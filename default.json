@@ -110,7 +110,12 @@
     },
     {
       "groupName": "cypress toolset",
-      "matchPackagePatterns": ["cypress", "cy2", "@types/cypress-image-snapshot", "cypress-image-snapshot"]
+      "matchPackagePatterns": [
+        "cypress",
+        "cy2",
+        "@types/cypress-image-snapshot",
+        "cypress-image-snapshot"
+      ]
     },
     {
       "groupName": "commitlint",
@@ -189,7 +194,13 @@
     },
     {
       "groupName": "jest",
-      "matchPackagePatterns": ["^@types/jest$", "^@types/jsdom$", "^jest.*", "^ts-jest$", "^jest-preset-angular$"]
+      "matchPackagePatterns": [
+        "^@types/jest$",
+        "^@types/jsdom$",
+        "^jest.*",
+        "^ts-jest$",
+        "^jest-preset-angular$"
+      ]
     },
     {
       "groupName": "jasmine",

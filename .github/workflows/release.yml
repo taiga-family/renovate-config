@@ -1,0 +1,26 @@
+name: ⚠️ Auto release
+on:
+  push:
+    branches: [main]
+
+jobs:
+  run-release:
+    name: Release
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3.5.3
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+          ref: ${{ github.head_ref }}
+          token: ${{ secrets.TAIGA_FAMILY_BOT_PAT }}
+      - uses: taiga-family/ci/./.github/actions/setup-node
+      - uses: taiga-family/ci/./.github/actions/setup-git
+        with:
+          token: ${{ secrets.TAIGA_FAMILY_BOT_PAT }}
+
+      - run: npx release-it --increment --ci
+
+concurrency:
+  group: release-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
