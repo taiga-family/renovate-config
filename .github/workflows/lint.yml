@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3.5.3
       - uses: taiga-family/ci/./.github/actions/variables@1.2.0
-      - uses: taiga-family/ci/./.github/actions/setup-node1.2.0
+      - uses: taiga-family/ci/./.github/actions/setup-node@1.2.0
 
       - name: Lint check
         run: |
