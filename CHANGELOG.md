@@ -1,11 +1,13 @@
 # Changelog
 
-- chore: fixup (a710ef3)
-- chore: fixup (21f7efc)
+- ci: use repositories (12e9bb9)
 
-* chore: fixup (da79b2d)
+* chore: fixup (a710ef3)
+* chore: fixup (21f7efc)
 
-- chore: fixup (0d73424)
+- chore: fixup (da79b2d)
+
+* chore: fixup (0d73424)
 
 ## 1.1.0 (2023-08-03)
 
