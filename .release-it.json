@@ -3,35 +3,19 @@
     "commitMessage": "chore(release): v${version}"
   },
   "github": {
-    "release": true
+    "release": true,
+    "releaseNotes": "git log --no-merges --pretty=format:\"* %s %h\" ${latestTag}...main"
   },
   "npm": {
     "publish": false
   },
   "plugins": {
     "@release-it/conventional-changelog": {
-      "infile": "CHANGELOG.md",
-      "header": "# Changelog",
-      "preset": {
-        "name": "conventionalcommits",
-        "types": [
-          {
-            "type": "feat",
-            "section": "Features"
-          },
-          {
-            "type": "fix",
-            "section": "Bug Fixes"
-          },
-          {}
-        ]
-      }
+      "preset": "angular",
+      "infile": false
     }
   },
   "hooks": {
-    "after:@release-it/conventional-changelog:beforeRelease": [
-      "npx prettier --write ./CHANGELOG.md"
-    ],
     "after:release": "echo Successfully released ${name} v${version} to ${repo.repository}."
   }
 }

@@ -15,12 +15,14 @@ jobs:
           persist-credentials: false
           ref: ${{ github.head_ref }}
           token: ${{ secrets.TAIGA_FAMILY_BOT_PAT }}
-      - uses: taiga-family/ci/.github/actions/setup-node@1.2.0
-      - uses: taiga-family/ci/.github/actions/setup-git@1.2.0
+      - uses: taiga-family/ci/actions/setup-node@1.3.0
+      - uses: taiga-family/ci/actions/setup-git@1.3.0
         with:
           token: ${{ secrets.TAIGA_FAMILY_BOT_PAT }}
 
       - run: npx release-it --increment --ci
+        env:
+          GITHUB_TOKEN: ${{ secrets.TAIGA_FAMILY_BOT_PAT }}
 
 concurrency:
   group: release-${{ github.workflow }}-${{ github.ref }}
