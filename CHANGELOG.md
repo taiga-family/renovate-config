@@ -1,6 +1,8 @@
 # Changelog
 
-- chore: fixup (0d73424)
+- chore: fixup (da79b2d)
+
+* chore: fixup (0d73424)
 
 ## 1.1.0 (2023-08-03)
 
