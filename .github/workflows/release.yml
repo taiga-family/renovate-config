@@ -2,6 +2,8 @@ name: ⚠️ Auto release
 on:
   push:
     branches: [main]
+    paths:
+      - "default.json"
 
 jobs:
   run-release:
