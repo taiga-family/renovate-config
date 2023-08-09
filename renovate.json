@@ -4,6 +4,7 @@
   "repositories": [
     "taiga-family/renovate-config",
     "taiga-family/ci",
-    "taiga-family/tui-editor"
+    "taiga-family/tui-editor",
+    "taiga-family/maskito"
   ]
 }
