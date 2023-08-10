@@ -5,6 +5,7 @@
     "taiga-family/renovate-config",
     "taiga-family/ci",
     "taiga-family/tui-editor",
-    "taiga-family/maskito"
+    "taiga-family/maskito",
+    "taiga-family/taiga-ui"
   ]
 }
