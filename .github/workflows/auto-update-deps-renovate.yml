@@ -13,6 +13,6 @@ jobs:
         with:
           renovate-version: full
           token: ${{ secrets.TAIGA_FAMILY_BOT_PAT }}
-          configurationFile: renovate.json
+          configurationFile: renovate-config.js
         env:
           LOG_LEVEL: "debug"
