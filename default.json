@@ -89,16 +89,7 @@
       "groupName": "taiga-ui",
       "matchFileNames": ["package.json"],
       "matchPackagePatterns": ["@taiga-ui/.*"],
-      "matchUpdateTypes": ["minor", "patch", "pin"],
-      "postUpgradeTasks": {
-        "fileFilters": ["**/**"],
-        "commands": [
-          "npm ci --ignore-scripts --force",
-          "npx --no-install nx migrate {{{depName}}} --from={{{depName}}}@{{{replace '^[^\\\\d]*' '' currentValue}}} --to={{{depName}}}@{{{replace '^[^\\\\d]*' '' newValue}}}",
-          "npx --no-install nx migrate --run-migrations=migrations.json --if-exists",
-          "exit 1"
-        ]
-      }
+      "matchUpdateTypes": ["minor", "patch", "pin"]
     },
     {
       "groupName": "tiptap",
@@ -222,12 +213,5 @@
       "groupName": "jasmine",
       "matchPackagePatterns": ["^jasmine.*"]
     }
-  ],
-  "force": {
-    "postUpgradeTasks": {
-      "commands": ["pwd", "echo 1234", "exit 1"],
-      "executionMode": "branch",
-      "fileFilters": ["**/*"]
-    }
-  }
+  ]
 }
