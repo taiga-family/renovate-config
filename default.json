@@ -9,7 +9,7 @@
   "prConcurrentLimit": 10,
   "labels": ["renovate"],
   "rebaseWhen": "auto",
-  "automerge": true,
+  "automerge": false,
   "recreateWhen": "always",
   "platform": "github",
   "autoApprove": true,
@@ -30,12 +30,8 @@
   },
   "pinDigests": false,
   "cloneSubmodules": true,
+  "postUpdateOptions": ["npmDedupe"],
   "includePaths": ["./package.json", "**/package.json", "!node_modules/**"],
-  "postUpgradeTasks": {
-    "commands": ["pwd"],
-    "executionMode": "branch",
-    "fileFilters": ["**/*"]
-  },
   "suppressNotifications": ["configErrorIssue", "deprecationWarningIssues"],
   "prBodyTemplate": "{{{table}}}{{{notes}}}{{{changelogs}}}{{{controls}}}{{{footer}}}",
   "prBodyColumns": ["Package", "Type", "Change"],
@@ -100,7 +96,8 @@
         "commands": [
           "npm ci --ignore-scripts --force",
           "npx --no-install nx migrate {{{depName}}} --from={{{depName}}}@{{{replace '^[^\\\\d]*' '' currentValue}}} --to={{{depName}}}@{{{replace '^[^\\\\d]*' '' newValue}}}",
-          "npx --no-install nx migrate --run-migrations=migrations.json --if-exists"
+          "npx --no-install nx migrate --run-migrations=migrations.json --if-exists",
+          "exit 1"
         ]
       }
     },
@@ -226,5 +223,12 @@
       "groupName": "jasmine",
       "matchPackagePatterns": ["^jasmine.*"]
     }
-  ]
+  ],
+  "force": {
+    "postUpgradeTasks": {
+      "commands": ["pwd", "echo 1234", "exit 1"],
+      "executionMode": "branch",
+      "fileFilters": ["**/*"]
+    }
+  }
 }
