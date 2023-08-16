@@ -32,9 +32,9 @@
   "cloneSubmodules": true,
   "includePaths": ["./package.json", "**/package.json", "!node_modules/**"],
   "postUpgradeTasks": {
-    "commands": ["pwd", "echo 'success postUpgradeTasks'"],
-    "executionMode": "update",
-    "fileFilters": []
+    "commands": ["pwd"],
+    "executionMode": "branch",
+    "fileFilters": ["**/*"]
   },
   "suppressNotifications": ["configErrorIssue", "deprecationWarningIssues"],
   "prBodyTemplate": "{{{table}}}{{{notes}}}{{{changelogs}}}{{{controls}}}{{{footer}}}",
