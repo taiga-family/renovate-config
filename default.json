@@ -82,7 +82,13 @@
     },
     {
       "groupName": "taiga-ui",
-      "matchPackagePatterns": ["^@taiga-ui/.*"]
+      "matchPackagePatterns": ["@taiga-ui/cdk"],
+      "postUpgradeTasks": {
+        "commands": [
+          "npm ci --ignore-scripts",
+          "[ ! -f ./nx.json ] && npx ng update @taiga-ui/cdk@{{{newVersion}}} --force || npx nx migrate @taiga-ui/cdk --to=\"@taiga-ui/cdk@{{{newVersion}}}\" --verbose && npx nx migrate --run-migrations --if-exists"
+        ]
+      }
     },
     {
       "groupName": "tiptap",
