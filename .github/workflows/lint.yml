@@ -15,7 +15,7 @@ jobs:
 
       - name: Lint check
         run: |
-          npx renovate-config-validator default.json
+          npx renovate-config-validator default.json --strict
           npm run prettier -- --check
 
 concurrency:
