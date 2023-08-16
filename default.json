@@ -92,17 +92,16 @@
     },
     {
       "groupName": "taiga-ui",
+      "matchFiles": ["package.json"],
       "matchPackagePatterns": ["@taiga-ui/.*"],
-      "matchUpdateTypes": ["minor", "patch"],
-      "allowedPostUpgradeCommands": [".*"],
+      "matchUpdateTypes": ["minor", "patch", "pin"],
       "postUpgradeTasks": {
+        "fileFilters": ["**/**"],
         "commands": [
           "npm ci --ignore-scripts --force",
-          "npx nx migrate @taiga-ui/cdk --to=@taiga-ui/cdk@{{{newVersion}}} --verbose && npx nx migrate --run-migrations --if-exists",
-          "git status"
-        ],
-        "executionMode": "update",
-        "fileFilters": []
+          "npx --no-install nx migrate {{{depName}}} --from={{{depName}}}@{{{replace '^[^\\\\d]*' '' currentValue}}} --to={{{depName}}}@{{{replace '^[^\\\\d]*' '' newValue}}}",
+          "npx --no-install nx migrate --run-migrations=migrations.json --if-exists"
+        ]
       }
     },
     {
