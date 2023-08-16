@@ -22,6 +22,8 @@ jobs:
         with:
           token: ${{ secrets.TAIGA_FAMILY_BOT_PAT }}
 
+      - run: npx renovate-config-validator default.json
+
       - run: npx release-it --increment --ci
         env:
           GITHUB_TOKEN: ${{ secrets.TAIGA_FAMILY_BOT_PAT }}
