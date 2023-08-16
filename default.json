@@ -30,7 +30,6 @@
   },
   "pinDigests": false,
   "cloneSubmodules": true,
-  "postUpdateOptions": ["npmDedupe"],
   "includePaths": ["./package.json", "**/package.json", "!node_modules/**"],
   "suppressNotifications": ["configErrorIssue", "deprecationWarningIssues"],
   "prBodyTemplate": "{{{table}}}{{{notes}}}{{{changelogs}}}{{{controls}}}{{{footer}}}",
