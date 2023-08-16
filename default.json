@@ -92,7 +92,7 @@
     },
     {
       "groupName": "taiga-ui",
-      "matchFiles": ["package.json"],
+      "matchFileNames": ["package.json"],
       "matchPackagePatterns": ["@taiga-ui/.*"],
       "matchUpdateTypes": ["minor", "patch", "pin"],
       "postUpgradeTasks": {
