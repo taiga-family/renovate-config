@@ -6,7 +6,7 @@ module.exports = {
   onboarding: false,
   allowCustomCrateRegistries: true,
   logFileLevel: "debug",
-  logFile: "renovate.log",
+  logFile: "./renovate.log",
   trustLevel: "high",
   commitMessageSuffix: "[renovate self hosted]",
 };
