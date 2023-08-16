@@ -22,13 +22,17 @@
   "branchPrefix": "renovate/",
   "timezone": "Europe/Moscow",
   "onboarding": false,
+  "trustLevel": "high",
   "requireConfig": false,
   "digest": {
     "enabled": false
   },
   "pinDigests": false,
   "cloneSubmodules": true,
-  "includePaths": ["package.json", "**/package.json", "!node_modules/**"],
+  "includePaths": ["./package.json", "**/package.json", "!node_modules/**"],
+  "postUpgradeTasks": {
+    "commands": ["pwd", "echo 'success postUpgradeTasks'"]
+  },
   "suppressNotifications": ["configErrorIssue", "deprecationWarningIssues"],
   "prBodyTemplate": "{{{table}}}{{{notes}}}{{{changelogs}}}{{{controls}}}{{{footer}}}",
   "prBodyColumns": ["Package", "Type", "Change"],
@@ -84,17 +88,14 @@
       "matchPackagePatterns": ["^@ng-web-apis/.*"]
     },
     {
-      "enabled": false,
-      "matchPackagePatterns": ["@taiga-ui/*"]
-    },
-    {
-      "enabled": true,
       "groupName": "taiga-ui",
-      "matchPackagePatterns": ["@taiga-ui/cdk"],
+      "matchPackagePrefix": ["@taiga-ui"],
+      "matchUpdateTypes": ["minor", "patch"],
       "postUpgradeTasks": {
         "commands": [
-          "npm ci --ignore-scripts",
-          "[ ! -f ./nx.json ] && npx ng update @taiga-ui/cdk@{{{newVersion}}} --allow-dirty --force || npx nx migrate @taiga-ui/cdk --to=\"@taiga-ui/cdk@{{{newVersion}}}\" --verbose && npx nx migrate --run-migrations --if-exists"
+          "npm ci --ignore-scripts --force",
+          "npx nx migrate @taiga-ui/cdk --to=@taiga-ui/cdk@{{{newVersion}}} --verbose && npx nx migrate --run-migrations --if-exists"
+          "git status"
         ],
         "fileFilters": [".*"],
         "executionMode": "branch"
