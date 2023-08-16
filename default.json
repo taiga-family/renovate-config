@@ -87,9 +87,7 @@
     },
     {
       "groupName": "taiga-ui",
-      "matchFileNames": ["package.json"],
-      "matchPackagePatterns": ["@taiga-ui/.*"],
-      "matchUpdateTypes": ["minor", "patch", "pin"]
+      "matchPackagePatterns": ["^@taiga-ui/.*"]
     },
     {
       "groupName": "tiptap",
