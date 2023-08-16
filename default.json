@@ -2,7 +2,7 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "baseBranches": ["main"],
   "enabledManagers": ["npm", "github-actions"],
-  "fetchReleaseNotes": false,
+  "fetchReleaseNotes": "off",
   "internalChecksFilter": "strict",
   "branchConcurrentLimit": 0,
   "prHourlyLimit": 0,
@@ -13,7 +13,6 @@
   "recreateWhen": "always",
   "platform": "github",
   "autoApprove": true,
-  "masterIssueApproval": false,
   "separateMajorMinor": true,
   "separateMinorPatch": false,
   "dependencyDashboard": false,
@@ -22,8 +21,10 @@
   "branchPrefix": "renovate/",
   "timezone": "Europe/Moscow",
   "onboarding": false,
-  "trustLevel": "high",
-  "requireConfig": false,
+  "allowCustomCrateRegistries": true,
+  "allowScripts": true,
+  "exposeAllEnv": true,
+  "requireConfig": "optional",
   "digest": {
     "enabled": false
   },
@@ -46,7 +47,7 @@
     },
     {
       "enabled": false,
-      "depTypeList": ["engines", "peerDependencies"]
+      "matchDepTypes": ["engines", "peerDependencies"]
     },
     {
       "enabled": false,

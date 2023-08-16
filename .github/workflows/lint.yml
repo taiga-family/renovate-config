@@ -13,10 +13,11 @@ jobs:
       - uses: taiga-family/ci/actions/variables@1.9.2
       - uses: taiga-family/ci/actions/setup-node@1.9.2
 
-      - name: Lint check
-        run: |
-          npx renovate-config-validator default.json --strict
-          npm run prettier -- --check
+      - name: Format check
+        run: npm run prettier -- --check
+
+      - name: Validate config
+        run: npx renovate-config-validator default.json --strict
 
 concurrency:
   group: lint-${{ github.head_ref }}
