@@ -98,7 +98,7 @@
           "npx nx migrate @taiga-ui/cdk --to=@taiga-ui/cdk@{{{newVersion}}} --verbose && npx nx migrate --run-migrations --if-exists",
           "git status"
         ],
-        "fileFilters": [".*"],
+        "fileFilters": ["**/*"],
         "executionMode": "branch"
       }
     },
