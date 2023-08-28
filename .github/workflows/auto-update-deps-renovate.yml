@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3.6.0
-      - uses: renovatebot/github-action@v39.0.1
+      - uses: renovatebot/github-action@v39.0.3
         with:
           renovate-version: full
           token: ${{ secrets.TAIGA_FAMILY_BOT_PAT }}
