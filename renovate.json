@@ -2,10 +2,12 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["github>taiga-family/renovate-config"],
   "repositories": [
-    "taiga-family/renovate-config",
     "taiga-family/ci",
+    "taiga-family/.github",
+    "taiga-family/linters",
     "taiga-family/tui-editor",
     "taiga-family/maskito",
-    "taiga-family/taiga-ui"
+    "taiga-family/taiga-ui",
+    "taiga-family/renovate-config"
   ]
 }
