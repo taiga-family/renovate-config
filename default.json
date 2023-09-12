@@ -34,6 +34,7 @@
   "suppressNotifications": ["configErrorIssue", "deprecationWarningIssues"],
   "prBodyTemplate": "{{{table}}}{{{notes}}}{{{changelogs}}}{{{controls}}}{{{footer}}}",
   "prBodyColumns": ["Package", "Type", "Change"],
+  "postUpdateOptions": ["npmDedupe"],
   "allowedPostUpgradeCommands": [".*"],
   "allowPostUpgradeCommandTemplating": true,
   "packageRules": [
