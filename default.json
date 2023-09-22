@@ -37,7 +37,9 @@
   "allowedPostUpgradeCommands": [".*"],
   "allowPostUpgradeCommandTemplating": true,
   "git-submodules": {
-    "enabled": true
+    "enabled": true,
+    "versioning": "git",
+    "fileMatch": ["(^|/)\\.gitmodules$"]
   },
   "packageRules": [
     {
