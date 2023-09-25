@@ -6,7 +6,7 @@
   "internalChecksFilter": "strict",
   "branchConcurrentLimit": 0,
   "prHourlyLimit": 0,
-  "prConcurrentLimit": 10,
+  "prConcurrentLimit": 0,
   "labels": ["renovate"],
   "rebaseWhen": "auto",
   "automerge": false,
