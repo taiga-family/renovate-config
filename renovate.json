@@ -8,6 +8,13 @@
     "taiga-family/tui-editor",
     "taiga-family/maskito",
     "taiga-family/taiga-ui",
-    "taiga-family/renovate-config"
+    "taiga-family/ng-web-apis",
+    "taiga-family/ng-morph",
+    "taiga-family/argus",
+    "taiga-family/ng-polymorpheus",
+    "taiga-family/ng-event-plugins",
+    "taiga-family/microzord",
+    "taiga-family/renovate-config",
+    "taiga-family/angular-contenteditable-accessor"
   ]
 }
