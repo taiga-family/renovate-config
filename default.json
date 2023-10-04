@@ -13,7 +13,7 @@
   "recreateWhen": "always",
   "platform": "github",
   "autoApprove": true,
-  "separateMajorMinor": true,
+  "separateMajorMinor": false,
   "separateMinorPatch": false,
   "dependencyDashboard": false,
   "dependencyDashboardApproval": false,
@@ -36,11 +36,6 @@
   "prBodyColumns": ["Package", "Type", "Change"],
   "allowedPostUpgradeCommands": [".*"],
   "allowPostUpgradeCommandTemplating": true,
-  "git-submodules": {
-    "enabled": true,
-    "versioning": "git",
-    "fileMatch": ["(^|/)\\.gitmodules$"]
-  },
   "packageRules": [
     {
       "enabled": false,
@@ -65,9 +60,21 @@
       ]
     },
     {
+      "enabled": false,
       "matchUpdateTypes": ["major", "minor"],
-      "matchPackageNames": ["typescript"],
-      "enabled": false
+      "matchPackageNames": ["typescript"]
+    },
+    {
+      "enabled": true,
+      "groupName": "rxjs",
+      "matchUpdateTypes": ["patch"],
+      "matchPackageNames": ["zone.js", "rxjs"]
+    },
+    {
+      "enabled": true,
+      "groupName": "zone.js",
+      "matchUpdateTypes": ["patch"],
+      "matchPackageNames": ["zone.js"]
     },
     {
       "enabled": true,
