@@ -13,6 +13,7 @@
   "recreateWhen": "always",
   "platform": "github",
   "autoApprove": true,
+  "prCreation": "status-success",
   "separateMajorMinor": false,
   "separateMinorPatch": false,
   "dependencyDashboard": false,
