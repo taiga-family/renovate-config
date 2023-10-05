@@ -12,6 +12,7 @@
     "taiga-family/ng-morph",
     "taiga-family/argus",
     "taiga-family/ng-polymorpheus",
+    "taiga-family/ng-dompurify",
     "taiga-family/ng-event-plugins",
     "taiga-family/microzord",
     "taiga-family/renovate-config",
