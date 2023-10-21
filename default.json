@@ -49,7 +49,7 @@
     {
       "enabled": false,
       "groupName": "angular toolset",
-      "matchUpdateTypes": ["major", "minor", "patch"],
+      "matchUpdateTypes": ["major", "minor"],
       "matchPackageNames": [
         "^@angular/.*",
         "^@angular-builders/.*",
@@ -135,8 +135,10 @@
       ]
     },
     {
-      "groupName": "commitlint",
-      "matchPackagePatterns": ["^@commitlint/.*"]
+      "enabled": true,
+      "matchPackagePatterns": ["^@commitlint/.*"],
+      "matchUpdateTypes": ["major", "minor", "patch"],
+      "groupName": "commitlint"
     },
     {
       "groupName": "tinkoff",
