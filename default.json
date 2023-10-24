@@ -39,11 +39,6 @@
   "packageRules": [
     {
       "enabled": false,
-      "matchManagers": ["npm"],
-      "matchUpdateTypes": ["major"]
-    },
-    {
-      "enabled": false,
       "matchDepTypes": ["engines", "peerDependencies"]
     },
     {
