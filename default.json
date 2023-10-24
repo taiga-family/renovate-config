@@ -43,9 +43,10 @@
     },
     {
       "matchUpdateTypes": ["major"],
-      "matchPackageNames": [
+      "matchPackagePatterns": [
         "^@angular.*",
         "^@nguniversal.*",
+        "ng-packagr",
         "zone.js",
         "rxjs"
       ],
@@ -53,7 +54,7 @@
     },
     {
       "matchUpdateTypes": ["major", "minor"],
-      "matchPackageNames": ["typescript"],
+      "matchPackagePatterns": ["typescript"],
       "enabled": false
     },
     {
@@ -70,7 +71,13 @@
     },
     {
       "groupName": "ng",
-      "matchPackageNames": ["^@angular.*", "^@nguniversal.*", "zone.js", "rxjs"]
+      "matchPackagePatterns": [
+        "^@angular.*",
+        "^@nguniversal.*",
+        "ng-packagr",
+        "zone.js",
+        "rxjs"
+      ]
     },
     {
       "groupName": "ng-web-apis",
