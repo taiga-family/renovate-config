@@ -38,43 +38,23 @@
   "allowPostUpgradeCommandTemplating": true,
   "packageRules": [
     {
-      "enabled": false,
-      "matchDepTypes": ["engines", "peerDependencies"]
+      "matchDepTypes": ["engines", "peerDependencies"],
+      "enabled": false
     },
     {
-      "enabled": false,
-      "groupName": "angular toolset",
-      "matchUpdateTypes": ["major", "minor"],
+      "matchUpdateTypes": ["major"],
       "matchPackageNames": [
-        "^@angular/.*",
-        "^@angular-builders/.*",
-        "^@angular-devkit/.*",
-        "^@nguniversal/.*",
+        "^@angular.*",
+        "^@nguniversal.*",
         "zone.js",
         "rxjs"
-      ]
+      ],
+      "enabled": false
     },
     {
-      "enabled": false,
       "matchUpdateTypes": ["major", "minor"],
-      "matchPackageNames": ["typescript"]
-    },
-    {
-      "enabled": true,
-      "groupName": "rxjs",
-      "matchUpdateTypes": ["patch"],
-      "matchPackageNames": ["zone.js", "rxjs"]
-    },
-    {
-      "enabled": true,
-      "groupName": "zone.js",
-      "matchUpdateTypes": ["patch"],
-      "matchPackageNames": ["zone.js"]
-    },
-    {
-      "enabled": true,
-      "matchManagers": ["github-actions"],
-      "matchUpdateTypes": ["major"]
+      "matchPackageNames": ["typescript"],
+      "enabled": false
     },
     {
       "matchUpdateTypes": ["major"],
@@ -87,6 +67,10 @@
     {
       "matchUpdateTypes": ["patch"],
       "labels": ["renovate", "patch"]
+    },
+    {
+      "groupName": "ng",
+      "matchPackageNames": ["^@angular.*", "^@nguniversal.*", "zone.js", "rxjs"]
     },
     {
       "groupName": "ng-web-apis",
@@ -114,14 +98,14 @@
     },
     {
       "groupName": "prettier",
-      "matchPackagePatterns": ["^prettier"]
+      "matchPackagePatterns": ["^prettier", "^@prettier/.*", "$^prettier-.*"]
     },
     {
-      "groupName": "Nx toolset",
+      "groupName": "nx",
       "matchPackagePatterns": ["^@nrwl/.*", "^@nx/.*", "nx", "nx-cloud"]
     },
     {
-      "groupName": "cypress toolset",
+      "groupName": "cypress",
       "matchPackagePatterns": [
         "cypress",
         "cy2",
@@ -130,10 +114,8 @@
       ]
     },
     {
-      "enabled": true,
-      "matchPackagePatterns": ["^@commitlint/.*"],
-      "matchUpdateTypes": ["major", "minor", "patch"],
-      "groupName": "commitlint"
+      "groupName": "commitlint",
+      "matchPackagePatterns": ["^@commitlint/.*"]
     },
     {
       "groupName": "tinkoff",
@@ -148,62 +130,22 @@
       "matchPackagePatterns": ["^rollup.*", "@rollup/pluginutils"]
     },
     {
-      "groupName": "svgo",
-      "matchPackagePatterns": ["@types/svgo", "svgo"]
-    },
-    {
-      "groupName": "firebase",
-      "matchPackagePatterns": ["firebase-tools"]
+      "groupName": "types",
+      "matchPackagePatterns": ["^@types/.*"]
     },
     {
       "groupName": "stackblitz sdk",
       "matchPackagePatterns": ["^@stackblitz/.*"]
     },
     {
-      "groupName": "nodejs toolset",
-      "matchPackagePatterns": [
-        "find-in-files",
-        "ts-node",
-        "wait-on",
-        "kill-port",
-        "http-server",
-        "husky",
-        "standard-version",
-        "bundlemon",
-        "cpy-cli",
-        "express",
-        "showdown"
-      ]
-    },
-    {
-      "groupName": "webpack toolset",
-      "matchPackagePatterns": ["ts-loader", "less-plugin-npm-import", "postcss"]
-    },
-    {
-      "groupName": "javascript toolset",
-      "matchPackagePatterns": ["core-js", "date-fns", "parse5"]
-    },
-    {
-      "groupName": "angular toolset",
-      "matchPackagePatterns": [
-        "angular-http-server",
-        "ng-yandex-metrika",
-        "ngx-markdown",
-        "ng-morph",
-        "dompurify"
-      ]
-    },
-    {
       "groupName": "eslint",
       "matchPackagePatterns": [
         "^eslint.*",
-        "^@types/eslint$",
-        "^@types/eslint-.*",
+        "^@types/eslint.*",
         "^@angular-eslint/.*",
         "^@html-eslint/.*",
-        "^@typescript-eslint/.*",
-        "^@nrwl/eslint-.*",
-        "^@tinkoff/eslint-.*"
+        "^@babel/eslint-.*",
+        "^@typescript-eslint/.*"
       ]
     },
     {
