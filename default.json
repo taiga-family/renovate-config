@@ -58,6 +58,11 @@
       "enabled": false
     },
     {
+      "matchUpdateTypes": ["major", "minor"],
+      "matchPackagePatterns": ["zone.js", "rxjs"],
+      "enabled": false
+    },
+    {
       "matchUpdateTypes": ["major"],
       "labels": ["renovate", "major"]
     },
