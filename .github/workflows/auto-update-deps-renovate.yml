@@ -2,7 +2,7 @@ name: 🤖 Auto update dependencies by Renovate
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 */3 * * mon-fri"
+    - cron: "0 */3 * * MON-FRI"
 
 jobs:
   renovate:
