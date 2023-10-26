@@ -64,6 +64,11 @@
     },
     {
       "matchUpdateTypes": ["major"],
+      "matchPackagePatterns": ["core-js"],
+      "enabled": false
+    },
+    {
+      "matchUpdateTypes": ["major"],
       "labels": ["renovate", "major"]
     },
     {
