@@ -46,7 +46,11 @@
       "matchPackagePatterns": [
         "^@angular.*",
         "^@nguniversal.*",
+        "jest-preset-angular",
+        "ngx-highlightjs",
+        "ngx-markdown",
         "ng-packagr",
+        "core-js",
         "zone.js",
         "rxjs"
       ],
@@ -60,11 +64,6 @@
     {
       "matchUpdateTypes": ["major", "minor"],
       "matchPackagePatterns": ["zone.js", "rxjs"],
-      "enabled": false
-    },
-    {
-      "matchUpdateTypes": ["major"],
-      "matchPackagePatterns": ["core-js", "ngx-highlightjs", "ngx-markdown"],
       "enabled": false
     },
     {
