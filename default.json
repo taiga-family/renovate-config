@@ -59,7 +59,7 @@
     },
     {
       "matchUpdateTypes": ["major", "minor"],
-      "matchPackagePatterns": ["zone.js", "rxjs"],
+      "matchPackagePatterns": ["zone.js", "rxjs", "ngx-highlightjs"],
       "enabled": false
     },
     {
