@@ -51,6 +51,7 @@
         "ngx-highlightjs",
         "ngx-markdown",
         "ng-packagr",
+        "parse5",
         "core-js",
         "zone.js",
         "rxjs"
