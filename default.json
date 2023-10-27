@@ -47,6 +47,7 @@
         "^@angular.*",
         "^@nguniversal.*",
         "jest-preset-angular",
+        "ng-yandex-metrika",
         "ngx-highlightjs",
         "ngx-markdown",
         "ng-packagr",
