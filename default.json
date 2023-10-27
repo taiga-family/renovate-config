@@ -118,6 +118,12 @@
       "matchPackagePatterns": ["^prettier", "^@prettier/.*", "$^prettier-.*"]
     },
     {
+      "groupName": "nx",
+      "matchPackagePatterns": ["^@nrwl/.*", "^@nx/.*", "nx-cloud"],
+      "matchUpdateTypes": ["major", "minor", "patch", "pin"],
+      "enabled": false
+    },
+    {
       "groupName": "Nx Workspace",
       "matchManagers": ["npm"],
       "matchPackagePatterns": ["^nx$"],
