@@ -45,6 +45,7 @@
       "matchUpdateTypes": ["major"],
       "matchPackagePatterns": [
         "^@angular.*",
+        "^@schematics.*",
         "^@nguniversal.*",
         "jest-preset-angular",
         "ng-yandex-metrika",
