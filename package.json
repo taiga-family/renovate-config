@@ -9,7 +9,7 @@
   "devDependencies": {
     "@release-it/conventional-changelog": "8.0.1",
     "prettier": "3.0.3",
-    "release-it": "16.2.1",
+    "release-it": "17.0.0",
     "renovate": "37.56.3"
   },
   "license": "Apache-2.0"
