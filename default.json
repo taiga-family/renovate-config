@@ -155,6 +155,12 @@
       "matchPackagePatterns": ["^@tinkoff/.*"]
     },
     {
+      "enabled": true,
+      "groupName": "ng-polymorpheus",
+      "matchPackagePatterns": ["^@tinkoff/ng-polymorpheus"],
+      "matchDepTypes": ["peerDependencies", "minor", "patch"]
+    },
+    {
       "groupName": "maskito",
       "matchPackagePatterns": ["^@maskito/.*"]
     },
