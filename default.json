@@ -121,21 +121,7 @@
     },
     {
       "groupName": "nx",
-      "matchManagers": ["npm"],
-      "matchFileNames": ["package.json"],
-      "matchPackagePatterns": ["^@nrwl/.*", "^@nx/.*", "nx-cloud", "^nx$"],
-      "matchUpdateTypes": ["major", "minor", "patch", "pin"],
-      "postUpgradeTasks": {
-        "commands": [
-          "npm i --ignore-scripts --legacy-peer-deps",
-          "npx --no-install nx migrate {{{depName}}} --from={{{depName}}}@{{{replace '^[^\\d]*' '' currentValue}}} --to={{{depName}}}@{{{replace '^[^\\d]*' '' newValue}}}",
-          "npx --no-install nx migrate --run-migrations=migrations.json",
-          "rm -f migrations.json || true",
-          "npm i --ignore-scripts",
-          "npx --no-install nx format:write --all"
-        ],
-        "fileFilters": ["**/**"]
-      }
+      "matchPackagePatterns": ["^@nrwl/.*", "^@nx/.*", "nx-cloud", "^nx$"]
     },
     {
       "groupName": "cypress",
@@ -158,7 +144,12 @@
       "enabled": true,
       "rangeStrategy": "bump",
       "matchDepTypes": ["peerDependencies"],
-      "matchPackagePatterns": ["^@tinkoff/ng-polymorpheus"]
+      "matchPackagePatterns": [
+        "tslib",
+        "^@tinkoff/.*",
+        "^@taiga-ui/.*",
+        "^@ng-web-apis/.*"
+      ]
     },
     {
       "groupName": "maskito",
