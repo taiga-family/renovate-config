@@ -156,9 +156,9 @@
     },
     {
       "enabled": true,
-      "groupName": "ng-polymorpheus",
-      "matchPackagePatterns": ["^@tinkoff/ng-polymorpheus"],
-      "matchDepTypes": ["peerDependencies", "minor", "patch"]
+      "rangeStrategy": "bump",
+      "matchDepTypes": ["peerDependencies"],
+      "matchPackagePatterns": ["^@tinkoff/ng-polymorpheus"]
     },
     {
       "groupName": "maskito",
