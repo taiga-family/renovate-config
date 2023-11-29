@@ -142,10 +142,10 @@
     },
     {
       "enabled": true,
-      "rangeStrategy": "bump",
       "matchDepTypes": ["peerDependencies"],
       "matchPackagePatterns": [
         "tslib",
+        "^@maskito/.*",
         "^@tinkoff/.*",
         "^@taiga-ui/.*",
         "^@ng-web-apis/.*"
