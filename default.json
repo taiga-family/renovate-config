@@ -144,12 +144,18 @@
       "enabled": true,
       "matchDepTypes": ["peerDependencies"],
       "matchPackagePatterns": [
-        "tslib",
+        "^tslib$",
         "^@maskito/.*",
         "^@tinkoff/.*",
         "^@taiga-ui/.*",
         "^@ng-web-apis/.*"
       ]
+    },
+    {
+      "enabled": true,
+      "rangeStrategy": "widen",
+      "matchDepTypes": ["peerDependencies"],
+      "matchPackagePatterns": ["^rxjs$"]
     },
     {
       "groupName": "maskito",
