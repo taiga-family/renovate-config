@@ -50,7 +50,6 @@
         "jest-preset-angular",
         "ng-yandex-metrika",
         "ngx-highlightjs",
-        "highlight.js",
         "ngx-markdown",
         "ng-packagr",
         "parse5",
@@ -58,6 +57,11 @@
         "zone.js",
         "rxjs"
       ],
+      "enabled": false
+    },
+    {
+      "matchUpdateTypes": ["major", "minor", "patch"],
+      "matchPackagePatterns": ["highlight.js"],
       "enabled": false
     },
     {
