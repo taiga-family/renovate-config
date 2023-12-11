@@ -50,6 +50,7 @@
         "jest-preset-angular",
         "ng-yandex-metrika",
         "ngx-highlightjs",
+        "highlight.js",
         "ngx-markdown",
         "ng-packagr",
         "parse5",
