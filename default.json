@@ -60,6 +60,14 @@
       "enabled": false
     },
     {
+      "matchUpdateTypes": ["major"],
+      "matchPackagePatterns": [
+        "^actions/upload-artifact",
+        "^actions/download-artifact"
+      ],
+      "enabled": false
+    },
+    {
       "matchUpdateTypes": ["major", "minor", "patch"],
       "matchPackagePatterns": ["highlight.js"],
       "enabled": false
