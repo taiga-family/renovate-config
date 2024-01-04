@@ -60,6 +60,17 @@
       "enabled": false
     },
     {
+      "groupName": "angular",
+      "matchPackagePatterns": ["@angular/*"],
+      "postUpgradeTasks": {
+        "commands": [
+          "npm ci --ignore-scripts",
+          "npx nx migrate {{{depName}}} --to=\"{{{depName}}}@{{{newVersion}}}\" --run-migrations=migrations.json --if-exists --verbose"
+        ],
+        "fileFilters": ["**/**"]
+      }
+    },
+    {
       "matchUpdateTypes": ["major"],
       "matchPackagePatterns": [
         "^actions/upload-artifact",
