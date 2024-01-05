@@ -64,9 +64,9 @@
       "matchPackagePatterns": ["@angular/*"],
       "postUpgradeTasks": {
         "commands": [
-          "npm install --ignore-scripts",
-          "npx nx migrate {{{depName}}} --to=\"{{{depName}}}@{{{newVersion}}}\" --run-migrations=migrations.json --if-exists --verbose"
+          "npx nx migrate @angular/cli --to=\"@angular/cli@{{{newVersion}}}\" --run-migrations=migrations.json --if-exists --verbose"
         ],
+        "executionMode": "branch",
         "fileFilters": ["**/**"]
       }
     },
