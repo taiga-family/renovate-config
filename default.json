@@ -60,17 +60,6 @@
       "enabled": false
     },
     {
-      "groupName": "angular",
-      "matchPackagePatterns": ["@angular/*"],
-      "postUpgradeTasks": {
-        "commands": [
-          "npm ci && npx nx migrate @angular/cli --to=\"@angular/cli@{{{newVersion}}}\" --run-migrations=migrations.json --if-exists --verbose"
-        ],
-        "executionMode": "branch",
-        "fileFilters": ["**/**"]
-      }
-    },
-    {
       "matchUpdateTypes": ["major"],
       "matchPackagePatterns": [
         "^actions/upload-artifact",
