@@ -60,6 +60,11 @@
       "enabled": false
     },
     {
+      "groupName": "nx",
+      "matchPackagePatterns": ["^@nrwl/.*", "^@nx/.*", "nx-cloud", "^nx$"],
+      "enabled": false
+    },
+    {
       "matchUpdateTypes": ["major"],
       "matchPackagePatterns": [
         "^actions/upload-artifact",
@@ -131,10 +136,6 @@
     {
       "groupName": "prettier",
       "matchPackagePatterns": ["^prettier", "^@prettier/.*", "$^prettier-.*"]
-    },
-    {
-      "groupName": "nx",
-      "matchPackagePatterns": ["^@nrwl/.*", "^@nx/.*", "nx-cloud", "^nx$"]
     },
     {
       "groupName": "cypress",
