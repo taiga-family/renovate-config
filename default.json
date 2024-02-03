@@ -38,10 +38,11 @@
   "allowPostUpgradeCommandTemplating": true,
   "packageRules": [
     {
-      "matchDepTypes": ["engines", "peerDependencies"],
-      "enabled": false
+      "enabled": false,
+      "matchDepTypes": ["engines"]
     },
     {
+      "enabled": false,
       "matchUpdateTypes": ["major"],
       "matchPackagePatterns": [
         "^@angular.*",
@@ -56,31 +57,30 @@
         "core-js",
         "zone.js",
         "rxjs"
-      ],
-      "enabled": false
+      ]
     },
     {
+      "enabled": false,
       "matchUpdateTypes": ["major"],
       "matchPackagePatterns": [
         "^actions/upload-artifact",
         "^actions/download-artifact"
-      ],
-      "enabled": false
+      ]
     },
     {
+      "enabled": false,
       "matchUpdateTypes": ["major", "minor", "patch"],
-      "matchPackagePatterns": ["highlight.js"],
-      "enabled": false
+      "matchPackagePatterns": ["highlight.js"]
     },
     {
+      "enabled": false,
       "matchUpdateTypes": ["major", "minor"],
-      "matchPackagePatterns": ["typescript"],
-      "enabled": false
+      "matchPackagePatterns": ["typescript"]
     },
     {
+      "enabled": false,
       "matchUpdateTypes": ["major", "minor"],
-      "matchPackagePatterns": ["zone.js", "rxjs"],
-      "enabled": false
+      "matchPackagePatterns": ["zone.js", "rxjs"]
     },
     {
       "matchUpdateTypes": ["major"],
@@ -95,6 +95,12 @@
       "labels": ["renovate", "patch"]
     },
     {
+      "enabled": true,
+      "rangeStrategy": "widen",
+      "matchDepTypes": ["peerDependencies"]
+    },
+    {
+      "enabled": true,
       "groupName": "ng",
       "matchPackagePatterns": [
         "^@angular.*",
@@ -105,38 +111,49 @@
       ]
     },
     {
+      "enabled": true,
       "groupName": "ng-web-apis",
       "matchPackagePatterns": ["^@ng-web-apis/.*"]
     },
     {
+      "enabled": true,
       "groupName": "taiga-ui",
       "matchPackagePatterns": ["^@taiga-ui/.*"]
     },
     {
+      "enabled": true,
       "groupName": "tiptap",
       "matchPackagePatterns": ["^@tiptap/.*"]
     },
     {
+      "enabled": true,
       "groupName": "cspell",
       "matchPackagePatterns": ["^@cspell/.*"]
     },
     {
+      "enabled": true,
       "groupName": "prosemirror",
       "matchPackagePatterns": ["^prosemirror.*"]
     },
     {
+      "enabled": true,
       "groupName": "definitely typed",
       "matchPackagePatterns": ["^@types/.*"]
     },
     {
+      "enabled": true,
       "groupName": "prettier",
       "matchPackagePatterns": ["^prettier", "^@prettier/.*", "$^prettier-.*"]
     },
     {
+      "enabled": true,
       "groupName": "nx",
-      "matchPackagePatterns": ["^@nrwl/.*", "^@nx/.*", "nx-cloud", "^nx$"]
+      "matchPackagePatterns": ["^@nrwl/.*", "^@nx/.*", "nx-cloud", "^nx$"],
+      "matchUpdateTypes": ["major", "minor", "patch"],
+      "matchManagers": ["npm"]
     },
     {
+      "enabled": true,
       "groupName": "cypress",
       "matchPackagePatterns": [
         "cypress",
@@ -146,47 +163,37 @@
       ]
     },
     {
+      "enabled": true,
       "groupName": "commitlint",
       "matchPackagePatterns": ["^@commitlint/.*"]
     },
     {
+      "enabled": true,
       "groupName": "tinkoff",
       "matchPackagePatterns": ["^@tinkoff/.*"]
     },
     {
       "enabled": true,
-      "matchDepTypes": ["peerDependencies"],
-      "matchPackagePatterns": [
-        "^tslib$",
-        "^@maskito/.*",
-        "^@tinkoff/.*",
-        "^@taiga-ui/.*",
-        "^@ng-web-apis/.*"
-      ]
-    },
-    {
-      "enabled": true,
-      "rangeStrategy": "widen",
-      "matchDepTypes": ["peerDependencies"],
-      "matchPackagePatterns": ["^rxjs$"]
-    },
-    {
       "groupName": "maskito",
       "matchPackagePatterns": ["^@maskito/.*"]
     },
     {
+      "enabled": true,
       "groupName": "rollup",
       "matchPackagePatterns": ["^rollup.*", "@rollup/pluginutils"]
     },
     {
+      "enabled": true,
       "groupName": "types",
       "matchPackagePatterns": ["^@types/.*"]
     },
     {
+      "enabled": true,
       "groupName": "stackblitz sdk",
       "matchPackagePatterns": ["^@stackblitz/.*"]
     },
     {
+      "enabled": true,
       "groupName": "eslint",
       "matchPackagePatterns": [
         "^eslint.*",
@@ -198,6 +205,7 @@
       ]
     },
     {
+      "enabled": true,
       "groupName": "jest",
       "matchPackagePatterns": [
         "^@types/jest$",
@@ -208,6 +216,7 @@
       ]
     },
     {
+      "enabled": true,
       "groupName": "jasmine",
       "matchPackagePatterns": ["^jasmine.*"]
     }
