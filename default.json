@@ -38,59 +38,6 @@
   "allowPostUpgradeCommandTemplating": true,
   "packageRules": [
     {
-      "matchCurrentAge": "> 2 years",
-      "groupName": "old dependencies"
-    },
-    {
-      "rangeStrategy": "pin",
-      "matchPackagePatterns": ["*"]
-    },
-    {
-      "rangeStrategy": "widen",
-      "matchDepTypes": ["engines", "peerDependencies"]
-    },
-    {
-      "enabled": false,
-      "matchDepTypes": ["engines"]
-    },
-    {
-      "enabled": false,
-      "matchUpdateTypes": ["major"]
-    },
-    {
-      "enabled": false,
-      "matchUpdateTypes": ["major", "minor", "patch"],
-      "matchPackagePatterns": ["highlight.js"]
-    },
-    {
-      "enabled": false,
-      "matchUpdateTypes": ["major", "minor"],
-      "matchPackagePatterns": ["typescript"]
-    },
-    {
-      "enabled": false,
-      "matchUpdateTypes": ["major", "minor"],
-      "matchPackagePatterns": ["zone.js", "rxjs"]
-    },
-    {
-      "enabled": true,
-      "labels": ["renovate"]
-    },
-    {
-      "enabled": true,
-      "groupName": "GitHub Actions",
-      "matchUpdateTypes": ["major", "minor", "patch"],
-      "matchPackagePatterns": ["^actions/.*", "^actions/.*"]
-    },
-    {
-      "enabled": false,
-      "matchUpdateTypes": ["major"],
-      "matchPackagePatterns": [
-        "^actions/upload-artifact",
-        "^actions/download-artifact"
-      ]
-    },
-    {
       "groupName": "ng",
       "matchPackagePatterns": [
         "^@angular.*",
@@ -109,13 +56,11 @@
       "matchPackagePatterns": ["^@taiga-ui/.*"]
     },
     {
-      "enabled": true,
       "groupName": "tiptap",
       "matchPackagePatterns": ["^@tiptap/.*"],
       "matchUpdateTypes": ["major", "minor", "patch"]
     },
     {
-      "enabled": true,
       "groupName": "cspell",
       "matchPackagePatterns": ["^@cspell/.*"],
       "matchUpdateTypes": ["major", "minor", "patch"]
@@ -125,25 +70,21 @@
       "matchPackagePatterns": ["^prosemirror.*"]
     },
     {
-      "enabled": true,
       "groupName": "definitely typed",
       "matchPackagePatterns": ["^@types/.*"],
       "matchUpdateTypes": ["major", "minor", "patch"]
     },
     {
-      "enabled": true,
       "groupName": "prettier",
       "matchPackagePatterns": ["^prettier", "^@prettier/.*", "$^prettier-.*"],
       "matchUpdateTypes": ["major", "minor", "patch"]
     },
     {
-      "enabled": true,
       "groupName": "nx",
       "matchPackagePatterns": ["^@nrwl/.*", "^@nx/.*", "nx-cloud", "^nx$"],
       "matchUpdateTypes": ["major", "minor", "patch"]
     },
     {
-      "enabled": true,
       "groupName": "cypress",
       "matchPackagePatterns": [
         "cypress",
@@ -154,7 +95,6 @@
       "matchUpdateTypes": ["major", "minor", "patch"]
     },
     {
-      "enabled": true,
       "groupName": "commitlint",
       "matchPackagePatterns": ["^@commitlint/.*"],
       "matchUpdateTypes": ["major", "minor", "patch"]
@@ -168,25 +108,21 @@
       "matchPackagePatterns": ["^@maskito/.*"]
     },
     {
-      "enabled": true,
       "groupName": "rollup",
       "matchPackagePatterns": ["^rollup.*", "@rollup/pluginutils"],
       "matchUpdateTypes": ["major", "minor", "patch"]
     },
     {
-      "enabled": true,
       "groupName": "types",
       "matchPackagePatterns": ["^@types/.*"],
       "matchUpdateTypes": ["major", "minor", "patch"]
     },
     {
-      "enabled": true,
       "groupName": "stackblitz sdk",
       "matchPackagePatterns": ["^@stackblitz/.*"],
       "matchUpdateTypes": ["major", "minor", "patch"]
     },
     {
-      "enabled": true,
       "groupName": "eslint",
       "matchPackagePatterns": [
         "^eslint.*",
@@ -199,7 +135,6 @@
       "matchUpdateTypes": ["major", "minor", "patch"]
     },
     {
-      "enabled": true,
       "groupName": "jest",
       "matchPackagePatterns": [
         "^@types/jest$",
@@ -211,10 +146,60 @@
       "matchUpdateTypes": ["major", "minor", "patch"]
     },
     {
-      "enabled": true,
       "groupName": "jasmine",
       "matchPackagePatterns": ["^jasmine.*"],
       "matchUpdateTypes": ["major", "minor", "patch"]
+    },
+    {
+      "rangeStrategy": "widen",
+      "matchDepTypes": ["peerDependencies"]
+    },
+    {
+      "enabled": false,
+      "matchDepTypes": ["engines"]
+    },
+    {
+      "enabled": false,
+      "matchUpdateTypes": ["major"]
+    },
+    {
+      "matchCurrentAge": "> 2 years",
+      "groupName": "old dependencies"
+    },
+    {
+      "rangeStrategy": "pin",
+      "matchPackagePatterns": ["*"]
+    },
+    {
+      "labels": ["renovate"]
+    },
+    {
+      "enabled": false,
+      "matchUpdateTypes": ["major", "minor", "patch"],
+      "matchPackagePatterns": ["highlight.js"]
+    },
+    {
+      "enabled": false,
+      "matchUpdateTypes": ["major", "minor"],
+      "matchPackagePatterns": ["typescript"]
+    },
+    {
+      "enabled": false,
+      "matchUpdateTypes": ["major", "minor"],
+      "matchPackagePatterns": ["zone.js", "rxjs"]
+    },
+    {
+      "groupName": "GitHub Actions",
+      "matchUpdateTypes": ["major", "minor", "patch"],
+      "matchPackagePatterns": ["^actions/.*", "^actions/.*"]
+    },
+    {
+      "enabled": false,
+      "matchUpdateTypes": ["major"],
+      "matchPackagePatterns": [
+        "^actions/upload-artifact",
+        "^actions/download-artifact"
+      ]
     }
   ]
 }
