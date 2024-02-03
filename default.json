@@ -164,10 +164,6 @@
       "matchUpdateTypes": ["major"]
     },
     {
-      "rangeStrategy": "pin",
-      "matchPackagePatterns": ["*"]
-    },
-    {
       "enabled": false,
       "matchUpdateTypes": ["major", "minor", "patch"],
       "matchPackagePatterns": ["highlight.js"]
