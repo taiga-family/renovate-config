@@ -38,6 +38,18 @@
   "allowPostUpgradeCommandTemplating": true,
   "packageRules": [
     {
+      "matchCurrentAge": "> 2 years",
+      "groupName": "old dependencies"
+    },
+    {
+      "rangeStrategy": "pin",
+      "matchPackagePatterns": ["*"]
+    },
+    {
+      "rangeStrategy": "widen",
+      "matchDepTypes": ["engines", "peerDependencies"]
+    },
+    {
       "enabled": false,
       "matchDepTypes": ["engines"]
     },
@@ -77,11 +89,6 @@
         "^actions/upload-artifact",
         "^actions/download-artifact"
       ]
-    },
-    {
-      "enabled": true,
-      "rangeStrategy": "widen",
-      "matchDepTypes": ["peerDependencies"]
     },
     {
       "groupName": "ng",
