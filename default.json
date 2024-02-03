@@ -168,15 +168,8 @@
       "matchUpdateTypes": ["major"]
     },
     {
-      "matchCurrentAge": "> 2 years",
-      "groupName": "old dependencies"
-    },
-    {
       "rangeStrategy": "pin",
       "matchPackagePatterns": ["*"]
-    },
-    {
-      "labels": ["renovate"]
     },
     {
       "enabled": false,
