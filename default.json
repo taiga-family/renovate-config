@@ -5,8 +5,8 @@
   "fetchChangeLogs": "off",
   "internalChecksFilter": "strict",
   "prHourlyLimit": 0,
-  "branchConcurrentLimit": 3,
-  "prConcurrentLimit": 3,
+  "branchConcurrentLimit": 2,
+  "prConcurrentLimit": 2,
   "labels": ["renovate"],
   "rebaseWhen": "auto",
   "automerge": false,
@@ -57,11 +57,6 @@
         "zone.js",
         "rxjs"
       ],
-      "enabled": false
-    },
-    {
-      "groupName": "nx",
-      "matchPackagePatterns": ["^@nrwl/.*", "^@nx/.*", "nx-cloud", "^nx$"],
       "enabled": false
     },
     {
@@ -136,6 +131,10 @@
     {
       "groupName": "prettier",
       "matchPackagePatterns": ["^prettier", "^@prettier/.*", "$^prettier-.*"]
+    },
+    {
+      "groupName": "nx",
+      "matchPackagePatterns": ["^@nrwl/.*", "^@nx/.*", "nx-cloud", "^nx$"]
     },
     {
       "groupName": "cypress",
