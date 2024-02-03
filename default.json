@@ -118,6 +118,11 @@
       "matchUpdateTypes": ["major", "minor", "patch"]
     },
     {
+      "groupName": "swc",
+      "matchPackagePatterns": ["^@swc.*"],
+      "matchUpdateTypes": ["major", "minor", "patch"]
+    },
+    {
       "groupName": "stackblitz sdk",
       "matchPackagePatterns": ["^@stackblitz/.*"],
       "matchUpdateTypes": ["major", "minor", "patch"]
