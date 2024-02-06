@@ -182,14 +182,6 @@
       "groupName": "GitHub Actions",
       "matchUpdateTypes": ["major", "minor", "patch"],
       "matchPackagePatterns": ["^actions/.*", "^actions/.*"]
-    },
-    {
-      "enabled": false,
-      "matchUpdateTypes": ["major"],
-      "matchPackagePatterns": [
-        "^actions/upload-artifact",
-        "^actions/download-artifact"
-      ]
     }
   ]
 }
