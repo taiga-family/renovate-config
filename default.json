@@ -42,7 +42,7 @@
     },
     {
       "matchDepTypes": ["peerDependencies", "optionalDependencies"],
-      "rangeStrategy": "in-range-only"
+      "rangeStrategy": "update-lockfile"
     },
     {
       "groupName": "ng",
