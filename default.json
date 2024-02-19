@@ -157,7 +157,7 @@
     },
     {
       "enabled": false,
-      "matchDepTypes": ["engines", "peerDependencies"]
+      "matchDepTypes": ["engines", "peerDependencies", "optionalDependencies"]
     },
     {
       "enabled": false,
