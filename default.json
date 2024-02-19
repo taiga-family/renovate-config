@@ -17,7 +17,6 @@
   "separateMinorPatch": false,
   "dependencyDashboard": false,
   "dependencyDashboardApproval": false,
-  "rangeStrategy": "pin",
   "branchPrefix": "renovate/",
   "timezone": "Europe/Moscow",
   "onboarding": false,
@@ -37,6 +36,14 @@
   "allowedPostUpgradeCommands": [".*"],
   "allowPostUpgradeCommandTemplating": true,
   "packageRules": [
+    {
+      "matchDepTypes": ["devDependencies", "dependencies"],
+      "rangeStrategy": "pin"
+    },
+    {
+      "matchDepTypes": ["peerDependencies", "optionalDependencies"],
+      "rangeStrategy": "in-range-only"
+    },
     {
       "groupName": "ng",
       "matchPackagePatterns": [
@@ -157,7 +164,7 @@
     },
     {
       "enabled": false,
-      "matchDepTypes": ["engines", "peerDependencies", "optionalDependencies"]
+      "matchDepTypes": ["engines"]
     },
     {
       "enabled": false,
