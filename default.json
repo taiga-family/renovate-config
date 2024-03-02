@@ -5,8 +5,8 @@
   "fetchChangeLogs": "off",
   "internalChecksFilter": "strict",
   "prHourlyLimit": 0,
-  "branchConcurrentLimit": 2,
-  "prConcurrentLimit": 2,
+  "branchConcurrentLimit": 1,
+  "prConcurrentLimit": 1,
   "labels": ["renovate"],
   "rebaseWhen": "auto",
   "automerge": false,
@@ -41,8 +41,12 @@
       "rangeStrategy": "pin"
     },
     {
-      "matchDepTypes": ["peerDependencies", "optionalDependencies"],
-      "rangeStrategy": "update-lockfile"
+      "matchDepTypes": ["peerDependencies"],
+      "rangeStrategy": "widen"
+    },
+    {
+      "matchDepTypes": ["\"optionalDependencies\""],
+      "enabled": false
     },
     {
       "groupName": "ng",
