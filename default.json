@@ -34,18 +34,6 @@
   "prBodyTemplate": "{{{table}}}{{{notes}}}{{{changelogs}}}{{{controls}}}{{{footer}}}",
   "prBodyColumns": ["Package", "Type", "Change"],
   "allowedPostUpgradeCommands": [".*"],
-  "postUpgradeTasks": {
-    "commands": [
-      "echo 'TODO: workaround for https://github.com/npm/cli/issues/7019'",
-      "rm -rf package-lock.json node_modules **/node_modules",
-      "npm i --workspaces --include-workspace-root || npm i",
-      "echo '------------------'",
-      "echo 'TODO: workaround for https://github.com/npm/cli/issues/6787#issuecomment-1751005219'",
-      "npm i --workspaces --include-workspace-root || npm i"
-    ],
-    "executionMode": "branch",
-    "fileFilters": ["package-lock.json"]
-  },
   "allowPostUpgradeCommandTemplating": true,
   "packageRules": [
     {
