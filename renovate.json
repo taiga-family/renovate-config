@@ -18,6 +18,5 @@
     "taiga-family/renovate-config",
     "taiga-family/angular-contenteditable-accessor",
     "taiga-family/preview-landing-components"
-  ],
-  "allowedPostUpgradeCommands": [".*"]
+  ]
 }
