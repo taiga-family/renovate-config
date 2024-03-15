@@ -35,6 +35,7 @@
   "prBodyColumns": ["Package", "Type", "Change"],
   "allowedPostUpgradeCommands": [".*"],
   "allowPostUpgradeCommandTemplating": true,
+  "skipInstalls": true,
   "postUpgradeTasks": {
     "commands": [
       "echo 'TODO: workaround for https://github.com/npm/cli/issues/7019'",
