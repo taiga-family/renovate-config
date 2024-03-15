@@ -157,6 +157,14 @@
       ]
     },
     {
+      "groupName": "react",
+      "matchPackagePatterns": ["^react.*"]
+    },
+    {
+      "groupName": "vue",
+      "matchPackagePatterns": ["^vue.*"]
+    },
+    {
       "groupName": "jasmine",
       "matchPackagePatterns": ["^jasmine.*"]
     },
@@ -175,27 +183,25 @@
     {
       "enabled": false,
       "matchUpdateTypes": ["major", "minor"],
-      "matchPackagePatterns": [
-        "^typescript",
-        "^@angular/.*",
-        "^@angular-devkit/.*",
-        "^@schematics/.*",
-        "highlight.js",
-        "zone.js",
-        "rxjs"
-      ]
+      "matchPackagePatterns": ["^typescript", "highlight.js", "zone.js", "rxjs"]
+    },
+    {
+      "enabled": false,
+      "matchUpdateTypes": ["major"],
+      "matchPackagePatterns": ["^@angular.*", "^@schematics/.*"]
     },
     {
       "enabled": false,
       "matchDepTypes": ["peerDependencies"],
       "matchPackagePatterns": [
-        "^typescript",
-        "^@angular/.*",
-        "^@angular-devkit/.*",
-        "^@schematics/.*",
         "highlight.js",
+        "^typescript",
+        "^@angular.*",
+        "^@schematics/.*",
         "zone.js",
-        "rxjs"
+        "rxjs",
+        "^react.*",
+        "^vue.*"
       ]
     }
   ]
