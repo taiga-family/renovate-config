@@ -54,7 +54,7 @@
       "rangeStrategy": "pin"
     },
     {
-      "matchDepTypes": ["peerDependencies"],
+      "matchDepTypes": ["peerDependencies", "optionalDependencies"],
       "rangeStrategy": "bump"
     },
     {
@@ -179,10 +179,6 @@
     },
     {
       "enabled": false,
-      "matchDepTypes": ["\"optionalDependencies\""]
-    },
-    {
-      "enabled": false,
       "matchUpdateTypes": ["major", "minor"],
       "matchPackagePatterns": ["^typescript", "highlight.js", "zone.js", "rxjs"]
     },
@@ -193,7 +189,8 @@
     },
     {
       "enabled": false,
-      "matchDepTypes": ["peerDependencies"],
+      "matchUpdateTypes": ["major", "minor"],
+      "matchDepTypes": ["peerDependencies", "optionalDependencies"],
       "matchPackagePatterns": [
         "highlight.js",
         "^typescript",
