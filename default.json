@@ -97,7 +97,7 @@
     },
     {
       "groupName": "nx",
-      "matchPackagePatterns": ["^@nrwl/.*", "^@nx/.*", "nx-cloud", "^nx$"]
+      "matchPackagePatterns": ["^@nrwl.*", "^@nx.*", "nx-cloud", "^nx$"]
     },
     {
       "groupName": "cypress",
