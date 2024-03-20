@@ -62,9 +62,9 @@
       "matchPackagePatterns": [
         "^@angular.*",
         "^@nguniversal.*",
-        "ng-packagr",
-        "zone.js",
-        "rxjs"
+        "^ng-packagr$",
+        "^zone.js$",
+        "^rxjs$"
       ]
     },
     {
@@ -180,24 +180,31 @@
     {
       "enabled": false,
       "matchUpdateTypes": ["major", "minor"],
-      "matchPackagePatterns": ["^typescript", "highlight.js", "zone.js", "rxjs"]
+      "matchPackagePatterns": [
+        "^typescript$",
+        "^highlight.js$",
+        "^ng-packagr$",
+        "^zone.js$",
+        "^rxjs$"
+      ]
     },
     {
       "enabled": false,
       "matchUpdateTypes": ["major"],
-      "matchPackagePatterns": ["^@angular.*", "^@schematics/.*"]
+      "matchPackagePatterns": ["^@angular.*", "^@schematics.*"]
     },
     {
       "enabled": false,
       "matchUpdateTypes": ["major", "minor"],
       "matchDepTypes": ["peerDependencies", "optionalDependencies"],
       "matchPackagePatterns": [
-        "highlight.js",
-        "^typescript",
+        "^typescript$",
+        "^highlight.js$",
         "^@angular.*",
-        "^@schematics/.*",
-        "zone.js",
-        "rxjs",
+        "^@schematics.*",
+        "^ng-packagr$",
+        "^zone.js$",
+        "^rxjs$",
         "^react.*",
         "^vue.*"
       ]
