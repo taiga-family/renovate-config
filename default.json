@@ -101,12 +101,7 @@
     },
     {
       "groupName": "cypress",
-      "matchPackagePatterns": [
-        "cypress",
-        "cy2",
-        "@types/cypress-image-snapshot",
-        "cypress-image-snapshot"
-      ]
+      "matchPackagePatterns": ["cypress", "cy2", "cypress-image-snapshot"]
     },
     {
       "groupName": "commitlint",
@@ -137,25 +132,20 @@
       "matchPackagePatterns": ["^@stackblitz/.*"]
     },
     {
-      "groupName": "eslint",
-      "matchPackagePatterns": [
-        "^eslint.*",
-        "^@types/eslint.*",
-        "^@angular-eslint/.*",
-        "^@html-eslint/.*",
-        "^@babel/eslint-.*",
-        "^@typescript-eslint/.*"
-      ]
+      "groupName": "eslint plugin",
+      "matchPackagePatterns": ["^eslint.*"]
+    },
+    {
+      "groupName": "babel",
+      "matchPackagePatterns": ["^@babel/eslint-.*", "babel.*"]
+    },
+    {
+      "groupName": "typescript eslint",
+      "matchPackagePatterns": ["^@typescript-eslint/.*"]
     },
     {
       "groupName": "jest",
-      "matchPackagePatterns": [
-        "^@types/jest$",
-        "^@types/jsdom$",
-        "^jest.*",
-        "^ts-jest$",
-        "^jest-preset-angular$"
-      ]
+      "matchPackagePatterns": ["^jest.*", "^ts-jest$", "^jest-preset-angular$"]
     },
     {
       "groupName": "react",
