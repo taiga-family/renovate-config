@@ -97,11 +97,11 @@
     },
     {
       "groupName": "nx",
-      "matchPackagePatterns": ["^@nrwl.*", "^@nx.*", "nx-cloud", "^nx$"]
+      "matchPackagePatterns": ["^@nrwl.*", "^@nx.*", "^nx-cloud$", "^nx$"]
     },
     {
       "groupName": "cypress",
-      "matchPackagePatterns": ["cypress", "cy2", "cypress-image-snapshot"]
+      "matchPackagePatterns": ["^cypress", "^cy2", "^cypress-image-snapshot"]
     },
     {
       "groupName": "commitlint",
