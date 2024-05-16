@@ -198,7 +198,8 @@
         "^@angular.*",
         "^@schematics.*",
         "^react.*",
-        "^vue.*"
+        "^vue.*",
+        "libphonenumber-js"
       ]
     }
   ]
