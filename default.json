@@ -192,14 +192,14 @@
         "^react$",
         "^vue$",
         "^highlight.js$",
-        "^@angular.*",
-        "^@schematics.*",
         "^ng-packagr$",
         "^zone.js$",
         "^rxjs$",
+        "^@angular.*",
+        "^@schematics.*",
         "^react.*",
-        "^vue.*",
-
+        "^vue.*"
+      ]
     }
   ]
 }
