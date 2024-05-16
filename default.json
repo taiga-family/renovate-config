@@ -189,6 +189,8 @@
       "matchDepTypes": ["peerDependencies", "optionalDependencies"],
       "matchPackagePatterns": [
         "^typescript$",
+        "^react$",
+        "^vue$",
         "^highlight.js$",
         "^@angular.*",
         "^@schematics.*",
@@ -196,8 +198,8 @@
         "^zone.js$",
         "^rxjs$",
         "^react.*",
-        "^vue.*"
-      ]
+        "^vue.*",
+
     }
   ]
 }
