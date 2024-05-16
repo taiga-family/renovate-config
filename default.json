@@ -185,7 +185,6 @@
     },
     {
       "enabled": false,
-      "matchUpdateTypes": ["major", "minor"],
       "matchDepTypes": ["peerDependencies", "optionalDependencies"],
       "matchPackagePatterns": [
         "^libphonenumber-js$",
