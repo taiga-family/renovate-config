@@ -181,7 +181,7 @@
     {
       "enabled": false,
       "matchUpdateTypes": ["major"],
-      "matchPackagePatterns": ["^@angular.*", "^@schematics.*"]
+      "matchPackagePatterns": ["^@angular.*", "^@schematics.*", "^eslint$"]
     },
     {
       "enabled": false,
