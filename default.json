@@ -188,18 +188,18 @@
       "matchUpdateTypes": ["major", "minor"],
       "matchDepTypes": ["peerDependencies", "optionalDependencies"],
       "matchPackagePatterns": [
+        "^libphonenumber-js$",
+        "^highlight.js$",
+        "^ng-packagr$",
         "^typescript$",
         "^react$",
         "^vue$",
-        "^highlight.js$",
-        "^ng-packagr$",
         "^zone.js$",
         "^rxjs$",
         "^@angular.*",
         "^@schematics.*",
         "^react.*",
-        "^vue.*",
-        "libphonenumber-js"
+        "^vue.*"
       ]
     }
   ]
