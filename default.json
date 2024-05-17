@@ -169,7 +169,12 @@
     {
       "enabled": false,
       "matchUpdateTypes": ["major"],
-      "matchPackagePatterns": ["^@angular.*", "^@schematics.*", "^eslint$"]
+      "matchPackagePatterns": [
+        "^@angular.*",
+        "^@schematics.*",
+        "^@nguniversal.*",
+        "^eslint$"
+      ]
     },
     {
       "enabled": false,
