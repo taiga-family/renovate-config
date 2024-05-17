@@ -171,9 +171,11 @@
       "matchUpdateTypes": ["major"],
       "matchPackagePatterns": [
         "^@angular.*",
+        "^@nx.*",
         "^@schematics.*",
         "^@nguniversal.*",
-        "^eslint$"
+        "^eslint$",
+        "^nx$"
       ]
     },
     {
