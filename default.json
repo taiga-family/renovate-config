@@ -175,6 +175,7 @@
         "^@schematics.*",
         "^@nguniversal.*",
         "^eslint$",
+        "^ngx-markdown$",
         "^nx$"
       ]
     },
