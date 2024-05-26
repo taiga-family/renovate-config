@@ -176,6 +176,7 @@
         "^@nguniversal.*",
         "^eslint$",
         "^ngx-markdown$",
+        "^ngx-highlightjs$",
         "^nx$"
       ]
     },
