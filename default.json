@@ -33,7 +33,6 @@
   "suppressNotifications": ["configErrorIssue", "deprecationWarningIssues"],
   "prBodyTemplate": "{{{table}}}{{{notes}}}{{{changelogs}}}{{{controls}}}{{{footer}}}",
   "prBodyColumns": ["Package", "Type", "Change"],
-  "allowedPostUpgradeCommands": [".*"],
   "allowPostUpgradeCommandTemplating": true,
   "skipInstalls": true,
   "packageRules": [
