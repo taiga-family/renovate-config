@@ -1,6 +1,7 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["github>taiga-family/renovate-config"],
+  "allowedPostUpgradeCommands": [".*"],
   "repositories": [
     "taiga-family/ci",
     "taiga-family/.github",
