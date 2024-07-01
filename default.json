@@ -107,10 +107,6 @@
       "matchPackagePatterns": ["^rollup.*", "@rollup/pluginutils"]
     },
     {
-      "groupName": "types",
-      "matchPackagePatterns": ["^@types/.*"]
-    },
-    {
       "groupName": "swc",
       "matchPackagePatterns": ["^@swc.*"]
     },
@@ -148,7 +144,7 @@
     },
     {
       "groupName": "GitHub Actions",
-      "matchPackagePatterns": ["^actions/.*", "^actions/.*"]
+      "matchPackagePatterns": ["^actions/.*"]
     },
     {
       "enabled": false,
