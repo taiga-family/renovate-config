@@ -6,7 +6,7 @@
     "taiga-family/ci",
     "taiga-family/.github",
     "taiga-family/linters",
-    "taiga-family/tui-editor",
+    "taiga-family/editor",
     "taiga-family/maskito",
     "taiga-family/taiga-ui",
     "taiga-family/ng-web-apis",
