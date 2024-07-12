@@ -10,7 +10,7 @@
     "@release-it/conventional-changelog": "8.0.1",
     "prettier": "3.3.2",
     "release-it": "17.5.0",
-    "renovate": "37.429.1"
+    "renovate": "37.430.0"
   },
   "license": "Apache-2.0"
 }
