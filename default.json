@@ -48,6 +48,7 @@
       "groupName": "ng",
       "matchPackagePatterns": [
         "^@angular.*",
+        "^@schematics.*",
         "^@nguniversal.*",
         "^ng-packagr$",
         "^zone.js$",
