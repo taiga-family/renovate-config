@@ -30,7 +30,7 @@
   "pinDigests": false,
   "cloneSubmodules": true,
   "includePaths": ["./package.json", "**/package.json", "!node_modules/**"],
-  "suppressNotifications": ["configErrorIssue", "deprecationWarningIssues"],
+  "suppressNotifications": ["configErrorIssue", "dependencyLookupWarnings"],
   "prBodyTemplate": "{{{table}}}{{{notes}}}{{{changelogs}}}{{{controls}}}{{{footer}}}",
   "prBodyColumns": ["Package", "Type", "Change"],
   "allowPostUpgradeCommandTemplating": true,
