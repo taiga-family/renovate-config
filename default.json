@@ -173,7 +173,8 @@
         "^eslint$",
         "^ngx-markdown$",
         "^ngx-highlightjs$",
-        "^nx$"
+        "^nx$",
+        "^glob$"
       ]
     },
     {
