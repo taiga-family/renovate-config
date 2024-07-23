@@ -1,23 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["github>taiga-family/renovate-config"],
-  "allowedPostUpgradeCommands": [".*"],
-  "repositories": [
-    "taiga-family/ci",
-    "taiga-family/.github",
-    "taiga-family/linters",
-    "taiga-family/editor",
-    "taiga-family/editor-preview",
-    "taiga-family/maskito",
-    "taiga-family/taiga-ui",
-    "taiga-family/ng-web-apis",
-    "taiga-family/ng-morph",
-    "taiga-family/argus",
-    "taiga-family/ng-polymorpheus",
-    "taiga-family/ng-dompurify",
-    "taiga-family/ng-event-plugins",
-    "taiga-family/microzord",
-    "taiga-family/renovate-config",
-    "taiga-family/preview-landing-components"
-  ]
+  "autodiscoverFilter": ["taiga-family/*"],
+  "autodiscover": true
 }
