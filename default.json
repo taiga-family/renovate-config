@@ -23,7 +23,6 @@
   "allowCustomCrateRegistries": true,
   "allowScripts": true,
   "exposeAllEnv": true,
-  "autodiscover": true,
   "requireConfig": "optional",
   "digest": {
     "enabled": false
