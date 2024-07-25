@@ -23,6 +23,7 @@
   "allowCustomCrateRegistries": true,
   "allowScripts": true,
   "exposeAllEnv": true,
+  "autodiscover": true,
   "requireConfig": "optional",
   "digest": {
     "enabled": false
@@ -46,106 +47,110 @@
     },
     {
       "groupName": "ng",
-      "matchPackagePatterns": [
-        "^@angular.*",
-        "^@schematics.*",
-        "^@nguniversal.*",
-        "^ng-packagr$",
-        "^zone.js$",
-        "^rxjs$"
+      "matchPackageNames": [
+        "/^@angular.*/",
+        "/^@schematics.*/",
+        "/^@nguniversal.*/",
+        "/^ng-packagr$/",
+        "/^zone.js$/",
+        "/^rxjs$/"
       ]
     },
     {
       "groupName": "ng-web-apis",
-      "matchPackagePatterns": ["^@ng-web-apis/.*"]
+      "matchPackageNames": ["/^@ng-web-apis/.*/"]
     },
     {
       "groupName": "taiga-ui",
-      "matchPackagePatterns": ["^@taiga-ui/.*"]
+      "matchPackageNames": ["/^@taiga-ui/.*/"]
     },
     {
       "groupName": "tiptap",
-      "matchPackagePatterns": ["^@tiptap/.*"]
+      "matchPackageNames": ["/^@tiptap/.*/"]
     },
     {
       "groupName": "cspell",
-      "matchPackagePatterns": ["^@cspell/.*"]
+      "matchPackageNames": ["/^@cspell/.*/"]
     },
     {
       "groupName": "prosemirror",
-      "matchPackagePatterns": ["^prosemirror.*"]
+      "matchPackageNames": ["/^prosemirror.*/"]
     },
     {
       "groupName": "definitely typed",
-      "matchPackagePatterns": ["^@types/.*"]
+      "matchPackageNames": ["/^@types/.*/"]
     },
     {
       "groupName": "prettier",
-      "matchPackagePatterns": ["^prettier", "^@prettier/.*", "$^prettier-.*"]
+      "matchPackageNames": ["/^prettier/", "/^@prettier/.*/", "/$^prettier-.*/"]
     },
     {
       "groupName": "nx",
-      "matchPackagePatterns": ["^@nrwl.*", "^@nx.*", "^nx-cloud$", "^nx$"]
+      "matchPackageNames": ["/^@nrwl.*/", "/^@nx.*/", "/^nx-cloud$/", "/^nx$/"]
     },
     {
       "groupName": "cypress",
-      "matchPackagePatterns": ["^cypress", "^cy2", "^cypress-image-snapshot"]
+      "matchPackageNames": ["/^cypress/", "/^cy2/", "/^cypress-image-snapshot/"]
     },
     {
       "groupName": "commitlint",
-      "matchPackagePatterns": ["^@commitlint/.*"]
+      "matchPackageNames": ["/^@commitlint/.*/"]
     },
     {
       "groupName": "tinkoff",
-      "matchPackagePatterns": ["^@tinkoff/.*"]
+      "matchPackageNames": ["/^@tinkoff/.*/"]
     },
     {
       "groupName": "maskito",
-      "matchPackagePatterns": ["^@maskito/.*"]
+      "matchPackageNames": ["/^@maskito/.*/"]
     },
     {
       "groupName": "rollup",
-      "matchPackagePatterns": ["^rollup.*", "@rollup/pluginutils"]
+      "matchPackageNames": ["/^rollup.*/", "/@rollup/pluginutils/"]
     },
     {
       "groupName": "swc",
-      "matchPackagePatterns": ["^@swc.*"]
+      "matchPackageNames": ["/^@swc.*/"]
     },
     {
       "groupName": "stackblitz sdk",
-      "matchPackagePatterns": ["^@stackblitz/.*"]
+      "matchPackageNames": ["/^@stackblitz/.*/"]
     },
     {
       "groupName": "eslint plugin",
-      "matchPackagePatterns": ["^eslint.*"]
+      "matchPackageNames": ["/^eslint.*/"]
     },
     {
       "groupName": "babel",
-      "matchPackagePatterns": ["^@babel/eslint-.*", "babel.*"]
+      "matchPackageNames": ["/^@babel/eslint-.*/", "/babel.*/"]
     },
     {
       "groupName": "typescript eslint",
-      "matchPackagePatterns": ["^@typescript-eslint/.*"]
+      "matchPackageNames": ["/^@typescript-eslint/.*/"]
     },
     {
       "groupName": "jest",
-      "matchPackagePatterns": ["^jest.*", "^ts-jest$", "^jest-preset-angular$"]
+      "matchPackageNames": [
+        "/^jest.*/",
+        "/^ts-jest$/",
+        "/^jest-preset-angular$/"
+      ]
     },
     {
       "groupName": "react",
-      "matchPackagePatterns": ["^react.*"]
+      "matchPackageNames": ["/^react.*/"]
     },
     {
       "groupName": "vue",
-      "matchPackagePatterns": ["^vue.*"]
+      "matchPackageNames": ["/^vue.*/"]
     },
     {
       "groupName": "jasmine",
-      "matchPackagePatterns": ["^jasmine.*"]
+      "matchPackageNames": ["/^jasmine.*/"]
     },
     {
       "groupName": "GitHub Actions",
-      "matchPackagePatterns": ["^actions/.*"]
+      "matchPackageNames": ["/^actions/.*/"]
     },
     {
       "enabled": false,
@@ -154,45 +159,45 @@
     {
       "enabled": false,
       "matchUpdateTypes": ["major", "minor"],
-      "matchPackagePatterns": [
-        "^typescript$",
-        "^highlight.js$",
-        "^ng-packagr$",
-        "^zone.js$",
-        "^rxjs$"
+      "matchPackageNames": [
+        "/^typescript$/",
+        "/^highlight.js$/",
+        "/^ng-packagr$/",
+        "/^zone.js$/",
+        "/^rxjs$/"
       ]
     },
     {
       "enabled": false,
       "matchUpdateTypes": ["major"],
-      "matchPackagePatterns": [
-        "^@angular.*",
-        "^@nx.*",
-        "^@schematics.*",
-        "^@nguniversal.*",
-        "^eslint$",
-        "^ngx-markdown$",
-        "^ngx-highlightjs$",
-        "^nx$",
-        "^glob$"
+      "matchPackageNames": [
+        "/^@angular.*/",
+        "/^@nx.*/",
+        "/^@schematics.*/",
+        "/^@nguniversal.*/",
+        "/^eslint$/",
+        "/^ngx-markdown$/",
+        "/^ngx-highlightjs$/",
+        "/^nx$/",
+        "/^glob$/"
       ]
     },
     {
       "enabled": false,
       "matchDepTypes": ["peerDependencies", "optionalDependencies"],
-      "matchPackagePatterns": [
-        "^libphonenumber-js$",
-        "^highlight.js$",
-        "^ng-packagr$",
-        "^typescript$",
-        "^react$",
-        "^vue$",
-        "^zone.js$",
-        "^rxjs$",
-        "^@angular.*",
-        "^@schematics.*",
-        "^react.*",
-        "^vue.*"
+      "matchPackageNames": [
+        "/^libphonenumber-js$/",
+        "/^highlight.js$/",
+        "/^ng-packagr$/",
+        "/^typescript$/",
+        "/^react$/",
+        "/^vue$/",
+        "/^zone.js$/",
+        "/^rxjs$/",
+        "/^@angular.*/",
+        "/^@schematics.*/",
+        "/^react.*/",
+        "/^vue.*/"
       ]
     }
   ]
