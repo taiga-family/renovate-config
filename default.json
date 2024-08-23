@@ -60,8 +60,27 @@
       "matchPackageNames": ["/^@ng-web-apis/.*/"]
     },
     {
-      "groupName": "taiga-ui",
-      "matchPackageNames": ["/^@taiga-ui/.*/"]
+      "groupName": "taiga-ui config tools",
+      "matchPackageNames": [
+        "@taiga-ui/eslint-plugin-experience",
+        "@taiga-ui/prettier-config",
+        "@taiga-ui/stylelint-config",
+        "@taiga-ui/cspell-config",
+        "@taiga-ui/commitlint-config",
+        "@taiga-ui/browserslist-config",
+        "@taiga-ui/tsconfig"
+      ]
+    },
+    {
+      "groupName": "taiga-ui cdk",
+      "matchPackageNames": ["@taiga-ui/cdk"],
+      "postUpgradeTasks": {
+        "commands": [
+          "npx nx migrate {{{depName}}} --from={{{currentVersion}}} --to={{{newVersion}}} --verbose",
+          "npm install && [ -f migrations.json ] && npx nx migrate --run-migrations=migrations.json"
+        ],
+        "fileFilters": ["**/**"]
+      }
     },
     {
       "groupName": "tiptap",
@@ -180,6 +199,21 @@
         "/^nx$/",
         "/^glob$/"
       ]
+    },
+    {
+      "enabled": false,
+      "matchPackageNames": ["/^@taiga-ui/.*/"],
+      "excludePackageNames": [
+        "@taiga-ui/cdk",
+        "@taiga-ui/eslint-plugin-experience",
+        "@taiga-ui/prettier-config",
+        "@taiga-ui/stylelint-config",
+        "@taiga-ui/cspell-config",
+        "@taiga-ui/commitlint-config",
+        "@taiga-ui/browserslist-config",
+        "@taiga-ui/tsconfig"
+      ],
+      "matchUpdateTypes": ["major", "minor", "patch"]
     },
     {
       "enabled": false,
