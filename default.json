@@ -83,10 +83,10 @@
           "echo '------------------'",
           "echo 'TODO: workaround for https://github.com/npm/cli/issues/7019'",
           "rm -rf package-lock.json node_modules **/node_modules",
-          "npm i --workspaces --include-workspace-root --ignore-scripts --loglevel=error --no-audit --no-fund",
+          "npm i --ignore-scripts --loglevel=error --no-audit --no-fund",
           "echo '------------------'",
           "echo 'TODO: workaround for https://github.com/npm/cli/issues/6787#issuecomment-1751005219'",
-          "npm i --workspaces --include-workspace-root --ignore-scripts --loglevel=error --no-audit --no-fund",
+          "npm i --ignore-scripts --loglevel=error --no-audit --no-fund",
           "echo '------------------'",
           "npx --no lint-staged --allow-empty > /dev/null"
         ],
