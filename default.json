@@ -77,7 +77,7 @@
       "postUpgradeTasks": {
         "commands": [
           "npm install --force --ignore-scripts",
-          "npx nx migrate {{{depName}}} --from={{{currentVersion}}} --to={{{newVersion}}} --verbose",
+          "npx nx migrate {{{depName}}} --from=@taiga-ui/cdk@{{{currentVersion}}} --to=@taiga-ui/cdk@{{{newVersion}}} --verbose",
           "npx nx migrate --run-migrations --ifExists",
           "rm -rf node_modules/ **/node_modules package-lock.json && npm i && npm i",
           "git add .",
