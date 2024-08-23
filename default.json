@@ -80,6 +80,7 @@
           "echo '------------------'",
           "npx nx migrate {{{depName}}} --from=@taiga-ui/cdk@{{{currentVersion}}} --to=@taiga-ui/cdk@{{{newVersion}}} --verbose",
           "npx nx migrate --run-migrations --ifExists",
+          "rm -f migrations.json || true",
           "echo '------------------'",
           "echo 'TODO: workaround for https://github.com/npm/cli/issues/7019'",
           "rm -rf package-lock.json node_modules **/node_modules",
@@ -88,7 +89,7 @@
           "echo 'TODO: workaround for https://github.com/npm/cli/issues/6787#issuecomment-1751005219'",
           "npm i --ignore-scripts --loglevel=error --no-audit --no-fund",
           "echo '------------------'",
-          "npx --no lint-staged --allow-empty > /dev/null"
+          "npx --no lint-staged --allow-empty || echo ''"
         ],
         "fileFilters": ["**/**"]
       }
