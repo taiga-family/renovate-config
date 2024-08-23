@@ -76,9 +76,10 @@
       "matchPackageNames": ["@taiga-ui/cdk"],
       "postUpgradeTasks": {
         "commands": [
-          "npm ci --ignore-scripts",
+          "npm install --force --ignore-scripts",
           "npx nx migrate {{{depName}}} --from={{{currentVersion}}} --to={{{newVersion}}} --verbose",
-          "npm install && [ -f migrations.json ] && npx nx migrate --run-migrations=migrations.json",
+          "[ -f migrations.json ] && npx nx migrate --run-migrations=migrations.json",
+          "rm -rf node_modules/ **/node_modules package-lock.json && npm i && npm i",
           "git add .",
           "npx lint-staged --allow-empty || echo ''"
         ],
