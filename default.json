@@ -81,15 +81,13 @@
           "npm install --force --ignore-scripts",
           "git add . && git commit -m 'chore: post upgrade' --no-verify",
           "npx nx migrate {{{depName}}} --from=@taiga-ui/cdk@{{{currentVersion}}} --to=@taiga-ui/cdk@{{{newVersion}}} --verbose",
-          "git add . && git commit --amend --no-verify",
+          "git add . && git commit -m 'chore: post upgrade' --amend --no-verify",
           "npx nx migrate --run-migrations --ifExists",
-          "git add . && git commit --amend --no-verify",
+          "git add . && git commit -m 'chore: post upgrade' --amend --no-verify",
           "rm -rf node_modules/ **/node_modules package-lock.json && npm i && npm i",
-          "git add .",
-          "git add . && git commit --amend --no-verify",
+          "git add . && git commit -m 'chore: post upgrade' --amend --no-verify",
           "npx lint-staged --allow-empty || echo ''",
-          "git add .",
-          "git add . && git commit --amend --no-verify"
+          "git add . && git commit -m 'chore: post upgrade' --amend --no-verify"
         ],
         "fileFilters": ["**/**"]
       }
