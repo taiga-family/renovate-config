@@ -202,16 +202,16 @@
     },
     {
       "enabled": false,
-      "matchPackageNames": ["/^@taiga-ui/.*/"],
-      "excludePackageNames": [
-        "@taiga-ui/cdk",
-        "@taiga-ui/eslint-plugin-experience",
-        "@taiga-ui/prettier-config",
-        "@taiga-ui/stylelint-config",
-        "@taiga-ui/cspell-config",
-        "@taiga-ui/commitlint-config",
-        "@taiga-ui/browserslist-config",
-        "@taiga-ui/tsconfig"
+      "matchPackageNames": [
+        "/^@taiga-ui/.*/",
+        "!@taiga-ui/cdk",
+        "!@taiga-ui/eslint-plugin-experience",
+        "!@taiga-ui/prettier-config",
+        "!@taiga-ui/stylelint-config",
+        "!@taiga-ui/cspell-config",
+        "!@taiga-ui/commitlint-config",
+        "!@taiga-ui/browserslist-config",
+        "!@taiga-ui/tsconfig"
       ],
       "matchUpdateTypes": ["major", "minor", "patch"]
     },
