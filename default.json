@@ -77,13 +77,17 @@
       "postUpgradeTasks": {
         "commands": [
           "npm install --force --ignore-scripts",
-          "git checkout -- package-lock.json # ignore This workspace is NOT up to date",
-          "git checkout -- package.json # ignore This workspace is NOT up to date",
+          "git add . && git commit -m 'chore: post upgrade'",
           "npx nx migrate {{{depName}}} --from=@taiga-ui/cdk@{{{currentVersion}}} --to=@taiga-ui/cdk@{{{newVersion}}} --verbose",
+          "git add . && git commit --amend",
           "npx nx migrate --run-migrations --ifExists",
+          "git add . && git commit --amend",
           "rm -rf node_modules/ **/node_modules package-lock.json && npm i && npm i",
           "git add .",
-          "npx lint-staged --allow-empty || echo ''"
+          "git add . && git commit --amend",
+          "npx lint-staged --allow-empty || echo ''",
+          "git add .",
+          "git add . && git commit --amend"
         ],
         "fileFilters": ["**/**"]
       }
