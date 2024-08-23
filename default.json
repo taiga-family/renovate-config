@@ -76,8 +76,9 @@
       "matchPackageNames": ["@taiga-ui/cdk"],
       "postUpgradeTasks": {
         "commands": [
-          "npx --yes nx migrate {{{depName}}} --from=@taiga-ui/cdk@{{{currentVersion}}} --to=@taiga-ui/cdk@{{{newVersion}}} --verbose",
-          "npx --yes nx migrate --run-migrations --ifExists"
+          "npm install nx --force --quiet --no-progress --no-save --no-audit --no-fund",
+          "npx nx migrate {{{depName}}} --from=@taiga-ui/cdk@{{{currentVersion}}} --to=@taiga-ui/cdk@{{{newVersion}}} --verbose",
+          "npx nx migrate --run-migrations --ifExists"
         ],
         "fileFilters": ["**/**"]
       }
