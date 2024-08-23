@@ -76,10 +76,10 @@
       "matchPackageNames": ["@taiga-ui/cdk"],
       "postUpgradeTasks": {
         "commands": [
-          "npm install nx --force --loglevel=error --no-progress --no-save --no-audit --no-fund",
+          "npm install nx --force --loglevel=error --no-progress --no-save --no-audit --no-fund --ignore-scripts",
           "npx nx migrate {{{depName}}} --from=@taiga-ui/cdk@{{{currentVersion}}} --to=@taiga-ui/cdk@{{{newVersion}}} --verbose",
           "npx nx migrate --run-migrations --ifExists",
-          "rm -rf node_modules/ **/node_modules package-lock.json && npm i --force --loglevel=error --no-progress --no-save --no-audit --no-fund && npm i --force --loglevel=error --no-progress --no-save --no-audit --no-fund && git add .",
+          "rm -rf node_modules/ **/node_modules package-lock.json && npm i --ignore-scripts --loglevel=error --no-audit --no-fund && git add .",
           "npx --no lint-staged --allow-empty > /dev/null"
         ],
         "fileFilters": ["**/**"]
