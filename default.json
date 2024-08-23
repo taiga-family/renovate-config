@@ -76,18 +76,8 @@
       "matchPackageNames": ["@taiga-ui/cdk"],
       "postUpgradeTasks": {
         "commands": [
-          "git config user.email \"opensource@acpekt.ru\"",
-          "git config user.name \"taiga-family-bot\"",
-          "npm install --force --ignore-scripts",
-          "git add . && git commit -m 'chore: post upgrade' --no-verify",
-          "npx nx migrate {{{depName}}} --from=@taiga-ui/cdk@{{{currentVersion}}} --to=@taiga-ui/cdk@{{{newVersion}}} --verbose",
-          "git add . && git commit -m 'chore: post upgrade' --amend --no-verify",
-          "npx nx migrate --run-migrations --ifExists",
-          "git add . && git commit -m 'chore: post upgrade' --amend --no-verify",
-          "rm -rf node_modules/ **/node_modules package-lock.json && npm i && npm i",
-          "git add . && git commit -m 'chore: post upgrade' --amend --no-verify",
-          "npx lint-staged --allow-empty || echo ''",
-          "git add . && git commit -m 'chore: post upgrade' --amend --no-verify"
+          "npx --yes nx migrate {{{depName}}} --from=@taiga-ui/cdk@{{{currentVersion}}} --to=@taiga-ui/cdk@{{{newVersion}}} --verbose",
+          "npx --yes nx migrate --run-migrations --ifExists"
         ],
         "fileFilters": ["**/**"]
       }
