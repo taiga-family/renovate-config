@@ -1,7 +1,8 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["github>taiga-family/renovate-config"],
-  "autodiscoverFilter": ["taiga-family/*"],
+  "autodiscoverFilter": ["taiga-family/ng-morph"],
   "allowedPostUpgradeCommands": [".*"],
+  "repositoryCache": "enabled",
   "autodiscover": true
 }
