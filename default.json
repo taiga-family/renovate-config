@@ -78,9 +78,8 @@
         "commands": [
           "npm install nx --force --loglevel=error --no-progress --no-save --no-audit --no-fund --ignore-scripts",
           "echo '------------------'",
-          "NX_MIGRATE_SKIP_INSTALL=true npx nx migrate {{{depName}}} --from=@taiga-ui/cdk@{{{currentVersion}}} --to=@taiga-ui/cdk@{{{newVersion}}} --verbose",
-          "npm i --ignore-scripts --loglevel=error --no-audit --no-fund --force",
-          "NX_MIGRATE_SKIP_INSTALL=true npx nx migrate --run-migrations --ifExists",
+          "npx nx migrate {{{depName}}} --from=@taiga-ui/cdk@{{{currentVersion}}} --to=@taiga-ui/cdk@{{{newVersion}}} --verbose",
+          "npx nx migrate --run-migrations --ifExists",
           "rm -f migrations.json || true",
           "echo '------------------'",
           "echo 'TODO: workaround for https://github.com/npm/cli/issues/7019'",
