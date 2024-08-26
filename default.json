@@ -72,6 +72,10 @@
       ]
     },
     {
+      "groupName": "Taiga UI Design Tokens",
+      "matchPackageNames": ["@taiga-ui/design-tokens"]
+    },
+    {
       "groupName": "taiga-ui cdk",
       "matchPackageNames": ["@taiga-ui/cdk"],
       "postUpgradeTasks": {
@@ -208,6 +212,7 @@
       "matchPackageNames": [
         "/^@taiga-ui/.*/",
         "!@taiga-ui/cdk",
+        "!@taiga-ui/design-tokens",
         "!@taiga-ui/eslint-plugin-experience",
         "!@taiga-ui/prettier-config",
         "!@taiga-ui/stylelint-config",
