@@ -67,7 +67,7 @@ jobs:
           sudo chown -R runneradmin:root /tmp/renovate/
           ls -R $cache_dir
 
-      - uses: renovatebot/github-action@v40.2.6
+      - uses: renovatebot/github-action@v40.2.7
         with:
           renovate-version: full
           configurationFile: renovate.json
