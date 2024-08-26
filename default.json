@@ -89,7 +89,8 @@
           "echo 'TODO: workaround for https://github.com/npm/cli/issues/6787#issuecomment-1751005219'",
           "npm i --ignore-scripts --loglevel=error --no-audit --no-fund",
           "echo '------------------'",
-          "git add . && npx --no lint-staged --allow-empty || true"
+          "git add . && npx --no lint-staged --allow-empty || true",
+          "npx --no eslint . --fix || true"
         ],
         "fileFilters": ["**/**"]
       }
