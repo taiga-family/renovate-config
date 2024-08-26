@@ -1,6 +1,6 @@
 {
   "name": "taiga-ui-renovate-config",
-  "version": "1.56.20",
+  "version": "1.56.21",
   "private": true,
   "scripts": {
     "prettier": "prettier '**/*.{svg,yml,js,ts,html,md,less,json}'",
