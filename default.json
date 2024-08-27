@@ -60,10 +60,19 @@
             "groupName": "taiga-ui-family",
             "matchPackageNames": ["/^@taiga-ui/.*/"],
             "skipInstalls": true,
+            "rangeStrategy": "pin",
             "postUpgradeTasks": {
                 "commands": [
-                    "npx --yes nx migrate @taiga-ui/cdk--from=@taiga-ui/cdk@{{{currentVersion}}} --to=@taiga-ui/cdk@{{{newVersion}}} --verbose",
-                    "npx --yes nx migrate --run-migrations --ifExists"
+                    "npm install nx --force --no-save --no-audit --no-fund --ignore-scripts --loglevel silent",
+                    "npx nx migrate @taiga-ui/cdk--from=@taiga-ui/cdk@{{{currentVersion}}} --to=@taiga-ui/cdk@{{{newVersion}}} --verbose",
+                    "npx nx migrate --run-migrations --ifExists",
+                    "rm -f migrations.json || true",
+                    "rm -rf package-lock.json node_modules **/node_modules",
+                    "npm i --workspaces --include-workspace-root --loglevel silent || npm i --loglevel silent",
+                    "npm i --workspaces --include-workspace-root --loglevel silent || npm i --loglevel silent",
+                    "npx --no --silent eslint . --fix || true",
+                    "npx --no --silent lint-staged --allow-empty || true",
+                    "git add ."
                 ],
                 "executionMode": "branch",
                 "fileFilters": ["**/**"]
