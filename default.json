@@ -60,24 +60,8 @@
       "matchPackageNames": ["/^@ng-web-apis/.*/"]
     },
     {
-      "groupName": "taiga-ui config tools",
-      "matchPackageNames": [
-        "@taiga-ui/eslint-plugin-experience",
-        "@taiga-ui/prettier-config",
-        "@taiga-ui/stylelint-config",
-        "@taiga-ui/cspell-config",
-        "@taiga-ui/commitlint-config",
-        "@taiga-ui/browserslist-config",
-        "@taiga-ui/tsconfig"
-      ]
-    },
-    {
-      "groupName": "Taiga UI Design Tokens",
-      "matchPackageNames": ["@taiga-ui/design-tokens"]
-    },
-    {
-      "groupName": "taiga-ui cdk",
-      "matchPackageNames": ["@taiga-ui/cdk"],
+      "groupName": "Taiga UI",
+      "matchPackageNames": ["^@taiga-ui/.*", "/^@ng-web-apis/.*/"],
       "postUpgradeTasks": {
         "commands": [
           "npm install nx --force --loglevel=error --no-progress --no-save --no-audit --no-fund --ignore-scripts",
@@ -213,22 +197,6 @@
         "/^nx$/",
         "/^glob$/"
       ]
-    },
-    {
-      "enabled": false,
-      "matchPackageNames": [
-        "/^@taiga-ui/.*/",
-        "!@taiga-ui/cdk",
-        "!@taiga-ui/design-tokens",
-        "!@taiga-ui/eslint-plugin-experience",
-        "!@taiga-ui/prettier-config",
-        "!@taiga-ui/stylelint-config",
-        "!@taiga-ui/cspell-config",
-        "!@taiga-ui/commitlint-config",
-        "!@taiga-ui/browserslist-config",
-        "!@taiga-ui/tsconfig"
-      ],
-      "matchUpdateTypes": ["major", "minor", "patch"]
     },
     {
       "enabled": false,
