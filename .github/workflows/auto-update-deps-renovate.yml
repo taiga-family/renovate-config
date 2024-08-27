@@ -2,7 +2,7 @@ name: 🤖 Run renovate
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 */10 * * *'
+    - cron: '0 */1 * * *'
 
 jobs:
   renovate:
@@ -18,4 +18,4 @@ jobs:
       - run: |
           npx renovate --print-config \
                        --autodiscover=true \
-                       --autodiscover-filter=taiga-family/ng-web-apis
+                       --autodiscover-filter=taiga-family/*
