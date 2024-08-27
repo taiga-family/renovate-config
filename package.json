@@ -12,9 +12,6 @@
     "release-it": "17.6.0",
     "renovate": "38.55.3"
   },
-  "engines": {
-    "node": ">=20.15.1",
-    "npm": ">=9.0.0"
-  },
+  "engineStrict": false,
   "license": "Apache-2.0"
 }
