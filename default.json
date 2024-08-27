@@ -29,6 +29,7 @@
     "digest": {
         "enabled": false
     },
+    "skipInstalls": true,
     "pinDigests": false,
     "cloneSubmodules": true,
     "includePaths": ["./package.json", "**/package.json", "!node_modules/**"],
@@ -59,12 +60,10 @@
         {
             "groupName": "taiga-ui-family",
             "matchPackageNames": ["/^@taiga-ui/.*/"],
-            "skipInstalls": true,
-            "rangeStrategy": "pin",
             "postUpgradeTasks": {
                 "commands": [
                     "npm install nx --force --no-save --no-audit --no-fund --ignore-scripts --loglevel silent",
-                    "npx nx migrate @taiga-ui/cdk--from=@taiga-ui/cdk@{{{currentVersion}}} --to=@taiga-ui/cdk@{{{newVersion}}} --verbose",
+                    "npx nx migrate @taiga-ui/cdk --from=@taiga-ui/cdk@{{{currentVersion}}} --to=@taiga-ui/cdk@{{{newVersion}}}",
                     "npx nx migrate --run-migrations --ifExists",
                     "rm -f migrations.json || true",
                     "rm -rf package-lock.json node_modules **/node_modules",
