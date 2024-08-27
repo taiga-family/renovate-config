@@ -66,12 +66,16 @@
                     "npx nx migrate @taiga-ui/cdk --from=@taiga-ui/cdk@{{{currentVersion}}} --to=@taiga-ui/cdk@{{{newVersion}}}",
                     "npx nx migrate --run-migrations --ifExists",
                     "rm -f migrations.json || true",
+                    "git add .",
+                    "npx lint-staged --allow-empty || true",
+                    "npm run format --loglevel silent || true",
+                    "npm run lint --loglevel silent || true",
+                    "npx eslint . --fix || true",
                     "rm -rf package-lock.json node_modules **/node_modules",
                     "npm i --workspaces --include-workspace-root --loglevel silent || npm i --loglevel silent",
                     "npm i --workspaces --include-workspace-root --loglevel silent || npm i --loglevel silent",
-                    "npx --no --silent eslint . --fix || true",
-                    "npx --no --silent lint-staged --allow-empty || true",
-                    "git add ."
+                    "git add .",
+                    "git status"
                 ],
                 "executionMode": "branch",
                 "fileFilters": ["**/**"]
