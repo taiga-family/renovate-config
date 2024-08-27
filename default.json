@@ -60,8 +60,12 @@
       "matchPackageNames": ["/^@ng-web-apis/.*/"]
     },
     {
-      "groupName": "Taiga UI Family",
-      "matchPackageNames": ["^@taiga-ui/.*", "/^@ng-web-apis/.*/"],
+      "groupName": "taiga-ui",
+      "matchPackageNames": ["^@taiga-ui/.*"]
+    },
+    {
+      "groupName": "taiga-ui",
+      "matchPackageNames": ["@taiga-ui/cdk"],
       "postUpgradeTasks": {
         "commands": [
           "npm install nx --force --loglevel=error --no-progress --no-save --no-audit --no-fund --ignore-scripts",
