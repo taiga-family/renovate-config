@@ -98,7 +98,19 @@
                 "@taiga-ui/commitlint-config",
                 "@taiga-ui/browserslist-config",
                 "@taiga-ui/tsconfig"
-            ]
+            ],
+            "postUpgradeTasks": {
+                "commands": [
+                    "rm -rf package-lock.json node_modules **/node_modules",
+                    "npm i --workspaces --include-workspace-root --loglevel silent || npm i --loglevel silent",
+                    "npm i --workspaces --include-workspace-root --loglevel silent || npm i --loglevel silent",
+                    "git add .",
+                    "npx lint-staged --allow-empty || true",
+                    "git add .",
+                    "git status"
+                ],
+                "fileFilters": ["**/**"]
+            }
         },
         {
             "groupName": "tiptap",
