@@ -81,9 +81,6 @@
                     "npm i --workspaces --include-workspace-root --loglevel silent || npm i --loglevel silent",
                     "git add .",
                     "npx lint-staged --allow-empty || true",
-                    "npm run format --loglevel silent || true",
-                    "npm run lint --loglevel silent || true",
-                    "npx eslint . --fix || true",
                     "git add .",
                     "git status"
                 ],
