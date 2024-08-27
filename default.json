@@ -58,8 +58,18 @@
             ]
         },
         {
-            "groupName": "taiga-ui-family",
-            "matchPackageNames": ["/^@taiga-ui/.*/"],
+            "groupName": "taiga-ui",
+            "matchPackageNames": [
+                "/^@taiga-ui/.*/",
+                "!@taiga-ui/design-tokens",
+                "!@taiga-ui/eslint-plugin-experience",
+                "!@taiga-ui/prettier-config",
+                "!@taiga-ui/stylelint-config",
+                "!@taiga-ui/cspell-config",
+                "!@taiga-ui/commitlint-config",
+                "!@taiga-ui/browserslist-config",
+                "!@taiga-ui/tsconfig"
+            ],
             "postUpgradeTasks": {
                 "commands": [
                     "npm install nx --force --no-save --no-audit --no-fund --ignore-scripts --loglevel silent",
@@ -80,6 +90,18 @@
                 "executionMode": "branch",
                 "fileFilters": ["**/**"]
             }
+        },
+        {
+            "groupName": "taiga-config",
+            "matchPackageNames": [
+                "@taiga-ui/eslint-plugin-experience",
+                "@taiga-ui/prettier-config",
+                "@taiga-ui/stylelint-config",
+                "@taiga-ui/cspell-config",
+                "@taiga-ui/commitlint-config",
+                "@taiga-ui/browserslist-config",
+                "@taiga-ui/tsconfig"
+            ]
         },
         {
             "groupName": "tiptap",
