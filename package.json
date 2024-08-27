@@ -1,6 +1,6 @@
 {
     "name": "taiga-ui-renovate-config",
-    "version": "1.59.9",
+    "version": "1.59.10",
     "private": true,
     "license": "Apache-2.0",
     "scripts": {
