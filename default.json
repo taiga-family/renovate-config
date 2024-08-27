@@ -58,21 +58,26 @@
             ]
         },
         {
-            "groupName": "ng-web-apis",
-            "matchPackageNames": ["/^@ng-web-apis/.*/"]
-        },
-        {
-            "groupName": "taiga-ui",
-            "matchPackageNames": ["/^@taiga-ui/.*/", "/^@ng-web-apis/.*/", "/^@maskito/.*/"],
+            "groupName": "taiga-ui cdk",
+            "groupSlug": "taiga-ui-family",
+            "matchPackageNames": ["@taiga-ui/cdk"],
             "matchUpdateTypes": ["major", "minor", "patch"],
             "postUpgradeTasks": {
                 "commands": [
-                    "npm install nx --force --loglevel=error --no-progress --no-save --no-audit --no-fund --ignore-scripts",
-                    "npx nx migrate {{{depName}}} --from=@taiga-ui/cdk@{{{currentVersion}}} --to=@taiga-ui/cdk@{{{newVersion}}} --verbose",
-                    "npx nx migrate --run-migrations --ifExists"
+                    "npx --yes nx migrate {{{depName}}} --from={{{depName}}}@{{{currentVersion}}} --to={{{depName}}}@{{{newVersion}}} --verbose",
+                    "npx --yes nx migrate --run-migrations --ifExists"
                 ],
+                "executionMode": "branch",
                 "fileFilters": ["**/**"]
-            }
+            },
+            "separateMajorMinor": false
+        },
+        {
+            "groupName": "taiga-ui family",
+            "groupSlug": "taiga-ui-family",
+            "matchPackageNames": ["/^@taiga-ui/.*/", "/^@ng-web-apis/.*/", "/^@maskito/.*/"],
+            "matchUpdateTypes": ["major", "minor", "patch"],
+            "separateMajorMinor": false
         },
         {
             "groupName": "tiptap",
@@ -109,10 +114,6 @@
         {
             "groupName": "tinkoff",
             "matchPackageNames": ["/^@tinkoff/.*/"]
-        },
-        {
-            "groupName": "maskito",
-            "matchPackageNames": ["/^@maskito/.*/"]
         },
         {
             "groupName": "rollup",

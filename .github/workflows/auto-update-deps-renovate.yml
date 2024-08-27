@@ -8,7 +8,7 @@ jobs:
   renovate:
     runs-on: ubuntu-latest
     env:
-      LOG_LEVEL: info
+      LOG_LEVEL: debug
       RENOVATE_CONFIG_FILE: default.json
       RENOVATE_TOKEN: ${{ secrets.TAIGA_FAMILY_BOT_PAT }}
     steps:
