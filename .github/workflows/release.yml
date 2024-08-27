@@ -3,7 +3,7 @@ on:
   push:
     branches: [main]
     paths:
-      - "default.json"
+      - 'default.json'
 
 jobs:
   run-release:

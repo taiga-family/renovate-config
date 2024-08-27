@@ -1,17 +1,19 @@
 {
-  "name": "taiga-ui-renovate-config",
-  "version": "1.59.1",
-  "private": true,
-  "scripts": {
-    "prettier": "prettier '**/*.{svg,yml,js,ts,html,md,less,json}'",
-    "format": "npm run prettier -- --write"
-  },
-  "devDependencies": {
-    "@release-it/conventional-changelog": "8.0.1",
-    "prettier": "3.3.3",
-    "release-it": "17.6.0",
-    "renovate": "38.55.3"
-  },
-  "engineStrict": false,
-  "license": "Apache-2.0"
+    "name": "taiga-ui-renovate-config",
+    "version": "1.59.1",
+    "private": true,
+    "license": "Apache-2.0",
+    "scripts": {
+        "prettier": "prettier '**/*.{svg,yml,js,ts,html,md,less,json}'",
+        "format": "npm run prettier -- --write"
+    },
+    "prettier": "@taiga-ui/prettier-config",
+    "devDependencies": {
+        "@release-it/conventional-changelog": "8.0.1",
+        "@taiga-ui/prettier-config": "0.144.15",
+        "prettier": "3.3.3",
+        "release-it": "17.6.0",
+        "renovate": "38.55.3"
+    },
+    "engineStrict": false
 }
