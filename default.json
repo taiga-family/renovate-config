@@ -36,7 +36,6 @@
     "prBodyTemplate": "{{{table}}}{{{notes}}}{{{changelogs}}}{{{controls}}}{{{footer}}}",
     "prBodyColumns": ["Package", "Type", "Change"],
     "allowPostUpgradeCommandTemplating": true,
-    "skipInstalls": true,
     "packageRules": [
         {
             "matchDepTypes": ["devDependencies", "dependencies"],
@@ -60,6 +59,7 @@
         {
             "groupName": "taiga-ui-family",
             "matchPackageNames": ["/^@taiga-ui/.*/"],
+            "skipInstalls": true,
             "postUpgradeTasks": {
                 "commands": [
                     "npx --yes nx migrate @taiga-ui/cdk--from=@taiga-ui/cdk@{{{currentVersion}}} --to=@taiga-ui/cdk@{{{newVersion}}} --verbose",
