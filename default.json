@@ -58,30 +58,28 @@
             ]
         },
         {
-            "groupName": "taiga-ui cdk",
-            "groupSlug": "taiga-ui-family",
-            "matchPackageNames": ["@taiga-ui/cdk"],
-            "matchUpdateTypes": ["major", "minor", "patch"],
+            "groupName": "taiga-ui-family",
+            "matchPackageNames": ["/^@taiga-ui/.*/"],
             "postUpgradeTasks": {
                 "commands": [
-                    "npx --yes nx migrate {{{depName}}} --from={{{depName}}}@{{{currentVersion}}} --to={{{depName}}}@{{{newVersion}}} --verbose",
+                    "npx --yes nx migrate @taiga-ui/cdk--from=@taiga-ui/cdk@{{{currentVersion}}} --to=@taiga-ui/cdk@{{{newVersion}}} --verbose",
                     "npx --yes nx migrate --run-migrations --ifExists"
                 ],
                 "executionMode": "branch",
                 "fileFilters": ["**/**"]
-            },
-            "separateMajorMinor": false
-        },
-        {
-            "groupName": "taiga-ui family",
-            "groupSlug": "taiga-ui-family",
-            "matchPackageNames": ["/^@taiga-ui/.*/", "/^@ng-web-apis/.*/", "/^@maskito/.*/"],
-            "matchUpdateTypes": ["major", "minor", "patch"],
-            "separateMajorMinor": false
+            }
         },
         {
             "groupName": "tiptap",
             "matchPackageNames": ["/^@tiptap/.*/"]
+        },
+        {
+            "groupName": "ng-web-apis",
+            "matchPackageNames": ["/^@ng-web-apis/.*/"]
+        },
+        {
+            "groupName": "maskito",
+            "matchPackageNames": ["/^@maskito/.*/"]
         },
         {
             "groupName": "cspell",
