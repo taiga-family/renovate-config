@@ -60,7 +60,7 @@
       "matchPackageNames": ["/^@ng-web-apis/.*/"]
     },
     {
-      "groupName": "Taiga UI",
+      "groupName": "Taiga UI Family",
       "matchPackageNames": ["^@taiga-ui/.*", "/^@ng-web-apis/.*/"],
       "postUpgradeTasks": {
         "commands": [
