@@ -73,7 +73,7 @@
             "postUpgradeTasks": {
                 "commands": [
                     "npm install nx --force --no-save --no-audit --no-fund --ignore-scripts --loglevel silent",
-                    "npx nx migrate @taiga-ui/cdk --from=@taiga-ui/cdk@{{{currentVersion}}} --to=@taiga-ui/cdk@{{{newVersion}}}",
+                    "npx nx migrate @taiga-ui/cdk --to=@taiga-ui/cdk@latest",
                     "npx nx migrate --run-migrations --ifExists",
                     "rm -f migrations.json || true",
                     "rm -rf package-lock.json node_modules **/node_modules",
