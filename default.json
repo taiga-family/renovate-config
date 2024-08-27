@@ -80,17 +80,15 @@
       "matchPackageNames": ["@taiga-ui/cdk"],
       "postUpgradeTasks": {
         "commands": [
-          "npm install nx --force --loglevel=error --no-progress --no-save --no-audit --no-fund --ignore-scripts || true",
-          "npx nx migrate {{{depName}}} --from=@taiga-ui/cdk@{{{currentVersion}}} --to=@taiga-ui/cdk@{{{newVersion}}} --verbose || true",
-          "npm_config_legacy_peer_deps=false npx nx migrate --run-migrations --ifExists || true",
+          "npm install nx --force --loglevel=error --no-progress --no-save --no-audit --no-fund --ignore-scripts",
+          "npx nx migrate {{{depName}}} --from=@taiga-ui/cdk@{{{currentVersion}}} --to=@taiga-ui/cdk@{{{newVersion}}} --verbose",
+          "npx nx migrate --run-migrations --ifExists",
           "rm -f migrations.json || true",
-          "echo 'TODO: workaround for https://github.com/npm/cli/issues/7019'",
-          "rm -rf package-lock.json node_modules **/node_modules || true",
+          "git add .",
+          "rm -rf package-lock.json node_modules **/node_modules",
+          "npm i --workspaces --include-workspace-root || npm i",
           "npm i --workspaces --include-workspace-root || npm i",
           "git add .",
-          "echo '------------------'",
-          "echo 'TODO: workaround for https://github.com/npm/cli/issues/6787#issuecomment-1751005219'",
-          "npm i --workspaces --include-workspace-root || npm i",
           "npx --no eslint . --fix || true",
           "npx --no lint-staged --allow-empty || true",
           "git add ."
