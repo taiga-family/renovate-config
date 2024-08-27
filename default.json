@@ -130,7 +130,24 @@
         },
         {
             "groupName": "nx",
-            "matchPackageNames": ["/^@nrwl.*/", "/^@nx.*/", "/^nx-cloud$/", "/^nx$/"]
+            "matchPackageNames": ["/^@nx.*/", "/^nx$/"],
+            "postUpgradeTasks": {
+                "commands": [
+                    "npm install nx@{{{currentVersion}}} @nx/workspace@{{{currentVersion}}} --force --no-save --no-audit --no-fund --ignore-scripts --loglevel silent",
+                    "npx nx migrate {{{newVersion}}}",
+                    "npx nx migrate --run-migrations --ifExists",
+                    "npx nx repair || true",
+                    "rm -f migrations.json || true",
+                    "rm -rf package-lock.json node_modules **/node_modules",
+                    "npm i --workspaces --include-workspace-root --loglevel silent || npm i --loglevel silent",
+                    "npm i --workspaces --include-workspace-root --loglevel silent || npm i --loglevel silent",
+                    "git add .",
+                    "npx lint-staged --allow-empty || true",
+                    "git add .",
+                    "git status"
+                ],
+                "fileFilters": ["**/**"]
+            }
         },
         {
             "groupName": "cypress",
