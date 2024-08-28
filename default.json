@@ -48,7 +48,7 @@
         },
         {
             "groupName": "ng",
-            "matchPackageNames": ["/^@angular.*/"],
+            "matchPackageNames": ["/^@angular.*/", "/^@schematics.*/"],
             "postUpgradeTasks": {
                 "commands": [
                     "npm install nx --force --no-save --no-audit --no-fund --ignore-scripts --loglevel silent",
