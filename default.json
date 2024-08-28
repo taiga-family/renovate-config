@@ -48,14 +48,24 @@
         },
         {
             "groupName": "ng",
-            "matchPackageNames": [
-                "/^@angular.*/",
-                "/^@schematics.*/",
-                "/^@nguniversal.*/",
-                "/^ng-packagr$/",
-                "/^zone.js$/",
-                "/^rxjs$/"
-            ]
+            "matchPackageNames": ["/^@angular.*/"],
+            "postUpgradeTasks": {
+                "commands": [
+                    "npm install nx --force --no-save --no-audit --no-fund --ignore-scripts --loglevel silent",
+                    "npx nx migrate @angular/cli --from=@angular/cli@{{{currentVersion}}} --to=@angular/cli@{{{newVersion}}}",
+                    "npx nx migrate --run-migrations --ifExists",
+                    "npx nx repair || true",
+                    "rm -f migrations.json || true",
+                    "rm -rf package-lock.json node_modules **/node_modules",
+                    "npm i --workspaces --include-workspace-root --loglevel silent || npm i --loglevel silent",
+                    "npm i --workspaces --include-workspace-root --loglevel silent || npm i --loglevel silent",
+                    "git add .",
+                    "npx lint-staged --allow-empty || true",
+                    "git add .",
+                    "git status"
+                ],
+                "fileFilters": ["**/**"]
+            }
         },
         {
             "groupName": "taiga-ui",
