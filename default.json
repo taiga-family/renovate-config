@@ -64,6 +64,7 @@
                     "git add .",
                     "git status"
                 ],
+                "executionMode": "branch",
                 "fileFilters": ["**/**"]
             }
         },
@@ -124,6 +125,7 @@
                     "git add .",
                     "git status"
                 ],
+                "executionMode": "branch",
                 "fileFilters": ["**/**"]
             }
         },
@@ -173,6 +175,7 @@
                     "git add .",
                     "git status"
                 ],
+                "executionMode": "branch",
                 "fileFilters": ["**/**"]
             }
         },
