@@ -68,9 +68,11 @@
             }
         },
         {
-            "groupName": "taiga-ui",
+            "groupName": "taiga-ui cdk",
             "matchPackageNames": [
                 "/^@taiga-ui/.*/",
+                "!@taiga-ui/event-plugins",
+                "!@taiga-ui/polymorpheus",
                 "!@taiga-ui/design-tokens",
                 "!@taiga-ui/eslint-plugin-experience",
                 "!@taiga-ui/prettier-config",
@@ -99,8 +101,11 @@
             }
         },
         {
-            "groupName": "taiga-config",
+            "groupName": "taiga-ui family",
             "matchPackageNames": [
+                "@taiga-ui/event-plugins",
+                "@taiga-ui/polymorpheus",
+                "@taiga-ui/design-tokens",
                 "@taiga-ui/eslint-plugin-experience",
                 "@taiga-ui/prettier-config",
                 "@taiga-ui/stylelint-config",
@@ -241,13 +246,11 @@
             "matchUpdateTypes": ["major"],
             "matchPackageNames": [
                 "/^@angular.*/",
-                "/^@nx.*/",
                 "/^@schematics.*/",
                 "/^@nguniversal.*/",
                 "/^eslint$/",
                 "/^ngx-markdown$/",
                 "/^ngx-highlightjs$/",
-                "/^nx$/",
                 "/^glob$/"
             ]
         },
