@@ -52,9 +52,8 @@
             "postUpgradeTasks": {
                 "commands": [
                     "npm install nx --force --no-save --no-audit --no-fund --ignore-scripts --loglevel silent",
-                    "npx nx migrate @angular/cli --from=@angular/cli@{{{currentVersion}}} --to=@angular/cli@{{{newVersion}}}",
+                    "npx nx migrate @angular/core --from=@angular/core@{{{currentVersion}}} --to=@angular/core@{{{newVersion}}}",
                     "npx nx migrate --run-migrations --ifExists",
-                    "npx nx repair || true",
                     "rm -f migrations.json || true",
                     "rm -rf package-lock.json node_modules **/node_modules",
                     "npm i --workspaces --include-workspace-root --loglevel silent || npm i --loglevel silent",
@@ -72,6 +71,7 @@
             "groupName": "taiga-ui cdk",
             "matchPackageNames": [
                 "/^@taiga-ui/.*/",
+                "/^@ng-web-apis/.*/",
                 "!@taiga-ui/event-plugins",
                 "!@taiga-ui/polymorpheus",
                 "!@taiga-ui/design-tokens",
