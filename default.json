@@ -39,16 +39,20 @@
     "allowPostUpgradeCommandTemplating": true,
     "packageRules": [
         {
+            "enabled": true,
             "matchDepTypes": ["devDependencies", "dependencies"],
             "rangeStrategy": "pin"
         },
         {
+            "enabled": true,
             "matchDepTypes": ["peerDependencies", "optionalDependencies"],
             "rangeStrategy": "bump"
         },
         {
+            "enabled": true,
             "groupName": "ng",
-            "matchPackageNames": ["/^@angular.*/", "/^@schematics.*/"],
+            "matchUpdateTypes": ["minor", "patch"],
+            "matchPackageNames": ["/^@angular.*/", "/^@schematics.*/", "zone.js"],
             "postUpgradeTasks": {
                 "commands": [
                     "npm install nx --force --no-save --no-audit --no-fund --ignore-scripts --loglevel silent",
@@ -68,6 +72,7 @@
             }
         },
         {
+            "enabled": true,
             "groupName": "taiga-ui cdk",
             "matchPackageNames": [
                 "/^@taiga-ui/.*/",
@@ -102,6 +107,7 @@
             }
         },
         {
+            "enabled": true,
             "groupName": "taiga-ui family",
             "matchPackageNames": [
                 "@taiga-ui/event-plugins",
@@ -130,35 +136,44 @@
             }
         },
         {
+            "enabled": true,
             "groupName": "tiptap",
             "matchPackageNames": ["/^@tiptap/.*/"]
         },
         {
+            "enabled": true,
             "groupName": "ng-web-apis",
             "matchPackageNames": ["/^@ng-web-apis/.*/"]
         },
         {
+            "enabled": true,
             "groupName": "maskito",
             "matchPackageNames": ["/^@maskito/.*/"]
         },
         {
+            "enabled": true,
             "groupName": "cspell",
             "matchPackageNames": ["/^@cspell/.*/"]
         },
         {
+            "enabled": true,
             "groupName": "prosemirror",
             "matchPackageNames": ["/^prosemirror.*/"]
         },
         {
+            "enabled": true,
             "groupName": "definitely typed",
             "matchPackageNames": ["/^@types/.*/"]
         },
         {
+            "enabled": true,
             "groupName": "prettier",
             "matchPackageNames": ["/^prettier/", "/^@prettier/.*/", "/$^prettier-.*/"]
         },
         {
+            "enabled": true,
             "groupName": "nx",
+            "matchUpdateTypes": ["major", "minor", "patch"],
             "matchPackageNames": ["/^@nx.*/", "/^nx$/"],
             "postUpgradeTasks": {
                 "commands": [
@@ -180,58 +195,72 @@
             }
         },
         {
+            "enabled": true,
             "groupName": "cypress",
             "matchPackageNames": ["/^cypress/", "/^cy2/", "/^cypress-image-snapshot/"]
         },
         {
+            "enabled": true,
             "groupName": "commitlint",
             "matchPackageNames": ["/^@commitlint/.*/"]
         },
         {
+            "enabled": true,
             "groupName": "tinkoff",
             "matchPackageNames": ["/^@tinkoff/.*/"]
         },
         {
+            "enabled": true,
             "groupName": "rollup",
             "matchPackageNames": ["/^rollup.*/", "/@rollup/pluginutils/"]
         },
         {
+            "enabled": true,
             "groupName": "swc",
             "matchPackageNames": ["/^@swc.*/"]
         },
         {
+            "enabled": true,
             "groupName": "stackblitz sdk",
             "matchPackageNames": ["/^@stackblitz/.*/"]
         },
         {
+            "enabled": true,
             "groupName": "eslint plugin",
             "matchPackageNames": ["/^eslint.*/"]
         },
         {
+            "enabled": true,
             "groupName": "babel",
             "matchPackageNames": ["/^@babel/eslint-.*/", "/babel.*/"]
         },
         {
+            "enabled": true,
             "groupName": "eslint for typescript",
             "matchPackageNames": ["/^@typescript-eslint/.*/", "/^@stylistic/.*/"]
         },
         {
+            "enabled": true,
             "groupName": "jest",
             "matchPackageNames": ["/^jest.*/", "/^ts-jest$/", "/^jest-preset-angular$/"]
         },
         {
+            "enabled": true,
             "groupName": "react",
             "matchPackageNames": ["/^react.*/"]
         },
         {
+            "enabled": true,
             "groupName": "vue",
             "matchPackageNames": ["/^vue.*/"]
         },
         {
+            "enabled": true,
             "groupName": "jasmine",
             "matchPackageNames": ["/^jasmine.*/"]
         },
         {
+            "enabled": true,
             "groupName": "GitHub Actions",
             "matchPackageNames": ["/^actions/.*/"]
         },
