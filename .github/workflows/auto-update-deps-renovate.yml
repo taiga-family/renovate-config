@@ -12,9 +12,9 @@ jobs:
       RENOVATE_CONFIG_FILE: default.json
       RENOVATE_TOKEN: ${{ secrets.TAIGA_FAMILY_BOT_PAT }}
     steps:
-      - uses: taiga-family/ci/actions/setup/checkout@v1.71.0
-      - uses: taiga-family/ci/actions/setup/variables@v1.71.0
-      - uses: taiga-family/ci/actions/setup/node@v1.71.0
+      - uses: taiga-family/ci/actions/setup/checkout@v1.71.1
+      - uses: taiga-family/ci/actions/setup/variables@v1.71.1
+      - uses: taiga-family/ci/actions/setup/node@v1.71.1
       - run: |
           npx renovate --print-config \
                        --autodiscover=true \
