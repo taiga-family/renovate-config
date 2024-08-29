@@ -39,11 +39,6 @@
     "allowPostUpgradeCommandTemplating": true,
     "packageRules": [
         {
-            "enabled": false,
-            "matchUpdateTypes": ["major", "minor"],
-            "matchPackageNames": ["/^zone.js$/"]
-        },
-        {
             "enabled": true,
             "matchDepTypes": ["devDependencies", "dependencies"],
             "rangeStrategy": "pin"
@@ -278,11 +273,11 @@
         {
             "enabled": false,
             "matchUpdateTypes": ["major", "minor"],
-            "matchPackageNames": ["/^typescript$/", "/^highlight.js$/", "/^ng-packagr$/", "/^rxjs$/"]
+            "matchPackageNames": ["/^typescript$/", "/^rxjs$/"]
         },
         {
             "enabled": false,
-            "matchUpdateTypes": ["major"],
+            "matchDepTypes": ["major", "peerDependencies", "optionalDependencies"],
             "matchPackageNames": [
                 "/^@angular.*/",
                 "/^@schematics.*/",
@@ -290,23 +285,13 @@
                 "/^eslint$/",
                 "/^ngx-markdown$/",
                 "/^ngx-highlightjs$/",
-                "/^glob$/"
-            ]
-        },
-        {
-            "enabled": false,
-            "matchDepTypes": ["peerDependencies", "optionalDependencies"],
-            "matchPackageNames": [
+                "/^glob$/",
                 "/^libphonenumber-js$/",
                 "/^highlight.js$/",
                 "/^ng-packagr$/",
                 "/^typescript$/",
-                "/^react$/",
-                "/^vue$/",
                 "/^zone.js$/",
                 "/^rxjs$/",
-                "/^@angular.*/",
-                "/^@schematics.*/",
                 "/^react.*/",
                 "/^vue.*/"
             ]
