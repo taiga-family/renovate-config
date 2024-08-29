@@ -212,8 +212,8 @@
             "matchPackageNames": ["/^@babel/eslint-.*/", "/babel.*/"]
         },
         {
-            "groupName": "typescript eslint",
-            "matchPackageNames": ["/^@typescript-eslint/.*/"]
+            "groupName": "eslint for typescript",
+            "matchPackageNames": ["/^@typescript-eslint/.*/", "/^@stylistic/.*/"]
         },
         {
             "groupName": "jest",
