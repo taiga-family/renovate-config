@@ -39,6 +39,46 @@
     "allowPostUpgradeCommandTemplating": true,
     "packageRules": [
         {
+            "enabled": false,
+            "matchDepTypes": ["engines"]
+        },
+        {
+            "enabled": false,
+            "matchUpdateTypes": ["major", "minor"],
+            "matchPackageNames": ["/^typescript$/", "/^highlight.js$/", "/^ng-packagr$/", "/^zone.js$/", "/^rxjs$/"]
+        },
+        {
+            "enabled": false,
+            "matchUpdateTypes": ["major"],
+            "matchPackageNames": [
+                "/^@angular.*/",
+                "/^@schematics.*/",
+                "/^@nguniversal.*/",
+                "/^eslint$/",
+                "/^ngx-markdown$/",
+                "/^ngx-highlightjs$/",
+                "/^glob$/"
+            ]
+        },
+        {
+            "enabled": false,
+            "matchDepTypes": ["peerDependencies", "optionalDependencies"],
+            "matchPackageNames": [
+                "/^libphonenumber-js$/",
+                "/^highlight.js$/",
+                "/^ng-packagr$/",
+                "/^typescript$/",
+                "/^react$/",
+                "/^vue$/",
+                "/^zone.js$/",
+                "/^rxjs$/",
+                "/^@angular.*/",
+                "/^@schematics.*/",
+                "/^react.*/",
+                "/^vue.*/"
+            ]
+        },
+        {
             "enabled": true,
             "matchDepTypes": ["devDependencies", "dependencies"],
             "rangeStrategy": "pin"
@@ -57,7 +97,9 @@
                 "commands": [
                     "npm install nx --force --no-save --no-audit --no-fund --ignore-scripts --loglevel silent",
                     "npx nx migrate @angular/core --from=@angular/core@{{{currentVersion}}} --to=@angular/core@{{{newVersion}}}",
-                    "npx nx migrate --run-migrations --ifExists",
+                    "npx nx migrate @angular/cli --from=@angular/cli@{{{currentVersion}}} --to=@angular/cli@{{{newVersion}}}",
+                    "npx nx migrate @angular/cdk --from=@angular/cdk@{{{currentVersion}}} --to=@angular/cdk@{{{newVersion}}} || true",
+                    "npx nx migrate --run-migrations --if-exists",
                     "rm -f migrations.json || true",
                     "rm -rf package-lock.json node_modules **/node_modules",
                     "npm i --workspaces --include-workspace-root --loglevel silent || npm i --loglevel silent",
@@ -92,7 +134,7 @@
                 "commands": [
                     "npm install nx --force --no-save --no-audit --no-fund --ignore-scripts --loglevel silent",
                     "npx nx migrate @taiga-ui/cdk --from=@taiga-ui/cdk@{{{currentVersion}}} --to=@taiga-ui/cdk@{{{newVersion}}}",
-                    "npx nx migrate --run-migrations --ifExists",
+                    "npx nx migrate --run-migrations --if-exists",
                     "rm -f migrations.json || true",
                     "rm -rf package-lock.json node_modules **/node_modules",
                     "npm i --workspaces --include-workspace-root --loglevel silent || npm i --loglevel silent",
@@ -179,7 +221,7 @@
                 "commands": [
                     "npm install nx@{{{currentVersion}}} @nx/workspace@{{{currentVersion}}} --force --no-save --no-audit --no-fund --ignore-scripts --loglevel silent",
                     "npx nx migrate {{{newVersion}}}",
-                    "npx nx migrate --run-migrations --ifExists",
+                    "npx nx migrate --run-migrations --if-exists",
                     "npx nx repair || true",
                     "rm -f migrations.json || true",
                     "rm -rf package-lock.json node_modules **/node_modules",
@@ -263,46 +305,6 @@
             "enabled": true,
             "groupName": "GitHub Actions",
             "matchPackageNames": ["/^actions/.*/"]
-        },
-        {
-            "enabled": false,
-            "matchDepTypes": ["engines"]
-        },
-        {
-            "enabled": false,
-            "matchUpdateTypes": ["major", "minor"],
-            "matchPackageNames": ["/^typescript$/", "/^highlight.js$/", "/^ng-packagr$/", "/^zone.js$/", "/^rxjs$/"]
-        },
-        {
-            "enabled": false,
-            "matchUpdateTypes": ["major"],
-            "matchPackageNames": [
-                "/^@angular.*/",
-                "/^@schematics.*/",
-                "/^@nguniversal.*/",
-                "/^eslint$/",
-                "/^ngx-markdown$/",
-                "/^ngx-highlightjs$/",
-                "/^glob$/"
-            ]
-        },
-        {
-            "enabled": false,
-            "matchDepTypes": ["peerDependencies", "optionalDependencies"],
-            "matchPackageNames": [
-                "/^libphonenumber-js$/",
-                "/^highlight.js$/",
-                "/^ng-packagr$/",
-                "/^typescript$/",
-                "/^react$/",
-                "/^vue$/",
-                "/^zone.js$/",
-                "/^rxjs$/",
-                "/^@angular.*/",
-                "/^@schematics.*/",
-                "/^react.*/",
-                "/^vue.*/"
-            ]
         }
     ]
 }
