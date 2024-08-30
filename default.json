@@ -130,8 +130,8 @@
             "postUpgradeTasks": {
                 "commands": [
                     "rm -rf package-lock.json node_modules **/node_modules",
-                    "npm i -ws --include-workspace-root --loglevel silent || npm i --loglevel silent",
-                    "npm i -ws --include-workspace-root --loglevel silent || npm i --loglevel silent",
+                    "npm i -ws --include-workspace-root --loglevel silent || npm i --loglevel silent || true",
+                    "npm i -ws --include-workspace-root --loglevel silent || npm i --loglevel silent || true",
                     "git add . && npx lint-staged --allow-empty || true"
                 ],
                 "executionMode": "branch",
@@ -144,8 +144,8 @@
             "postUpgradeTasks": {
                 "commands": [
                     "rm -rf package-lock.json node_modules **/node_modules",
-                    "npm i -ws --include-workspace-root --loglevel silent || npm i --loglevel silent",
-                    "npm i -ws --include-workspace-root --loglevel silent || npm i --loglevel silent",
+                    "npm i -ws --include-workspace-root --loglevel silent || npm i --loglevel silent || true",
+                    "npm i -ws --include-workspace-root --loglevel silent || npm i --loglevel silent || true",
                     "git add . && npx lint-staged --allow-empty || true"
                 ],
                 "executionMode": "branch",
@@ -163,8 +163,8 @@
                     "npx nx repair || true",
                     "rm -f migrations.json || true",
                     "rm -rf package-lock.json node_modules **/node_modules",
-                    "npm i -ws --include-workspace-root --loglevel silent || npm i --loglevel silent",
-                    "npm i -ws --include-workspace-root --loglevel silent || npm i --loglevel silent",
+                    "npm i -ws --include-workspace-root --loglevel silent || npm i --loglevel silent || true",
+                    "npm i -ws --include-workspace-root --loglevel silent || npm i --loglevel silent || true",
                     "git add . && npx lint-staged --allow-empty || true"
                 ],
                 "executionMode": "branch",
@@ -191,8 +191,8 @@
                     "npx nx migrate --run-migrations --ifExists",
                     "rm -f migrations.json || true",
                     "rm -rf package-lock.json node_modules **/node_modules",
-                    "npm i -ws --include-workspace-root --loglevel silent || npm i --loglevel silent",
-                    "npm i -ws --include-workspace-root --loglevel silent || npm i --loglevel silent",
+                    "npm i -ws --include-workspace-root --loglevel silent || npm i --loglevel silent || true",
+                    "npm i -ws --include-workspace-root --loglevel silent || npm i --loglevel silent || true",
                     "git add . && npx lint-staged --allow-empty || true"
                 ],
                 "executionMode": "branch",
@@ -221,8 +221,8 @@
                     "npx nx migrate --run-migrations --ifExists",
                     "rm -f migrations.json || true",
                     "rm -rf package-lock.json node_modules **/node_modules",
-                    "npm i -ws --include-workspace-root --loglevel silent || npm i --loglevel silent",
-                    "npm i -ws --include-workspace-root --loglevel silent || npm i --loglevel silent",
+                    "npm i -ws --include-workspace-root --loglevel silent || npm i --loglevel silent || true",
+                    "npm i -ws --include-workspace-root --loglevel silent || npm i --loglevel silent || true",
                     "git add . && npx lint-staged --allow-empty || true"
                 ],
                 "executionMode": "branch",
@@ -246,8 +246,8 @@
             "postUpgradeTasks": {
                 "commands": [
                     "rm -rf package-lock.json node_modules **/node_modules",
-                    "npm i -ws --include-workspace-root --loglevel silent || npm i --loglevel silent",
-                    "npm i -ws --include-workspace-root --loglevel silent || npm i --loglevel silent",
+                    "npm i -ws --include-workspace-root --loglevel silent || npm i --loglevel silent || true",
+                    "npm i -ws --include-workspace-root --loglevel silent || npm i --loglevel silent || true",
                     "git add . && npx lint-staged --allow-empty || true"
                 ],
                 "executionMode": "branch",
@@ -270,9 +270,10 @@
                 "/^@angular.*/",
                 "/^@schematics.*/",
                 "/^@nguniversal.*/",
-                "/^eslint$/",
-                "/^ngx-markdown$/",
                 "/^ngx-highlightjs$/",
+                "/^ngx-markdown$/",
+                "/^ng-packagr/",
+                "/^eslint$/",
                 "/^glob$/"
             ]
         },
