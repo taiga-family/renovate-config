@@ -39,132 +39,22 @@
     "allowPostUpgradeCommandTemplating": true,
     "packageRules": [
         {
-            "enabled": true,
             "matchDepTypes": ["devDependencies", "dependencies"],
             "rangeStrategy": "pin"
         },
         {
-            "enabled": true,
             "matchDepTypes": ["peerDependencies", "optionalDependencies"],
             "rangeStrategy": "bump"
         },
         {
-            "enabled": true,
-            "groupName": "tiptap",
-            "matchPackageNames": ["/^@tiptap/.*/"]
-        },
-        {
-            "enabled": true,
-            "groupName": "ng-web-apis",
-            "matchPackageNames": ["/^@ng-web-apis/.*/"]
-        },
-        {
-            "enabled": true,
-            "groupName": "maskito",
-            "matchPackageNames": ["/^@maskito/.*/"]
-        },
-        {
-            "enabled": true,
-            "groupName": "cspell",
-            "matchPackageNames": ["/^@cspell/.*/"]
-        },
-        {
-            "enabled": true,
-            "groupName": "prosemirror",
-            "matchPackageNames": ["/^prosemirror.*/"]
-        },
-        {
-            "enabled": true,
-            "groupName": "definitely typed",
-            "matchPackageNames": ["/^@types/.*/"]
-        },
-        {
-            "enabled": true,
-            "groupName": "prettier",
-            "matchPackageNames": ["/^prettier/", "/^@prettier/.*/", "/$^prettier-.*/"]
-        },
-        {
-            "enabled": true,
-            "groupName": "cypress",
-            "matchPackageNames": ["/^cypress/", "/^cy2/", "/^cypress-image-snapshot/"]
-        },
-        {
-            "enabled": true,
-            "groupName": "commitlint",
-            "matchPackageNames": ["/^@commitlint/.*/"]
-        },
-        {
-            "enabled": true,
-            "groupName": "tinkoff",
-            "matchPackageNames": ["/^@tinkoff/.*/"]
-        },
-        {
-            "enabled": true,
-            "groupName": "rollup",
-            "matchPackageNames": ["/^rollup.*/", "/@rollup/pluginutils/"]
-        },
-        {
-            "enabled": true,
-            "groupName": "swc",
-            "matchPackageNames": ["/^@swc.*/"]
-        },
-        {
-            "enabled": true,
-            "groupName": "stackblitz sdk",
-            "matchPackageNames": ["/^@stackblitz/.*/"]
-        },
-        {
-            "enabled": true,
-            "groupName": "babel",
-            "matchPackageNames": ["/^@babel/eslint-.*/", "/babel.*/"]
-        },
-        {
-            "enabled": true,
-            "groupName": "eslint",
-            "matchPackageNames": [
-                "/^@typescript-eslint/.*/",
-                "/^@stylistic/.*/",
-                "/^@angular-eslint/.*/",
-                "/^eslint.*/"
-            ]
-        },
-        {
-            "enabled": true,
-            "groupName": "jest",
-            "matchPackageNames": ["/^jest.*/", "/^ts-jest$/", "/^jest-preset-angular$/"]
-        },
-        {
-            "enabled": true,
-            "groupName": "react",
-            "matchPackageNames": ["/^react.*/"]
-        },
-        {
-            "enabled": true,
-            "groupName": "vue",
-            "matchPackageNames": ["/^vue.*/"]
-        },
-        {
-            "enabled": true,
-            "groupName": "jasmine",
-            "matchPackageNames": ["/^jasmine.*/"]
-        },
-        {
-            "enabled": true,
-            "groupName": "GitHub Actions",
-            "matchPackageNames": ["/^actions/.*/"]
-        },
-        {
-            "enabled": true,
             "groupName": "ng",
-            "matchUpdateTypes": ["minor", "patch"],
-            "matchPackageNames": ["/^@angular.*/", "/^@schematics.*/", "zone.js", "!/^@angular-eslint/.*/"],
+            "matchPackageNames": ["/^@angular.*/", "/^@angular-devkit.*/", "/^@schematics.*/"],
             "postUpgradeTasks": {
                 "commands": [
                     "npm install nx --force --no-save --no-audit --no-fund --ignore-scripts --loglevel silent",
                     "npx nx migrate @angular/core --from=@angular/core@{{{currentVersion}}} --to=@angular/core@{{{newVersion}}}",
                     "npx nx migrate @angular/cli --from=@angular/cli@{{{currentVersion}}} --to=@angular/cli@{{{newVersion}}}",
-                    "npx nx migrate @angular/cdk --from=@angular/cdk@{{{currentVersion}}} --to=@angular/cdk@{{{newVersion}}} || true",
-                    "npx nx migrate --run-migrations --if-exists",
+                    "npx nx migrate --run-migrations --ifExists",
                     "rm -f migrations.json || true",
                     "rm -rf package-lock.json node_modules **/node_modules",
                     "npm i --workspaces --include-workspace-root --loglevel silent || npm i --loglevel silent",
@@ -179,7 +69,6 @@
             }
         },
         {
-            "enabled": true,
             "groupName": "taiga-ui cdk",
             "matchPackageNames": [
                 "/^@taiga-ui/.*/",
@@ -199,7 +88,7 @@
                 "commands": [
                     "npm install nx --force --no-save --no-audit --no-fund --ignore-scripts --loglevel silent",
                     "npx nx migrate @taiga-ui/cdk --from=@taiga-ui/cdk@{{{currentVersion}}} --to=@taiga-ui/cdk@{{{newVersion}}}",
-                    "npx nx migrate --run-migrations --if-exists",
+                    "npx nx migrate --run-migrations --ifExists",
                     "rm -f migrations.json || true",
                     "rm -rf package-lock.json node_modules **/node_modules",
                     "npm i --workspaces --include-workspace-root --loglevel silent || npm i --loglevel silent",
@@ -214,7 +103,6 @@
             }
         },
         {
-            "enabled": true,
             "groupName": "taiga-ui family",
             "matchPackageNames": [
                 "@taiga-ui/event-plugins",
@@ -243,15 +131,41 @@
             }
         },
         {
-            "enabled": true,
+            "groupName": "tiptap",
+            "matchPackageNames": ["/^@tiptap/.*/"]
+        },
+        {
+            "groupName": "ng-web-apis",
+            "matchPackageNames": ["/^@ng-web-apis/.*/"]
+        },
+        {
+            "groupName": "maskito",
+            "matchPackageNames": ["/^@maskito/.*/"]
+        },
+        {
+            "groupName": "cspell",
+            "matchPackageNames": ["/^@cspell/.*/"]
+        },
+        {
+            "groupName": "prosemirror",
+            "matchPackageNames": ["/^prosemirror.*/"]
+        },
+        {
+            "groupName": "definitely typed",
+            "matchPackageNames": ["/^@types/.*/"]
+        },
+        {
+            "groupName": "prettier",
+            "matchPackageNames": ["/^prettier/", "/^@prettier/.*/", "/$^prettier-.*/"]
+        },
+        {
             "groupName": "nx",
-            "matchUpdateTypes": ["major", "minor", "patch"],
             "matchPackageNames": ["/^@nx.*/", "/^nx$/"],
             "postUpgradeTasks": {
                 "commands": [
                     "npm install nx@{{{currentVersion}}} @nx/workspace@{{{currentVersion}}} --force --no-save --no-audit --no-fund --ignore-scripts --loglevel silent",
                     "npx nx migrate {{{newVersion}}}",
-                    "npx nx migrate --run-migrations --if-exists",
+                    "npx nx migrate --run-migrations --ifExists",
                     "npx nx repair || true",
                     "rm -f migrations.json || true",
                     "rm -rf package-lock.json node_modules **/node_modules",
@@ -267,17 +181,73 @@
             }
         },
         {
+            "groupName": "cypress",
+            "matchPackageNames": ["/^cypress/", "/^cy2/", "/^cypress-image-snapshot/"]
+        },
+        {
+            "groupName": "commitlint",
+            "matchPackageNames": ["/^@commitlint/.*/"]
+        },
+        {
+            "groupName": "tinkoff",
+            "matchPackageNames": ["/^@tinkoff/.*/"]
+        },
+        {
+            "groupName": "rollup",
+            "matchPackageNames": ["/^rollup.*/", "/@rollup/pluginutils/"]
+        },
+        {
+            "groupName": "swc",
+            "matchPackageNames": ["/^@swc.*/"]
+        },
+        {
+            "groupName": "stackblitz sdk",
+            "matchPackageNames": ["/^@stackblitz/.*/"]
+        },
+        {
+            "groupName": "eslint plugin",
+            "matchPackageNames": ["/^eslint.*/"]
+        },
+        {
+            "groupName": "babel",
+            "matchPackageNames": ["/^@babel/eslint-.*/", "/babel.*/"]
+        },
+        {
+            "groupName": "eslint for typescript",
+            "matchPackageNames": ["/^@typescript-eslint/.*/", "/^@stylistic/.*/"]
+        },
+        {
+            "groupName": "jest",
+            "matchPackageNames": ["/^jest.*/", "/^ts-jest$/", "/^jest-preset-angular$/"]
+        },
+        {
+            "groupName": "react",
+            "matchPackageNames": ["/^react.*/"]
+        },
+        {
+            "groupName": "vue",
+            "matchPackageNames": ["/^vue.*/"]
+        },
+        {
+            "groupName": "jasmine",
+            "matchPackageNames": ["/^jasmine.*/"]
+        },
+        {
+            "groupName": "GitHub Actions",
+            "matchPackageNames": ["/^actions/.*/"]
+        },
+        {
             "enabled": false,
             "matchDepTypes": ["engines"]
         },
         {
             "enabled": false,
             "matchUpdateTypes": ["major", "minor"],
-            "matchPackageNames": ["/^typescript$/", "/^rxjs$/"]
+            "matchPackageNames": ["/^typescript$/", "/^highlight.js$/", "/^ng-packagr$/", "/^zone.js$/", "/^rxjs$/"]
         },
         {
             "enabled": false,
-            "matchDepTypes": ["major", "peerDependencies", "optionalDependencies"],
+            "matchUpdateTypes": ["major"],
             "matchPackageNames": [
                 "/^@angular.*/",
                 "/^@schematics.*/",
@@ -285,13 +255,23 @@
                 "/^eslint$/",
                 "/^ngx-markdown$/",
                 "/^ngx-highlightjs$/",
-                "/^glob$/",
+                "/^glob$/"
+            ]
+        },
+        {
+            "enabled": false,
+            "matchDepTypes": ["peerDependencies", "optionalDependencies"],
+            "matchPackageNames": [
                 "/^libphonenumber-js$/",
                 "/^highlight.js$/",
                 "/^ng-packagr$/",
                 "/^typescript$/",
+                "/^react$/",
+                "/^vue$/",
                 "/^zone.js$/",
                 "/^rxjs$/",
+                "/^@angular.*/",
+                "/^@schematics.*/",
                 "/^react.*/",
                 "/^vue.*/"
             ]
