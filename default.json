@@ -47,96 +47,8 @@
             "rangeStrategy": "bump"
         },
         {
-            "groupName": "ng",
-            "matchPackageNames": ["/^@angular.*/", "/^@angular-devkit.*/", "/^@schematics.*/"],
-            "postUpgradeTasks": {
-                "commands": [
-                    "npm install nx --force --no-save --no-audit --no-fund --ignore-scripts --loglevel silent",
-                    "npx nx migrate @angular/core --from=@angular/core@{{{currentVersion}}} --to=@angular/core@{{{newVersion}}}",
-                    "npx nx migrate @angular/cli --from=@angular/cli@{{{currentVersion}}} --to=@angular/cli@{{{newVersion}}}",
-                    "npx nx migrate --run-migrations --ifExists",
-                    "rm -f migrations.json || true",
-                    "rm -rf package-lock.json node_modules **/node_modules",
-                    "npm i --workspaces --include-workspace-root --loglevel silent || npm i --loglevel silent",
-                    "npm i --workspaces --include-workspace-root --loglevel silent || npm i --loglevel silent",
-                    "git add .",
-                    "npx lint-staged --allow-empty || true",
-                    "git add .",
-                    "git status"
-                ],
-                "executionMode": "branch",
-                "fileFilters": ["**/**"]
-            }
-        },
-        {
-            "groupName": "taiga-ui cdk",
-            "matchPackageNames": [
-                "/^@taiga-ui/.*/",
-                "/^@ng-web-apis/.*/",
-                "!@taiga-ui/event-plugins",
-                "!@taiga-ui/polymorpheus",
-                "!@taiga-ui/design-tokens",
-                "!@taiga-ui/eslint-plugin-experience",
-                "!@taiga-ui/prettier-config",
-                "!@taiga-ui/stylelint-config",
-                "!@taiga-ui/cspell-config",
-                "!@taiga-ui/commitlint-config",
-                "!@taiga-ui/browserslist-config",
-                "!@taiga-ui/tsconfig"
-            ],
-            "postUpgradeTasks": {
-                "commands": [
-                    "npm install nx --force --no-save --no-audit --no-fund --ignore-scripts --loglevel silent",
-                    "npx nx migrate @taiga-ui/cdk --from=@taiga-ui/cdk@{{{currentVersion}}} --to=@taiga-ui/cdk@{{{newVersion}}}",
-                    "npx nx migrate --run-migrations --ifExists",
-                    "rm -f migrations.json || true",
-                    "rm -rf package-lock.json node_modules **/node_modules",
-                    "npm i --workspaces --include-workspace-root --loglevel silent || npm i --loglevel silent",
-                    "npm i --workspaces --include-workspace-root --loglevel silent || npm i --loglevel silent",
-                    "git add .",
-                    "npx lint-staged --allow-empty || true",
-                    "git add .",
-                    "git status"
-                ],
-                "executionMode": "branch",
-                "fileFilters": ["**/**"]
-            }
-        },
-        {
-            "groupName": "taiga-ui family",
-            "matchPackageNames": [
-                "@taiga-ui/event-plugins",
-                "@taiga-ui/polymorpheus",
-                "@taiga-ui/design-tokens",
-                "@taiga-ui/eslint-plugin-experience",
-                "@taiga-ui/prettier-config",
-                "@taiga-ui/stylelint-config",
-                "@taiga-ui/cspell-config",
-                "@taiga-ui/commitlint-config",
-                "@taiga-ui/browserslist-config",
-                "@taiga-ui/tsconfig"
-            ],
-            "postUpgradeTasks": {
-                "commands": [
-                    "rm -rf package-lock.json node_modules **/node_modules",
-                    "npm i --workspaces --include-workspace-root --loglevel silent || npm i --loglevel silent",
-                    "npm i --workspaces --include-workspace-root --loglevel silent || npm i --loglevel silent",
-                    "git add .",
-                    "npx lint-staged --allow-empty || true",
-                    "git add .",
-                    "git status"
-                ],
-                "executionMode": "branch",
-                "fileFilters": ["**/**"]
-            }
-        },
-        {
             "groupName": "tiptap",
             "matchPackageNames": ["/^@tiptap/.*/"]
-        },
-        {
-            "groupName": "ng-web-apis",
-            "matchPackageNames": ["/^@ng-web-apis/.*/"]
         },
         {
             "groupName": "maskito",
@@ -157,28 +69,6 @@
         {
             "groupName": "prettier",
             "matchPackageNames": ["/^prettier/", "/^@prettier/.*/", "/$^prettier-.*/"]
-        },
-        {
-            "groupName": "nx",
-            "matchPackageNames": ["/^@nx.*/", "/^nx$/"],
-            "postUpgradeTasks": {
-                "commands": [
-                    "npm install nx@{{{currentVersion}}} @nx/workspace@{{{currentVersion}}} --force --no-save --no-audit --no-fund --ignore-scripts --loglevel silent",
-                    "npx nx migrate {{{newVersion}}}",
-                    "npx nx migrate --run-migrations --ifExists",
-                    "npx nx repair || true",
-                    "rm -f migrations.json || true",
-                    "rm -rf package-lock.json node_modules **/node_modules",
-                    "npm i --workspaces --include-workspace-root --loglevel silent || npm i --loglevel silent",
-                    "npm i --workspaces --include-workspace-root --loglevel silent || npm i --loglevel silent",
-                    "git add .",
-                    "npx lint-staged --allow-empty || true",
-                    "git add .",
-                    "git status"
-                ],
-                "executionMode": "branch",
-                "fileFilters": ["**/**"]
-            }
         },
         {
             "groupName": "cypress",
@@ -205,16 +95,8 @@
             "matchPackageNames": ["/^@stackblitz/.*/"]
         },
         {
-            "groupName": "eslint plugin",
-            "matchPackageNames": ["/^eslint.*/"]
-        },
-        {
             "groupName": "babel",
             "matchPackageNames": ["/^@babel/eslint-.*/", "/babel.*/"]
-        },
-        {
-            "groupName": "eslint for typescript",
-            "matchPackageNames": ["/^@typescript-eslint/.*/", "/^@stylistic/.*/"]
         },
         {
             "groupName": "jest",
@@ -237,13 +119,149 @@
             "matchPackageNames": ["/^actions/.*/"]
         },
         {
+            "groupName": "eslint",
+            "matchPackageNames": [
+                "/^eslint.*/",
+                "/^@stylistic/.*/",
+                "/^@angular-eslint.*/",
+                "/^@typescript-eslint/.*/",
+                "/^@taiga-ui/eslint-plugin-experience$/"
+            ],
+            "postUpgradeTasks": {
+                "commands": [
+                    "rm -rf package-lock.json node_modules **/node_modules",
+                    "npm i -ws --include-workspace-root --loglevel silent || npm i --loglevel silent",
+                    "npm i -ws --include-workspace-root --loglevel silent || npm i --loglevel silent",
+                    "git add . && npx lint-staged --allow-empty || true"
+                ],
+                "executionMode": "branch",
+                "fileFilters": ["**/**"]
+            }
+        },
+        {
+            "groupName": "ng-web-apis",
+            "matchPackageNames": ["/^@ng-web-apis/.*/"],
+            "postUpgradeTasks": {
+                "commands": [
+                    "rm -rf package-lock.json node_modules **/node_modules",
+                    "npm i -ws --include-workspace-root --loglevel silent || npm i --loglevel silent",
+                    "npm i -ws --include-workspace-root --loglevel silent || npm i --loglevel silent",
+                    "git add . && npx lint-staged --allow-empty || true"
+                ],
+                "executionMode": "branch",
+                "fileFilters": ["**/**"]
+            }
+        },
+        {
+            "groupName": "nx",
+            "matchPackageNames": ["/^@nx.*/", "/^nx$/"],
+            "postUpgradeTasks": {
+                "commands": [
+                    "npm install nx@{{{currentVersion}}} @nx/workspace@{{{currentVersion}}} --force --no-save --no-audit --no-fund --ignore-scripts --loglevel silent",
+                    "npx nx migrate {{{newVersion}}}",
+                    "npx nx migrate --run-migrations --ifExists",
+                    "npx nx repair || true",
+                    "rm -f migrations.json || true",
+                    "rm -rf package-lock.json node_modules **/node_modules",
+                    "npm i -ws --include-workspace-root --loglevel silent || npm i --loglevel silent",
+                    "npm i -ws --include-workspace-root --loglevel silent || npm i --loglevel silent",
+                    "git add . && npx lint-staged --allow-empty || true"
+                ],
+                "executionMode": "branch",
+                "fileFilters": ["**/**"]
+            }
+        },
+        {
+            "groupName": "ng",
+            "matchPackageNames": [
+                "/^zone.js$/",
+                "/^@angular.*/",
+                "/^@angular-devkit.*/",
+                "/^@schematics.*/",
+                "/^typescript$/",
+                "/^ng-packagr$/",
+                "/^rxjs$/",
+                "!/^@angular-eslint.*/"
+            ],
+            "postUpgradeTasks": {
+                "commands": [
+                    "npm install nx --force --no-save --no-audit --no-fund --ignore-scripts --loglevel silent",
+                    "npx nx migrate @angular/core --from=@angular/core@{{{currentVersion}}} --to=@angular/core@{{{newVersion}}}",
+                    "npx nx migrate @angular/cli --from=@angular/cli@{{{currentVersion}}} --to=@angular/cli@{{{newVersion}}}",
+                    "npx nx migrate --run-migrations --ifExists",
+                    "rm -f migrations.json || true",
+                    "rm -rf package-lock.json node_modules **/node_modules",
+                    "npm i -ws --include-workspace-root --loglevel silent || npm i --loglevel silent",
+                    "npm i -ws --include-workspace-root --loglevel silent || npm i --loglevel silent",
+                    "git add . && npx lint-staged --allow-empty || true"
+                ],
+                "executionMode": "branch",
+                "fileFilters": ["**/**"]
+            }
+        },
+        {
+            "groupName": "taiga-ui cdk",
+            "matchPackageNames": [
+                "/^@taiga-ui/.*/",
+                "!@taiga-ui/event-plugins",
+                "!@taiga-ui/polymorpheus",
+                "!@taiga-ui/design-tokens",
+                "!@taiga-ui/eslint-plugin-experience",
+                "!@taiga-ui/prettier-config",
+                "!@taiga-ui/stylelint-config",
+                "!@taiga-ui/cspell-config",
+                "!@taiga-ui/commitlint-config",
+                "!@taiga-ui/browserslist-config",
+                "!@taiga-ui/tsconfig"
+            ],
+            "postUpgradeTasks": {
+                "commands": [
+                    "npm install nx --force --no-save --no-audit --no-fund --ignore-scripts --loglevel silent",
+                    "npx nx migrate @taiga-ui/cdk --from=@taiga-ui/cdk@{{{currentVersion}}} --to=@taiga-ui/cdk@{{{newVersion}}}",
+                    "npx nx migrate --run-migrations --ifExists",
+                    "rm -f migrations.json || true",
+                    "rm -rf package-lock.json node_modules **/node_modules",
+                    "npm i -ws --include-workspace-root --loglevel silent || npm i --loglevel silent",
+                    "npm i -ws --include-workspace-root --loglevel silent || npm i --loglevel silent",
+                    "git add . && npx lint-staged --allow-empty || true"
+                ],
+                "executionMode": "branch",
+                "fileFilters": ["**/**"]
+            }
+        },
+        {
+            "groupName": "taiga-ui family",
+            "matchPackageNames": [
+                "@taiga-ui/event-plugins",
+                "@taiga-ui/polymorpheus",
+                "@taiga-ui/design-tokens",
+                "@taiga-ui/eslint-plugin-experience",
+                "@taiga-ui/prettier-config",
+                "@taiga-ui/stylelint-config",
+                "@taiga-ui/cspell-config",
+                "@taiga-ui/commitlint-config",
+                "@taiga-ui/browserslist-config",
+                "@taiga-ui/tsconfig"
+            ],
+            "postUpgradeTasks": {
+                "commands": [
+                    "rm -rf package-lock.json node_modules **/node_modules",
+                    "npm i -ws --include-workspace-root --loglevel silent || npm i --loglevel silent",
+                    "npm i -ws --include-workspace-root --loglevel silent || npm i --loglevel silent",
+                    "git add . && npx lint-staged --allow-empty || true"
+                ],
+                "executionMode": "branch",
+                "fileFilters": ["**/**"]
+            }
+        },
+        {
             "enabled": false,
             "matchDepTypes": ["engines"]
         },
         {
             "enabled": false,
             "matchUpdateTypes": ["major", "minor"],
-            "matchPackageNames": ["/^typescript$/", "/^highlight.js$/", "/^ng-packagr$/", "/^zone.js$/", "/^rxjs$/"]
+            "matchPackageNames": ["/^typescript$/", "/^rxjs$/"]
         },
         {
             "enabled": false,
@@ -264,7 +282,6 @@
             "matchPackageNames": [
                 "/^libphonenumber-js$/",
                 "/^highlight.js$/",
-                "/^ng-packagr$/",
                 "/^typescript$/",
                 "/^react$/",
                 "/^vue$/",
