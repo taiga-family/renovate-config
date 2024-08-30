@@ -139,29 +139,14 @@
             }
         },
         {
-            "groupName": "ng-web-apis",
-            "matchPackageNames": ["/^@ng-web-apis/.*/"],
-            "postUpgradeTasks": {
-                "commands": [
-                    "rm -rf package-lock.json node_modules **/node_modules",
-                    "npm i -ws --include-workspace-root --loglevel silent || npm i --loglevel silent || true",
-                    "npm i -ws --include-workspace-root --loglevel silent || npm i --loglevel silent || true",
-                    "git add . && npx lint-staged --allow-empty || true"
-                ],
-                "executionMode": "branch",
-                "fileFilters": ["**/**"]
-            }
-        },
-        {
             "groupName": "nx",
             "matchPackageNames": ["/^@nx.*/", "/^nx$/"],
             "postUpgradeTasks": {
                 "commands": [
                     "npm install nx@{{{currentVersion}}} @nx/workspace@{{{currentVersion}}} --force --no-save --no-audit --no-fund --ignore-scripts --loglevel silent",
                     "npx nx migrate {{{newVersion}}}",
-                    "npx nx migrate --run-migrations --ifExists",
+                    "npx nx migrate --run-migrations --ifExists && rm -f migrations.json || true",
                     "npx nx repair || true",
-                    "rm -f migrations.json || true",
                     "rm -rf package-lock.json node_modules **/node_modules",
                     "npm i -ws --include-workspace-root --loglevel silent || npm i --loglevel silent || true",
                     "npm i -ws --include-workspace-root --loglevel silent || npm i --loglevel silent || true",
@@ -188,8 +173,7 @@
                     "npm install nx --force --no-save --no-audit --no-fund --ignore-scripts --loglevel silent",
                     "npx nx migrate @angular/core --from=@angular/core@{{{currentVersion}}} --to=@angular/core@{{{newVersion}}}",
                     "npx nx migrate @angular/cli --from=@angular/cli@{{{currentVersion}}} --to=@angular/cli@{{{newVersion}}}",
-                    "npx nx migrate --run-migrations --ifExists",
-                    "rm -f migrations.json || true",
+                    "npx nx migrate --run-migrations --ifExists && rm -f migrations.json || true",
                     "rm -rf package-lock.json node_modules **/node_modules",
                     "npm i -ws --include-workspace-root --loglevel silent || npm i --loglevel silent || true",
                     "npm i -ws --include-workspace-root --loglevel silent || npm i --loglevel silent || true",
@@ -203,6 +187,7 @@
             "groupName": "taiga-ui cdk",
             "matchPackageNames": [
                 "/^@taiga-ui/.*/",
+                "/^@ng-web-apis/.*/",
                 "!@taiga-ui/event-plugins",
                 "!@taiga-ui/polymorpheus",
                 "!@taiga-ui/design-tokens",
@@ -217,9 +202,8 @@
             "postUpgradeTasks": {
                 "commands": [
                     "npm install nx --force --no-save --no-audit --no-fund --ignore-scripts --loglevel silent",
-                    "npx nx migrate @taiga-ui/cdk --from=@taiga-ui/cdk@{{{currentVersion}}} --to=@taiga-ui/cdk@{{{newVersion}}}",
-                    "npx nx migrate --run-migrations --ifExists",
-                    "rm -f migrations.json || true",
+                    "npx nx migrate @taiga-ui/cdk --from=@taiga-ui/cdk@{{{lookup (split currentVersion '.') 0}}} --to=@taiga-ui/cdk@{{{lookup (split newVersion '.') 0}}} || true",
+                    "npx nx migrate --run-migrations --ifExists && rm -f migrations.json || true",
                     "rm -rf package-lock.json node_modules **/node_modules",
                     "npm i -ws --include-workspace-root --loglevel silent || npm i --loglevel silent || true",
                     "npm i -ws --include-workspace-root --loglevel silent || npm i --loglevel silent || true",
