@@ -207,7 +207,7 @@
             }
         },
         {
-            "groupName": "taiga-ui family",
+            "groupName": "taiga-ui dev infra",
             "matchPackageNames": [
                 "@taiga-ui/design-tokens",
                 "@taiga-ui/eslint-plugin-experience",
