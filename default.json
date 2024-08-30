@@ -188,16 +188,9 @@
             "matchPackageNames": [
                 "/^@taiga-ui/.*/",
                 "/^@ng-web-apis/.*/",
-                "!@taiga-ui/event-plugins",
-                "!@taiga-ui/polymorpheus",
+                "!/^@taiga-ui/.*config$/",
                 "!@taiga-ui/design-tokens",
-                "!@taiga-ui/eslint-plugin-experience",
-                "!@taiga-ui/prettier-config",
-                "!@taiga-ui/stylelint-config",
-                "!@taiga-ui/cspell-config",
-                "!@taiga-ui/commitlint-config",
-                "!@taiga-ui/browserslist-config",
-                "!@taiga-ui/tsconfig"
+                "!@taiga-ui/eslint-plugin-experience"
             ],
             "postUpgradeTasks": {
                 "commands": [
@@ -216,16 +209,9 @@
         {
             "groupName": "taiga-ui family",
             "matchPackageNames": [
-                "@taiga-ui/event-plugins",
-                "@taiga-ui/polymorpheus",
                 "@taiga-ui/design-tokens",
                 "@taiga-ui/eslint-plugin-experience",
-                "@taiga-ui/prettier-config",
-                "@taiga-ui/stylelint-config",
-                "@taiga-ui/cspell-config",
-                "@taiga-ui/commitlint-config",
-                "@taiga-ui/browserslist-config",
-                "@taiga-ui/tsconfig"
+                "/^@taiga-ui/.*config$/"
             ],
             "postUpgradeTasks": {
                 "commands": [
