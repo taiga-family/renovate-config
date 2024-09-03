@@ -16,6 +16,4 @@ jobs:
       - uses: taiga-family/ci/actions/setup/variables@v1.71.2
       - uses: taiga-family/ci/actions/setup/node@v1.71.2
       - run: |
-          npx renovate --print-config \
-                       --autodiscover=true \
-                       --autodiscover-filter=taiga-family/*
+          npx renovate --autodiscover=true --autodiscover-filter=taiga-family/*
