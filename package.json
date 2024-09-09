@@ -13,7 +13,7 @@
         "@taiga-ui/prettier-config": "0.164.2",
         "prettier": "3.3.3",
         "release-it": "17.6.0",
-        "renovate": "38.73.0"
+        "renovate": "38.73.1"
     },
     "engineStrict": false
 }
