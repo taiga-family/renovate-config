@@ -39,6 +39,10 @@
     "allowPostUpgradeCommandTemplating": true,
     "packageRules": [
         {
+            "matchDepTypes": ["dependencies", "peerDependencies", "optionalDependencies"],
+            "commitMessagePrefix": "fix:"
+        },
+        {
             "matchDepTypes": ["devDependencies", "dependencies"],
             "rangeStrategy": "pin"
         },
