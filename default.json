@@ -21,6 +21,8 @@
     "dependencyDashboardApproval": false,
     "branchPrefix": "renovate/",
     "timezone": "Europe/Moscow",
+    "commitMessageLowerCase": "auto",
+    "semanticCommits": "enabled",
     "onboarding": false,
     "allowCustomCrateRegistries": true,
     "allowScripts": true,
@@ -40,7 +42,7 @@
     "packageRules": [
         {
             "matchDepTypes": ["dependencies", "peerDependencies", "optionalDependencies"],
-            "commitMessagePrefix": "fix:"
+            "semanticCommitType": "fix"
         },
         {
             "matchDepTypes": ["devDependencies", "dependencies"],
