@@ -190,7 +190,7 @@
             }
         },
         {
-            "groupName": "taiga-ui cdk",
+            "groupName": "taiga-ui",
             "matchPackageNames": [
                 "/^@taiga-ui/.*/",
                 "/^@ng-web-apis/.*/",
@@ -211,6 +211,10 @@
                 "executionMode": "branch",
                 "fileFilters": ["**/**"]
             }
+        },
+        {
+            "groupName": "ng-web-apis",
+            "matchPackageNames": ["/^@ng-web-apis/.*/"]
         },
         {
             "groupName": "taiga-ui dev infra",
