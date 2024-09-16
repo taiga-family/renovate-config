@@ -10,7 +10,7 @@
     "prettier": "@taiga-ui/prettier-config",
     "devDependencies": {
         "@release-it/conventional-changelog": "8.0.2",
-        "@taiga-ui/prettier-config": "0.181.0",
+        "@taiga-ui/prettier-config": "0.182.0",
         "prettier": "3.3.3",
         "release-it": "17.6.0",
         "renovate": "38.81.0"
