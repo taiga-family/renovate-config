@@ -220,10 +220,10 @@
         {
             "groupName": "taiga-ui dev infra",
             "matchPackageNames": [
+                "/^@taiga-ui/.*config$/",
                 "@taiga-ui/syncer",
                 "@taiga-ui/design-tokens",
-                "@taiga-ui/eslint-plugin-experience",
-                "/^@taiga-ui/.*config$/"
+                "@taiga-ui/eslint-plugin-experience"
             ],
             "postUpgradeTasks": {
                 "commands": [

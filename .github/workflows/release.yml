@@ -24,7 +24,7 @@ jobs:
 
       - run: npx renovate-config-validator default.json --strict
 
-      - run: npx release-it --increment --ci
+      - run: npx release-it minor --increment --ci
         env:
           GITHUB_TOKEN: ${{ secrets.TAIGA_FAMILY_BOT_PAT }}
 
