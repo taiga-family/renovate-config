@@ -4,16 +4,13 @@
     "private": true,
     "license": "Apache-2.0",
     "scripts": {
-        "prettier": "prettier '**/*.{svg,yml,js,ts,html,md,less,json}'",
-        "format": "npm run prettier -- --write"
+        "prettier": "prettier '**/*.{svg,yml,js,ts,html,md,less,json}'"
     },
     "prettier": "@taiga-ui/prettier-config",
     "devDependencies": {
-        "@release-it/conventional-changelog": "8.0.2",
+        "@taiga-ui/auto-changelog-config": "0.182.0",
         "@taiga-ui/prettier-config": "0.182.0",
-        "prettier": "3.3.3",
-        "release-it": "17.6.0",
-        "renovate": "38.81.0"
-    },
-    "engineStrict": false
+        "@taiga-ui/release-it-config": "0.182.0",
+        "renovate": "38.77.3"
+    }
 }

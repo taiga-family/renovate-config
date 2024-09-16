@@ -195,6 +195,7 @@
                 "/^@taiga-ui/.*/",
                 "/^@ng-web-apis/.*/",
                 "!/^@taiga-ui/.*config$/",
+                "!@taiga-ui/syncer",
                 "!@taiga-ui/design-tokens",
                 "!@taiga-ui/eslint-plugin-experience"
             ],
@@ -219,6 +220,7 @@
         {
             "groupName": "taiga-ui dev infra",
             "matchPackageNames": [
+                "@taiga-ui/syncer",
                 "@taiga-ui/design-tokens",
                 "@taiga-ui/eslint-plugin-experience",
                 "/^@taiga-ui/.*config$/"
