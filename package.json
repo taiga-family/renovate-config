@@ -11,6 +11,6 @@
         "@taiga-ui/auto-changelog-config": "0.201.0",
         "@taiga-ui/prettier-config": "0.201.0",
         "@taiga-ui/release-it-config": "0.201.0",
-        "renovate": "38.90.0"
+        "renovate": "38.91.0"
     }
 }
