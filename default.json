@@ -41,16 +41,16 @@
     "allowPostUpgradeCommandTemplating": true,
     "packageRules": [
         {
-            "matchDepTypes": ["dependencies", "peerDependencies", "optionalDependencies"],
-            "semanticCommitType": "fix"
-        },
-        {
             "matchDepTypes": ["devDependencies", "dependencies"],
             "rangeStrategy": "pin"
         },
         {
             "matchDepTypes": ["peerDependencies", "optionalDependencies"],
             "rangeStrategy": "bump"
+        },
+        {
+            "matchDepTypes": ["dependencies", "peerDependencies", "optionalDependencies"],
+            "semanticCommitType": "fix"
         },
         {
             "groupName": "tiptap",
@@ -212,10 +212,6 @@
                 "executionMode": "branch",
                 "fileFilters": ["**/**"]
             }
-        },
-        {
-            "groupName": "ng-web-apis",
-            "matchPackageNames": ["/^@ng-web-apis/.*/"]
         },
         {
             "groupName": "taiga-ui dev infra",
