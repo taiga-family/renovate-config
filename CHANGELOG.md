@@ -1,3 +1,10 @@
+### [1.76.3](https://github.com/taiga-family/renovate-config/compare/v1.76.2...v1.76.3) (2024-09-30)
+
+### 🐞 Bug Fixes
+
+- rename deps
+  [(225d1ca)](https://github.com/taiga-family/renovate-config/commit/225d1cad614290f87a2f13df997205b71353fdb1)
+
 # Changelog
 
 All notable changes to this project will be documented in this file. See
