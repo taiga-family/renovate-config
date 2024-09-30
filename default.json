@@ -190,7 +190,7 @@
             }
         },
         {
-            "groupName": "taiga-ui",
+            "groupName": "taiga-ui family dependencies",
             "matchPackageNames": [
                 "/^@taiga-ui/.*/",
                 "/^@ng-web-apis/.*/",
