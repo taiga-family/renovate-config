@@ -26,11 +26,6 @@
 - rename deps
   [(225d1ca)](https://github.com/taiga-family/renovate-config/commit/225d1cad614290f87a2f13df997205b71353fdb1)
 
-# Changelog
-
-All notable changes to this project will be documented in this file. See
-[`conventional commits`](https://www.conventionalcommits.org/) guidelines.
-
 ### [1.76.2](https://github.com/taiga-family/renovate-config/compare/v1.76.1...v1.76.2) (2024-09-23)
 
 ### [1.76.1](https://github.com/taiga-family/renovate-config/compare/v1.76.0...v1.76.1) (2024-09-20)
