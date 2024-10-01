@@ -1,3 +1,10 @@
+### [1.82.0](https://github.com/taiga-family/renovate-config/compare/v1.81.0...v1.82.0) (2024-10-02)
+
+### 🚀 Features
+
+- force bump
+  [(54ebdd3)](https://github.com/taiga-family/renovate-config/commit/54ebdd3dda4e9fcaa24811762cf84dd0ec85fd8d)
+
 ### [1.81.0](https://github.com/taiga-family/renovate-config/compare/v1.80.0...v1.81.0) (2024-10-02)
 
 ### 🚀 Features
