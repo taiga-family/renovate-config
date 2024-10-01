@@ -40,6 +40,11 @@
     "allowPostUpgradeCommandTemplating": true,
     "packageRules": [
         {
+            "matchFileNames": ["actions/**", "projects/**"],
+            "enabledManagers": ["github-actions"],
+            "semanticCommitType": "fix"
+        },
+        {
             "matchDepTypes": ["devDependencies", "dependencies"],
             "rangeStrategy": "pin"
         },
@@ -142,11 +147,9 @@
                     "npx nx migrate {{{newVersion}}}",
                     "npx nx migrate --run-migrations --ifExists && rm -f migrations.json || true",
                     "npx nx repair || true",
-
                     "rm -rf package-lock.json node_modules **/node_modules",
                     "export HAS_WS=$(npm ls --ws -s || echo 'false')",
                     "if [[ $HAS_WS == 'false' ]]; then npm i && npm i; else npm i -ws --include-workspace-root && npm i -ws --include-workspace-root; fi",
-
                     "git add . && npx lint-staged --allow-empty || true"
                 ],
                 "executionMode": "branch",
@@ -171,11 +174,9 @@
                     "npx nx migrate @angular/core --from=@angular/core@{{{currentVersion}}} --to=@angular/core@{{{newVersion}}}",
                     "npx nx migrate @angular/cli --from=@angular/cli@{{{currentVersion}}} --to=@angular/cli@{{{newVersion}}}",
                     "npx nx migrate --run-migrations --ifExists && rm -f migrations.json || true",
-
                     "rm -rf package-lock.json node_modules **/node_modules",
                     "export HAS_WS=$(npm ls --ws -s || echo 'false')",
                     "if [[ $HAS_WS == 'false' ]]; then npm i && npm i; else npm i -ws --include-workspace-root && npm i -ws --include-workspace-root; fi",
-
                     "git add . && npx lint-staged --allow-empty || true"
                 ],
                 "executionMode": "branch",
@@ -197,11 +198,9 @@
                     "npm install nx --force --no-save --no-audit --no-fund --ignore-scripts --loglevel silent",
                     "npx nx migrate @taiga-ui/cdk --from=@taiga-ui/cdk@{{{lookup (split currentVersion '.') 0}}} --to=@taiga-ui/cdk@{{{lookup (split newVersion '.') 0}}} || true",
                     "npx nx migrate --run-migrations --ifExists && rm -f migrations.json || true",
-
                     "rm -rf package-lock.json node_modules **/node_modules",
                     "export HAS_WS=$(npm ls --ws -s || echo 'false')",
                     "if [[ $HAS_WS == 'false' ]]; then npm i && npm i; else npm i -ws --include-workspace-root && npm i -ws --include-workspace-root; fi",
-
                     "git add . && npx lint-staged --allow-empty || true"
                 ],
                 "executionMode": "branch",
