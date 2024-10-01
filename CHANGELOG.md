@@ -1,3 +1,10 @@
+### [1.78.0](https://github.com/taiga-family/renovate-config/compare/v1.77.0...v1.78.0) (2024-10-01)
+
+### 🚀 Features
+
+- add postUpgradeTasks for eslint plugins
+  [(ff886e2)](https://github.com/taiga-family/renovate-config/commit/ff886e277e719c00d9f00fc7414dd737785d42d8)
+
 ### [1.77.0](https://github.com/taiga-family/renovate-config/compare/v1.76.5...v1.77.0) (2024-10-01)
 
 ### 🚀 Features
