@@ -219,7 +219,7 @@
             }
         },
         {
-            "groupName": "taiga-ui dev infra",
+            "groupName": "taiga-ui config and tools",
             "matchPackageNames": [
                 "/^@taiga-ui/.*config$/",
                 "@taiga-ui/syncer",

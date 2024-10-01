@@ -14,6 +14,7 @@
 
 ```bash
 export LOG_LEVEL=debug
+export RENOVATE_CONFIG_FILE=default.json
 export RENOVATE_TOKEN=ghp_FIVUf.....
 
 npx renovate --autodiscover=true \
