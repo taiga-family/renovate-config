@@ -1,3 +1,10 @@
+### [1.83.0](https://github.com/taiga-family/renovate-config/compare/v1.82.0...v1.83.0) (2024-10-02)
+
+### 🚀 Features
+
+- drop verbose after debug
+  [(679c016)](https://github.com/taiga-family/renovate-config/commit/679c016aed89876122319663cb5dd89fae72a689)
+
 ### [1.82.0](https://github.com/taiga-family/renovate-config/compare/v1.81.0...v1.82.0) (2024-10-02)
 
 ### 🚀 Features
