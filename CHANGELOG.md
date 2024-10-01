@@ -1,3 +1,10 @@
+### [1.79.0](https://github.com/taiga-family/renovate-config/compare/v1.78.0...v1.79.0) (2024-10-02)
+
+### 🚀 Features
+
+- show verbose flag
+  [(1bda771)](https://github.com/taiga-family/renovate-config/commit/1bda771f21aaa56830a440d7f874ee2aed27e220)
+
 ### [1.78.0](https://github.com/taiga-family/renovate-config/compare/v1.77.0...v1.78.0) (2024-10-01)
 
 ### 🚀 Features
