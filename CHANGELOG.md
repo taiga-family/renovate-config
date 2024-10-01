@@ -1,3 +1,10 @@
+### [1.77.0](https://github.com/taiga-family/renovate-config/compare/v1.76.5...v1.77.0) (2024-10-01)
+
+### 🚀 Features
+
+- support fix prefix for custom github-actions (#1425)
+  [(3d74c2b)](https://github.com/taiga-family/renovate-config/commit/3d74c2bc48658eef63c1a97f8a4ab3c34874d5d7)
+
 ### [1.76.5](https://github.com/taiga-family/renovate-config/compare/v1.76.4...v1.76.5) (2024-10-01)
 
 ### 🐞 Bug Fixes
