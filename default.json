@@ -142,7 +142,7 @@
                 "commands": [
                     "rm -rf package-lock.json node_modules **/node_modules",
                     "export HAS_WS=$(node -p 'require(`./package.json`).workspaces ?? false')",
-                    "if [[ $HAS_WS == 'false' ]]; then npm i --verbose && npm i --verbose; else npm i -ws --include-workspace-root --verbose && npm i -ws --include-workspace-root --verbose; fi",
+                    "if [[ $HAS_WS == 'false' ]]; then npm i && npm i; else npm i -ws --include-workspace-root && npm i -ws --include-workspace-root; fi",
                     "git add . && npx lint-staged --allow-empty || true"
                 ],
                 "executionMode": "branch",
@@ -160,7 +160,7 @@
                     "npx nx repair || true",
                     "rm -rf package-lock.json node_modules **/node_modules",
                     "export HAS_WS=$(node -p 'require(`./package.json`).workspaces ?? false')",
-                    "if [[ $HAS_WS == 'false' ]]; then npm i --verbose && npm i --verbose; else npm i -ws --include-workspace-root --verbose && npm i -ws --include-workspace-root --verbose; fi",
+                    "if [[ $HAS_WS == 'false' ]]; then npm i && npm i; else npm i -ws --include-workspace-root && npm i -ws --include-workspace-root; fi",
                     "git add . && npx lint-staged --allow-empty || true"
                 ],
                 "executionMode": "branch",
@@ -187,7 +187,7 @@
                     "npx nx migrate --run-migrations --ifExists && rm -f migrations.json || true",
                     "rm -rf package-lock.json node_modules **/node_modules",
                     "export HAS_WS=$(node -p 'require(`./package.json`).workspaces ?? false')",
-                    "if [[ $HAS_WS == 'false' ]]; then npm i --verbose && npm i --verbose; else npm i -ws --include-workspace-root --verbose && npm i -ws --include-workspace-root --verbose; fi",
+                    "if [[ $HAS_WS == 'false' ]]; then npm i && npm i; else npm i -ws --include-workspace-root && npm i -ws --include-workspace-root; fi",
                     "git add . && npx lint-staged --allow-empty || true"
                 ],
                 "executionMode": "branch",
@@ -211,7 +211,7 @@
                     "npx nx migrate --run-migrations --ifExists && rm -f migrations.json || true",
                     "rm -rf package-lock.json node_modules **/node_modules",
                     "export HAS_WS=$(node -p 'require(`./package.json`).workspaces ?? false')",
-                    "if [[ $HAS_WS == 'false' ]]; then npm i --verbose && npm i --verbose; else npm i -ws --include-workspace-root --verbose && npm i -ws --include-workspace-root --verbose; fi",
+                    "if [[ $HAS_WS == 'false' ]]; then npm i && npm i; else npm i -ws --include-workspace-root && npm i -ws --include-workspace-root; fi",
                     "git add . && npx lint-staged --allow-empty || true"
                 ],
                 "executionMode": "branch",
@@ -219,7 +219,7 @@
             }
         },
         {
-            "groupName": "taiga-ui config and tools",
+            "groupName": "taiga-ui config-tools",
             "matchPackageNames": [
                 "/^@taiga-ui/.*config$/",
                 "@taiga-ui/syncer",
@@ -230,7 +230,7 @@
                 "commands": [
                     "rm -rf package-lock.json node_modules **/node_modules",
                     "export HAS_WS=$(node -p 'require(`./package.json`).workspaces ?? false')",
-                    "if [[ $HAS_WS == 'false' ]]; then npm i --verbose && npm i --verbose; else npm i -ws --include-workspace-root --verbose && npm i -ws --include-workspace-root --verbose; fi",
+                    "if [[ $HAS_WS == 'false' ]]; then npm i && npm i; else npm i -ws --include-workspace-root && npm i -ws --include-workspace-root; fi",
                     "git add . && npx lint-staged --allow-empty || true"
                 ],
                 "executionMode": "branch",
