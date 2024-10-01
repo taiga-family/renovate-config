@@ -140,7 +140,7 @@
             "postUpgradeTasks": {
                 "commands": [
                     "rm -rf package-lock.json node_modules **/node_modules",
-                    "export HAS_WS=$(npm ls --ws -s || echo 'false')",
+                    "export HAS_WS=$(node -p 'require(`./package.json`).workspaces ?? false')",
                     "if [[ $HAS_WS == 'false' ]]; then npm i --verbose && npm i --verbose; else npm i -ws --include-workspace-root --verbose && npm i -ws --include-workspace-root --verbose; fi",
                     "git add . && npx lint-staged --allow-empty || true"
                 ],
@@ -158,7 +158,7 @@
                     "npx nx migrate --run-migrations --ifExists && rm -f migrations.json || true",
                     "npx nx repair || true",
                     "rm -rf package-lock.json node_modules **/node_modules",
-                    "export HAS_WS=$(npm ls --ws -s || echo 'false')",
+                    "export HAS_WS=$(node -p 'require(`./package.json`).workspaces ?? false')",
                     "if [[ $HAS_WS == 'false' ]]; then npm i --verbose && npm i --verbose; else npm i -ws --include-workspace-root --verbose && npm i -ws --include-workspace-root --verbose; fi",
                     "git add . && npx lint-staged --allow-empty || true"
                 ],
@@ -185,7 +185,7 @@
                     "npx nx migrate @angular/cli --from=@angular/cli@{{{currentVersion}}} --to=@angular/cli@{{{newVersion}}}",
                     "npx nx migrate --run-migrations --ifExists && rm -f migrations.json || true",
                     "rm -rf package-lock.json node_modules **/node_modules",
-                    "export HAS_WS=$(npm ls --ws -s || echo 'false')",
+                    "export HAS_WS=$(node -p 'require(`./package.json`).workspaces ?? false')",
                     "if [[ $HAS_WS == 'false' ]]; then npm i --verbose && npm i --verbose; else npm i -ws --include-workspace-root --verbose && npm i -ws --include-workspace-root --verbose; fi",
                     "git add . && npx lint-staged --allow-empty || true"
                 ],
@@ -209,7 +209,7 @@
                     "npx nx migrate @taiga-ui/cdk --from=@taiga-ui/cdk@{{{lookup (split currentVersion '.') 0}}} --to=@taiga-ui/cdk@{{{lookup (split newVersion '.') 0}}} || true",
                     "npx nx migrate --run-migrations --ifExists && rm -f migrations.json || true",
                     "rm -rf package-lock.json node_modules **/node_modules",
-                    "export HAS_WS=$(npm ls --ws -s || echo 'false')",
+                    "export HAS_WS=$(node -p 'require(`./package.json`).workspaces ?? false')",
                     "if [[ $HAS_WS == 'false' ]]; then npm i --verbose && npm i --verbose; else npm i -ws --include-workspace-root --verbose && npm i -ws --include-workspace-root --verbose; fi",
                     "git add . && npx lint-staged --allow-empty || true"
                 ],
@@ -228,7 +228,7 @@
             "postUpgradeTasks": {
                 "commands": [
                     "rm -rf package-lock.json node_modules **/node_modules",
-                    "export HAS_WS=$(npm ls --ws -s || echo 'false')",
+                    "export HAS_WS=$(node -p 'require(`./package.json`).workspaces ?? false')",
                     "if [[ $HAS_WS == 'false' ]]; then npm i --verbose && npm i --verbose; else npm i -ws --include-workspace-root --verbose && npm i -ws --include-workspace-root --verbose; fi",
                     "git add . && npx lint-staged --allow-empty || true"
                 ],
