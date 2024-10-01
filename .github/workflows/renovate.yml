@@ -21,3 +21,7 @@ jobs:
                 --autodiscover=true \
                 --autodiscover-filter='taiga-family/*' \
                 --allowed-post-upgrade-commands='.*'
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
