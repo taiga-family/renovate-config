@@ -1,3 +1,10 @@
+### [1.81.0](https://github.com/taiga-family/renovate-config/compare/v1.80.0...v1.81.0) (2024-10-02)
+
+### 🚀 Features
+
+- add renovate cache dir
+  [(2ecd0ba)](https://github.com/taiga-family/renovate-config/commit/2ecd0bacf959510b4734d60434555c474c7c2b83)
+
 ### [1.80.0](https://github.com/taiga-family/renovate-config/compare/v1.79.0...v1.80.0) (2024-10-02)
 
 ### 🚀 Features
