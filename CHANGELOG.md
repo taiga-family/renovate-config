@@ -1,3 +1,10 @@
+### [1.80.0](https://github.com/taiga-family/renovate-config/compare/v1.79.0...v1.80.0) (2024-10-02)
+
+### 🚀 Features
+
+- try another detector workspaces
+  [(3bb448c)](https://github.com/taiga-family/renovate-config/commit/3bb448cfa0ddf402ac1fe32f0d1515898cf95cca)
+
 ### [1.79.0](https://github.com/taiga-family/renovate-config/compare/v1.78.0...v1.79.0) (2024-10-02)
 
 ### 🚀 Features
