@@ -1,3 +1,10 @@
+### [1.76.4](https://github.com/taiga-family/renovate-config/compare/v1.76.3...v1.76.4) (2024-10-01)
+
+### 🚀 Features
+
+- show log from renovate output (#1418)
+  [(76fa499)](https://github.com/taiga-family/renovate-config/commit/76fa4996111b299aaa70effe38a722bdb3c5d7a9)
+
 ### [1.76.3](https://github.com/taiga-family/renovate-config/compare/v1.76.2...v1.76.3) (2024-09-30)
 
 ### 🐞 Bug Fixes
