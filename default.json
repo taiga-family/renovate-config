@@ -11,7 +11,6 @@
     "rebaseWhen": "auto",
     "automerge": false,
     "recreateWhen": "always",
-    "allowedPostUpgradeCommands": [".*"],
     "repositoryCache": "enabled",
     "platform": "github",
     "autoApprove": true,
@@ -132,17 +131,7 @@
                 "/^@angular-eslint.*/",
                 "/^@typescript-eslint/.*/",
                 "/^@taiga-ui/eslint-plugin-experience$/"
-            ],
-            "postUpgradeTasks": {
-                "commands": [
-                    "rm -rf package-lock.json node_modules **/node_modules",
-                    "npm i -ws --include-workspace-root --loglevel silent || npm i --loglevel silent || true",
-                    "npm i -ws --include-workspace-root --loglevel silent || npm i --loglevel silent || true",
-                    "git add . && npx lint-staged --allow-empty || true"
-                ],
-                "executionMode": "branch",
-                "fileFilters": ["**/**"]
-            }
+            ]
         },
         {
             "groupName": "nx",
@@ -153,9 +142,12 @@
                     "npx nx migrate {{{newVersion}}}",
                     "npx nx migrate --run-migrations --ifExists && rm -f migrations.json || true",
                     "npx nx repair || true",
+
                     "rm -rf package-lock.json node_modules **/node_modules",
-                    "npm i -ws --include-workspace-root --loglevel silent || npm i --loglevel silent || true",
-                    "npm i -ws --include-workspace-root --loglevel silent || npm i --loglevel silent || true",
+                    "export HAS_WS=$(npm ls --ws -s || echo 'false')",
+                    "if [ $HAS_WS == 'false' ]; then npm i --verbose; else npm i -ws --include-workspace-root --verbose; fi",
+                    "if [ $HAS_WS == 'false' ]; then npm i --verbose; else npm i -ws --include-workspace-root --verbose; fi",
+
                     "git add . && npx lint-staged --allow-empty || true"
                 ],
                 "executionMode": "branch",
@@ -180,9 +172,12 @@
                     "npx nx migrate @angular/core --from=@angular/core@{{{currentVersion}}} --to=@angular/core@{{{newVersion}}}",
                     "npx nx migrate @angular/cli --from=@angular/cli@{{{currentVersion}}} --to=@angular/cli@{{{newVersion}}}",
                     "npx nx migrate --run-migrations --ifExists && rm -f migrations.json || true",
+
                     "rm -rf package-lock.json node_modules **/node_modules",
-                    "npm i -ws --include-workspace-root --loglevel silent || npm i --loglevel silent || true",
-                    "npm i -ws --include-workspace-root --loglevel silent || npm i --loglevel silent || true",
+                    "export HAS_WS=$(npm ls --ws -s || echo 'false')",
+                    "if [ $HAS_WS == 'false' ]; then npm i --verbose; else npm i -ws --include-workspace-root --verbose; fi",
+                    "if [ $HAS_WS == 'false' ]; then npm i --verbose; else npm i -ws --include-workspace-root --verbose; fi",
+
                     "git add . && npx lint-staged --allow-empty || true"
                 ],
                 "executionMode": "branch",
@@ -204,9 +199,12 @@
                     "npm install nx --force --no-save --no-audit --no-fund --ignore-scripts --loglevel silent",
                     "npx nx migrate @taiga-ui/cdk --from=@taiga-ui/cdk@{{{lookup (split currentVersion '.') 0}}} --to=@taiga-ui/cdk@{{{lookup (split newVersion '.') 0}}} || true",
                     "npx nx migrate --run-migrations --ifExists && rm -f migrations.json || true",
+
                     "rm -rf package-lock.json node_modules **/node_modules",
-                    "npm i -ws --include-workspace-root --loglevel silent || npm i --loglevel silent || true",
-                    "npm i -ws --include-workspace-root --loglevel silent || npm i --loglevel silent || true",
+                    "export HAS_WS=$(npm ls --ws -s || echo 'false')",
+                    "if [ $HAS_WS == 'false' ]; then npm i --verbose; else npm i -ws --include-workspace-root --verbose; fi",
+                    "if [ $HAS_WS == 'false' ]; then npm i --verbose; else npm i -ws --include-workspace-root --verbose; fi",
+
                     "git add . && npx lint-staged --allow-empty || true"
                 ],
                 "executionMode": "branch",
@@ -220,17 +218,7 @@
                 "@taiga-ui/syncer",
                 "@taiga-ui/design-tokens",
                 "@taiga-ui/eslint-plugin-experience"
-            ],
-            "postUpgradeTasks": {
-                "commands": [
-                    "rm -rf package-lock.json node_modules **/node_modules",
-                    "npm i -ws --include-workspace-root --loglevel silent || npm i --loglevel silent || true",
-                    "npm i -ws --include-workspace-root --loglevel silent || npm i --loglevel silent || true",
-                    "git add . && npx lint-staged --allow-empty || true"
-                ],
-                "executionMode": "branch",
-                "fileFilters": ["**/**"]
-            }
+            ]
         },
         {
             "enabled": false,
