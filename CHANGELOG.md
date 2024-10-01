@@ -1,3 +1,10 @@
+### [1.76.5](https://github.com/taiga-family/renovate-config/compare/v1.76.4...v1.76.5) (2024-10-01)
+
+### 🐞 Bug Fixes
+
+- bash (#1420)
+  [(5eba321)](https://github.com/taiga-family/renovate-config/commit/5eba321d94f5e739fbd6905367edd099afd6a2b9)
+
 ### [1.76.4](https://github.com/taiga-family/renovate-config/compare/v1.76.3...v1.76.4) (2024-10-01)
 
 ### 🚀 Features
