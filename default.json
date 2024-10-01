@@ -145,8 +145,7 @@
 
                     "rm -rf package-lock.json node_modules **/node_modules",
                     "export HAS_WS=$(npm ls --ws -s || echo 'false')",
-                    "if [ $HAS_WS == 'false' ]; then npm i --verbose; else npm i -ws --include-workspace-root --verbose; fi",
-                    "if [ $HAS_WS == 'false' ]; then npm i --verbose; else npm i -ws --include-workspace-root --verbose; fi",
+                    "if [[ $HAS_WS == 'false' ]]; then npm i && npm i; else npm i -ws --include-workspace-root && npm i -ws --include-workspace-root; fi",
 
                     "git add . && npx lint-staged --allow-empty || true"
                 ],
@@ -175,8 +174,7 @@
 
                     "rm -rf package-lock.json node_modules **/node_modules",
                     "export HAS_WS=$(npm ls --ws -s || echo 'false')",
-                    "if [ $HAS_WS == 'false' ]; then npm i --verbose; else npm i -ws --include-workspace-root --verbose; fi",
-                    "if [ $HAS_WS == 'false' ]; then npm i --verbose; else npm i -ws --include-workspace-root --verbose; fi",
+                    "if [[ $HAS_WS == 'false' ]]; then npm i && npm i; else npm i -ws --include-workspace-root && npm i -ws --include-workspace-root; fi",
 
                     "git add . && npx lint-staged --allow-empty || true"
                 ],
@@ -202,8 +200,7 @@
 
                     "rm -rf package-lock.json node_modules **/node_modules",
                     "export HAS_WS=$(npm ls --ws -s || echo 'false')",
-                    "if [ $HAS_WS == 'false' ]; then npm i --verbose; else npm i -ws --include-workspace-root --verbose; fi",
-                    "if [ $HAS_WS == 'false' ]; then npm i --verbose; else npm i -ws --include-workspace-root --verbose; fi",
+                    "if [[ $HAS_WS == 'false' ]]; then npm i && npm i; else npm i -ws --include-workspace-root && npm i -ws --include-workspace-root; fi",
 
                     "git add . && npx lint-staged --allow-empty || true"
                 ],
