@@ -1,3 +1,10 @@
+### [1.86.1](https://github.com/taiga-family/renovate-config/compare/v1.86.0...v1.86.1) (2024-10-02)
+
+### 🐞 Bug Fixes
+
+- custom variables aren't sharable between commands (#1436)
+  [(4b6d17b)](https://github.com/taiga-family/renovate-config/commit/4b6d17b419f4ea7afedfc20a41663b1f467d7c63)
+
 ### [1.86.0](https://github.com/taiga-family/renovate-config/compare/v1.85.0...v1.86.0) (2024-10-02)
 
 ### 🚀 Features
