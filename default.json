@@ -144,8 +144,7 @@
                 "commands": [
                     "rm -rf package-lock.json node_modules **/node_modules",
                     "node -p '!!require(`./package.json`).workspaces'",
-                    "ws=$(node -p '!!require(`./package.json`).workspaces')",
-                    "echo 'Enabled workspace:' && echo $ws",
+                    "ws=$(node -p '!!require(`./package.json`).workspaces') && echo 'Enabled workspace:' && echo $ws",
                     "npm i -ws=$ws --include-workspace-root=$ws --verbose && npm i -ws=$ws --include-workspace-root=$ws",
                     "git add . && npx lint-staged --allow-empty || true"
                 ],
@@ -163,9 +162,7 @@
                     "npx nx migrate --run-migrations --ifExists && rm -f migrations.json || true",
                     "npx nx repair || true",
                     "rm -rf package-lock.json node_modules **/node_modules",
-                    "node -p '!!require(`./package.json`).workspaces'",
-                    "ws=$(node -p '!!require(`./package.json`).workspaces')",
-                    "echo 'Enabled workspace:' && echo $ws",
+                    "ws=$(node -p '!!require(`./package.json`).workspaces') && echo 'Enabled workspace:' && echo $ws",
                     "npm i -ws=$ws --include-workspace-root=$ws --verbose && npm i -ws=$ws --include-workspace-root=$ws",
                     "git add . && npx lint-staged --allow-empty || true"
                 ],
@@ -192,9 +189,7 @@
                     "npx nx migrate @angular/cli --from=@angular/cli@{{{currentVersion}}} --to=@angular/cli@{{{newVersion}}}",
                     "npx nx migrate --run-migrations --ifExists && rm -f migrations.json || true",
                     "rm -rf package-lock.json node_modules **/node_modules",
-                    "node -p '!!require(`./package.json`).workspaces'",
-                    "ws=$(node -p '!!require(`./package.json`).workspaces')",
-                    "echo 'Enabled workspace:' && echo $ws",
+                    "ws=$(node -p '!!require(`./package.json`).workspaces') && echo 'Enabled workspace:' && echo $ws",
                     "npm i -ws=$ws --include-workspace-root=$ws --verbose && npm i -ws=$ws --include-workspace-root=$ws",
                     "git add . && npx lint-staged --allow-empty || true"
                 ],
@@ -218,9 +213,7 @@
                     "npx nx migrate @taiga-ui/cdk --from=@taiga-ui/cdk@{{{lookup (split currentVersion '.') 0}}} --to=@taiga-ui/cdk@{{{lookup (split newVersion '.') 0}}} || true",
                     "npx nx migrate --run-migrations --ifExists && rm -f migrations.json || true",
                     "rm -rf package-lock.json node_modules **/node_modules",
-                    "node -p '!!require(`./package.json`).workspaces'",
-                    "ws=$(node -p '!!require(`./package.json`).workspaces')",
-                    "echo 'Enabled workspace:' && echo $ws",
+                    "ws=$(node -p '!!require(`./package.json`).workspaces') && echo 'Enabled workspace:' && echo $ws",
                     "npm i -ws=$ws --include-workspace-root=$ws --verbose && npm i -ws=$ws --include-workspace-root=$ws",
                     "git add . && npx lint-staged --allow-empty || true"
                 ],
@@ -239,9 +232,8 @@
             "postUpgradeTasks": {
                 "commands": [
                     "rm -rf package-lock.json node_modules **/node_modules",
-                    "node -p '!!require(`./package.json`).workspaces'",
                     "ws=$(node -p '!!require(`./package.json`).workspaces')",
-                    "echo 'Enabled workspace:' && echo $ws",
+                    "ws=$(node -p '!!require(`./package.json`).workspaces') && echo 'Enabled workspace:' && echo $ws",
                     "npm i -ws=$ws --include-workspace-root=$ws --verbose && npm i -ws=$ws --include-workspace-root=$ws",
                     "git add . && npx lint-staged --allow-empty || true"
                 ],
