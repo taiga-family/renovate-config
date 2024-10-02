@@ -20,6 +20,7 @@ jobs:
                 --autodiscover=true \
                 --autodiscover-filter='taiga-family/*' \
                 --cache-dir='.renovate' \
+                --allowed-env='ws' \
                 --allowed-post-upgrade-commands='.*'
 
 concurrency:
