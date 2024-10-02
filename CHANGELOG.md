@@ -1,3 +1,10 @@
+### [1.86.0](https://github.com/taiga-family/renovate-config/compare/v1.85.0...v1.86.0) (2024-10-02)
+
+### 🚀 Features
+
+- debug allow (#1434)
+  [(705faa2)](https://github.com/taiga-family/renovate-config/commit/705faa234a5cddb39d68d3276caa146c3372147d)
+
 ### [1.85.0](https://github.com/taiga-family/renovate-config/compare/v1.84.0...v1.85.0) (2024-10-02)
 
 ### 🚀 Features
