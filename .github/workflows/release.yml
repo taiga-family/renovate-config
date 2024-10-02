@@ -14,7 +14,6 @@ jobs:
       - uses: taiga-family/ci/actions/run/release-it@v1.91.0
         with:
           ref: ${{ github.ref }}
-          mode: ${{ github.event.inputs.mode }}
           githubToken: ${{ secrets.TAIGA_FAMILY_BOT_PAT }}
 
 concurrency:
