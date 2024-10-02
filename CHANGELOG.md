@@ -1,3 +1,10 @@
+### [1.84.0](https://github.com/taiga-family/renovate-config/compare/v1.83.0...v1.84.0) (2024-10-02)
+
+### 🚀 Features
+
+- provide flags with value (#1431)
+  [(6018eca)](https://github.com/taiga-family/renovate-config/commit/6018eca23a1aaae0976d6ab5293de2160927469a)
+
 ### [1.83.0](https://github.com/taiga-family/renovate-config/compare/v1.82.0...v1.83.0) (2024-10-02)
 
 ### 🚀 Features
