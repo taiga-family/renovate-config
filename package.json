@@ -8,9 +8,9 @@
     },
     "prettier": "@taiga-ui/prettier-config",
     "devDependencies": {
-        "@taiga-ui/auto-changelog-config": "0.222.1",
-        "@taiga-ui/prettier-config": "0.222.1",
-        "@taiga-ui/release-it-config": "0.222.1",
+        "@taiga-ui/auto-changelog-config": "0.222.2",
+        "@taiga-ui/prettier-config": "0.222.2",
+        "@taiga-ui/release-it-config": "0.222.2",
         "renovate": "38.106.4"
     }
 }
