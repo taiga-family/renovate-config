@@ -1,3 +1,10 @@
+### [1.85.0](https://github.com/taiga-family/renovate-config/compare/v1.84.0...v1.85.0) (2024-10-02)
+
+### 🚀 Features
+
+- behind-base-branch (#1432)
+  [(594f3d1)](https://github.com/taiga-family/renovate-config/commit/594f3d12fa1069468655f276ce22cd9300085ce7)
+
 ### [1.84.0](https://github.com/taiga-family/renovate-config/compare/v1.83.0...v1.84.0) (2024-10-02)
 
 ### 🚀 Features
