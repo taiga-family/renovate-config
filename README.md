@@ -19,6 +19,5 @@ export RENOVATE_TOKEN=ghp_FIVUf.....
 
 npx renovate --autodiscover=true \
              --autodiscover-filter='taiga-family/YOUR_REPOSITORY_NAME'  \
-             --allowed-post-upgrade-commands='.*' \
-             --repository-cache=reset
+             --allowed-post-upgrade-commands='.*'
 ```
