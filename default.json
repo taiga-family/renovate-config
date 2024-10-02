@@ -141,8 +141,8 @@
             "postUpgradeTasks": {
                 "commands": [
                     "rm -rf package-lock.json node_modules **/node_modules",
-                    "export HAS_WS=$(node -p 'require(`./package.json`).workspaces ?? false')",
-                    "if [[ $HAS_WS == 'false' ]]; then npm i && npm i; else npm i -ws --include-workspace-root && npm i -ws --include-workspace-root; fi",
+                    "export ws=$(node -p '!!require(`./package.json`).workspaces')",
+                    "npm i -ws=$ws --include-workspace-root=$ws --verbose && npm i -ws=$ws --include-workspace-root=$ws",
                     "git add . && npx lint-staged --allow-empty || true"
                 ],
                 "executionMode": "branch",
@@ -159,8 +159,8 @@
                     "npx nx migrate --run-migrations --ifExists && rm -f migrations.json || true",
                     "npx nx repair || true",
                     "rm -rf package-lock.json node_modules **/node_modules",
-                    "export HAS_WS=$(node -p 'require(`./package.json`).workspaces ?? false')",
-                    "if [[ $HAS_WS == 'false' ]]; then npm i && npm i; else npm i -ws --include-workspace-root && npm i -ws --include-workspace-root; fi",
+                    "export ws=$(node -p '!!require(`./package.json`).workspaces')",
+                    "npm i -ws=$ws --include-workspace-root=$ws --verbose && npm i -ws=$ws --include-workspace-root=$ws",
                     "git add . && npx lint-staged --allow-empty || true"
                 ],
                 "executionMode": "branch",
@@ -186,8 +186,8 @@
                     "npx nx migrate @angular/cli --from=@angular/cli@{{{currentVersion}}} --to=@angular/cli@{{{newVersion}}}",
                     "npx nx migrate --run-migrations --ifExists && rm -f migrations.json || true",
                     "rm -rf package-lock.json node_modules **/node_modules",
-                    "export HAS_WS=$(node -p 'require(`./package.json`).workspaces ?? false')",
-                    "if [[ $HAS_WS == 'false' ]]; then npm i && npm i; else npm i -ws --include-workspace-root && npm i -ws --include-workspace-root; fi",
+                    "export ws=$(node -p '!!require(`./package.json`).workspaces')",
+                    "npm i -ws=$ws --include-workspace-root=$ws --verbose && npm i -ws=$ws --include-workspace-root=$ws",
                     "git add . && npx lint-staged --allow-empty || true"
                 ],
                 "executionMode": "branch",
@@ -210,8 +210,8 @@
                     "npx nx migrate @taiga-ui/cdk --from=@taiga-ui/cdk@{{{lookup (split currentVersion '.') 0}}} --to=@taiga-ui/cdk@{{{lookup (split newVersion '.') 0}}} || true",
                     "npx nx migrate --run-migrations --ifExists && rm -f migrations.json || true",
                     "rm -rf package-lock.json node_modules **/node_modules",
-                    "export HAS_WS=$(node -p 'require(`./package.json`).workspaces ?? false')",
-                    "if [[ $HAS_WS == 'false' ]]; then npm i && npm i; else npm i -ws --include-workspace-root && npm i -ws --include-workspace-root; fi",
+                    "export ws=$(node -p '!!require(`./package.json`).workspaces')",
+                    "npm i -ws=$ws --include-workspace-root=$ws --verbose && npm i -ws=$ws --include-workspace-root=$ws",
                     "git add . && npx lint-staged --allow-empty || true"
                 ],
                 "executionMode": "branch",
@@ -229,8 +229,8 @@
             "postUpgradeTasks": {
                 "commands": [
                     "rm -rf package-lock.json node_modules **/node_modules",
-                    "export HAS_WS=$(node -p 'require(`./package.json`).workspaces ?? false')",
-                    "if [[ $HAS_WS == 'false' ]]; then npm i && npm i; else npm i -ws --include-workspace-root && npm i -ws --include-workspace-root; fi",
+                    "export ws=$(node -p '!!require(`./package.json`).workspaces')",
+                    "npm i -ws=$ws --include-workspace-root=$ws --verbose && npm i -ws=$ws --include-workspace-root=$ws",
                     "git add . && npx lint-staged --allow-empty || true"
                 ],
                 "executionMode": "branch",
