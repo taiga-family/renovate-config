@@ -41,6 +41,19 @@
     "allowPostUpgradeCommandTemplating": true,
     "packageRules": [
         {
+            "enabledManagers": ["npm"],
+            "matchPackageNames": [".*"],
+            "postUpgradeTasks": {
+                "commands": [
+                    "rm -rf package-lock.json node_modules **/node_modules",
+                    "ws=$(node -p '!!require(`./package.json`).workspaces') && npm i -ws=$ws --include-workspace-root=$ws --verbose && npm i -ws=$ws --include-workspace-root=$ws",
+                    "git add . && npx lint-staged --allow-empty || true"
+                ],
+                "executionMode": "branch",
+                "fileFilters": ["package-lock.json"]
+            }
+        },
+        {
             "matchDepTypes": ["devDependencies", "dependencies"],
             "rangeStrategy": "pin"
         },
@@ -136,16 +149,7 @@
                 "/^@angular-eslint.*/",
                 "/^@typescript-eslint/.*/",
                 "/^@taiga-ui/eslint-plugin-experience$/"
-            ],
-            "postUpgradeTasks": {
-                "commands": [
-                    "rm -rf package-lock.json node_modules **/node_modules",
-                    "ws=$(node -p '!!require(`./package.json`).workspaces') && npm i -ws=$ws --include-workspace-root=$ws --verbose && npm i -ws=$ws --include-workspace-root=$ws",
-                    "git add . && npx lint-staged --allow-empty || true"
-                ],
-                "executionMode": "branch",
-                "fileFilters": ["**/**"]
-            }
+            ]
         },
         {
             "groupName": "nx",
@@ -219,16 +223,7 @@
                 "@taiga-ui/syncer",
                 "@taiga-ui/design-tokens",
                 "@taiga-ui/eslint-plugin-experience"
-            ],
-            "postUpgradeTasks": {
-                "commands": [
-                    "rm -rf package-lock.json node_modules **/node_modules",
-                    "ws=$(node -p '!!require(`./package.json`).workspaces') && npm i -ws=$ws --include-workspace-root=$ws --verbose && npm i -ws=$ws --include-workspace-root=$ws",
-                    "git add . && npx lint-staged --allow-empty || true"
-                ],
-                "executionMode": "branch",
-                "fileFilters": ["**/**"]
-            }
+            ]
         },
         {
             "enabled": false,
