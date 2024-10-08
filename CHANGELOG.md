@@ -1,3 +1,10 @@
+### [1.88.1](https://github.com/taiga-family/renovate-config/compare/v1.88.0...v1.88.1) (2024-10-08)
+
+### 🐞 Bug Fixes
+
+- drop redundant rule (#1470)
+  [(0da42dd)](https://github.com/taiga-family/renovate-config/commit/0da42dd3527998d27d3009e9aa3a6c266f8e5267)
+
 ### [1.88.0](https://github.com/taiga-family/renovate-config/compare/v1.87.0...v1.88.0) (2024-10-08)
 
 ### 🚀 Features
