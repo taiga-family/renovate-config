@@ -1,3 +1,10 @@
+### [1.88.0](https://github.com/taiga-family/renovate-config/compare/v1.87.0...v1.88.0) (2024-10-08)
+
+### 🚀 Features
+
+- use separate group slug for ng-web-apis (#1467)
+  [(64c44c0)](https://github.com/taiga-family/renovate-config/commit/64c44c0a456522395135b7a3879ac108631c272a)
+
 ### [1.87.0](https://github.com/taiga-family/renovate-config/compare/v1.86.1...v1.87.0) (2024-10-08)
 
 ### 🚀 Features
