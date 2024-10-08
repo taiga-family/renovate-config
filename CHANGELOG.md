@@ -1,3 +1,10 @@
+### [1.87.0](https://github.com/taiga-family/renovate-config/compare/v1.86.1...v1.87.0) (2024-10-08)
+
+### 🚀 Features
+
+- separate update peer deps and devDependencies (#1465)
+  [(d99af87)](https://github.com/taiga-family/renovate-config/commit/d99af876221b0a74b2f6cad0b2b703c191dd9b80)
+
 ### [1.86.1](https://github.com/taiga-family/renovate-config/compare/v1.86.0...v1.86.1) (2024-10-02)
 
 ### 🐞 Bug Fixes
