@@ -130,6 +130,10 @@
             "matchPackageNames": ["/^actions/.*/"]
         },
         {
+            "groupName": "angular web APIs plugins",
+            "matchPackageNames": ["/^@ng-web-apis/.*/"]
+        },
+        {
             "groupName": "eslint",
             "matchPackageNames": [
                 "/^eslint.*/",
@@ -195,7 +199,6 @@
             "groupName": "taiga-ui family dependencies",
             "matchPackageNames": [
                 "/^@taiga-ui/.*/",
-                "/^@ng-web-apis/.*/",
                 "!/^@taiga-ui/.*config$/",
                 "!@taiga-ui/syncer",
                 "!@taiga-ui/design-tokens",
