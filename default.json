@@ -41,11 +41,6 @@
     "allowPostUpgradeCommandTemplating": true,
     "packageRules": [
         {
-            "matchFileNames": ["actions/**", "projects/**"],
-            "enabledManagers": ["github-actions"],
-            "semanticCommitType": "fix"
-        },
-        {
             "matchDepTypes": ["devDependencies", "dependencies"],
             "rangeStrategy": "pin"
         },
