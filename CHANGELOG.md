@@ -1,3 +1,10 @@
+### [1.89.1](https://github.com/taiga-family/renovate-config/compare/v1.89.0...v1.89.1) (2024-10-09)
+
+### 🐞 Bug Fixes
+
+- invalid commit type (#1469)
+  [(f7ba80d)](https://github.com/taiga-family/renovate-config/commit/f7ba80d24b8e81d08bc7276adf94a04f4adc9380)
+
 ### [1.89.0](https://github.com/taiga-family/renovate-config/compare/v1.88.1...v1.89.0) (2024-10-09)
 
 ### 🚀 Features
