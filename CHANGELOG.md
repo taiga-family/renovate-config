@@ -1,3 +1,10 @@
+### [1.89.2](https://github.com/taiga-family/renovate-config/compare/v1.89.1...v1.89.2) (2024-10-09)
+
+### 🐞 Bug Fixes
+
+- change rangeStrategy for peer deps (#1471)
+  [(d4e35cd)](https://github.com/taiga-family/renovate-config/commit/d4e35cdedf24d627e39c117cded908c51681876b)
+
 ### [1.89.1](https://github.com/taiga-family/renovate-config/compare/v1.89.0...v1.89.1) (2024-10-09)
 
 ### 🐞 Bug Fixes
