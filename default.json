@@ -1,7 +1,6 @@
 {
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
     "baseBranches": ["main"],
-    "cacheDir": ".renovate",
     "enabledManagers": ["npm", "github-actions"],
     "fetchChangeLogs": "off",
     "internalChecksFilter": "strict",
