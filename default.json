@@ -1,5 +1,6 @@
 {
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "extends": [":semanticCommitScopeDisabled"],
     "baseBranches": ["main"],
     "cacheDir": ".renovate",
     "enabledManagers": ["npm", "github-actions"],
