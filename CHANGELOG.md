@@ -1,3 +1,10 @@
+### [1.89.0](https://github.com/taiga-family/renovate-config/compare/v1.88.1...v1.89.0) (2024-10-09)
+
+### 🚀 Features
+
+- add default postUpgradeTasks for npm (#1468)
+  [(f3649ff)](https://github.com/taiga-family/renovate-config/commit/f3649ff908dc6c86b9d92c6be795d47808f87e46)
+
 ### [1.88.1](https://github.com/taiga-family/renovate-config/compare/v1.88.0...v1.88.1) (2024-10-08)
 
 ### 🐞 Bug Fixes
