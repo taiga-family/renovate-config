@@ -1,6 +1,15 @@
 name: 🤖 Run renovate
 on:
   workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Override default log level'
+        required: false
+        type: choice
+        options:
+          - minor
+          - patch
+          - major
   schedule:
     - cron: '0 */1 * * *'
 
@@ -8,8 +17,8 @@ jobs:
   renovate:
     runs-on: ubuntu-latest
     env:
-      LOG_LEVEL: debug
       RENOVATE_CONFIG_FILE: default.json
+      LOG_LEVEL: ${{ inputs.logLevel || 'debug' }}
       RENOVATE_TOKEN: ${{ secrets.TAIGA_FAMILY_BOT_PAT }}
     steps:
       - uses: actions/checkout@v4.2.1
