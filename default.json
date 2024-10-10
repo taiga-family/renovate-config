@@ -7,7 +7,7 @@
     "internalChecksFilter": "strict",
     "prHourlyLimit": 0,
     "branchConcurrentLimit": 0,
-    "prConcurrentLimit": 0,
+    "prConcurrentLimit": 2,
     "labels": ["renovate"],
     "rebaseWhen": "behind-base-branch",
     "automerge": false,
@@ -52,6 +52,14 @@
                 "executionMode": "branch",
                 "fileFilters": ["package-lock.json"]
             }
+        },
+        {
+            "matchDepTypes": ["devDependencies", "dependencies"],
+            "rangeStrategy": "pin"
+        },
+        {
+            "matchDepTypes": ["peerDependencies", "optionalDependencies"],
+            "rangeStrategy": "widen"
         },
         {
             "groupName": "tiptap",
@@ -252,6 +260,21 @@
                 "/^react.*/",
                 "/^vue.*/"
             ]
+        },
+        {
+            "matchDepTypes": ["devDependencies"],
+            "additionalBranchPrefix": "renovate/dev-dependencies/",
+            "branchPrefix": ""
+        },
+        {
+            "matchDepTypes": ["dependencies"],
+            "additionalBranchPrefix": "renovate/dependencies/",
+            "branchPrefix": ""
+        },
+        {
+            "matchDepTypes": ["peerDependencies", "optionalDependencies"],
+            "additionalBranchPrefix": "renovate/peer-dependencies/",
+            "branchPrefix": ""
         }
     ]
 }
