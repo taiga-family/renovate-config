@@ -252,29 +252,6 @@
                 "/^react.*/",
                 "/^vue.*/"
             ]
-        },
-        {
-            "matchDepTypes": ["devDependencies"],
-            "additionalBranchPrefix": "renovate/dev-dependencies/",
-            "branchPrefix": ""
-        },
-        {
-            "matchDepTypes": ["dependencies"],
-            "additionalBranchPrefix": "renovate/dependencies/",
-            "branchPrefix": ""
-        },
-        {
-            "matchDepTypes": ["peerDependencies", "optionalDependencies"],
-            "additionalBranchPrefix": "renovate/peer-dependencies/",
-            "branchPrefix": ""
-        },
-        {
-            "matchDepTypes": ["devDependencies", "dependencies"],
-            "rangeStrategy": "pin"
-        },
-        {
-            "matchDepTypes": ["peerDependencies", "optionalDependencies"],
-            "rangeStrategy": "replace"
         }
     ]
 }
