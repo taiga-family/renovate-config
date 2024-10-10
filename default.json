@@ -59,7 +59,7 @@
         },
         {
             "matchDepTypes": ["peerDependencies", "optionalDependencies"],
-            "rangeStrategy": "widen"
+            "rangeStrategy": "in-range-only"
         },
         {
             "groupName": "tiptap",
