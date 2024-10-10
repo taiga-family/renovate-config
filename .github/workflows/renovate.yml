@@ -18,7 +18,7 @@ jobs:
       - run: |
           npx renovate \
                 --autodiscover=true \
-                --autodiscover-filter='taiga-family/*' \
+                --autodiscover-filter='taiga-family/taiga-ui' \
                 --allowed-post-upgrade-commands='.*'
 
 concurrency:
