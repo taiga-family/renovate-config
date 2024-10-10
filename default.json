@@ -6,8 +6,8 @@
     "fetchChangeLogs": "off",
     "internalChecksFilter": "strict",
     "prHourlyLimit": 0,
-    "branchConcurrentLimit": 2,
-    "prConcurrentLimit": 2,
+    "branchConcurrentLimit": 0,
+    "prConcurrentLimit": 0,
     "labels": ["renovate"],
     "rebaseWhen": "behind-base-branch",
     "automerge": false,
@@ -59,7 +59,7 @@
         },
         {
             "matchDepTypes": ["peerDependencies", "optionalDependencies"],
-            "rangeStrategy": "bump"
+            "rangeStrategy": "widen"
         },
         {
             "groupName": "tiptap",
