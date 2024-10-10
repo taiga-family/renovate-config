@@ -54,14 +54,6 @@
             }
         },
         {
-            "matchDepTypes": ["devDependencies", "dependencies"],
-            "rangeStrategy": "pin"
-        },
-        {
-            "matchDepTypes": ["peerDependencies", "optionalDependencies"],
-            "rangeStrategy": "widen"
-        },
-        {
             "groupName": "tiptap",
             "matchPackageNames": ["/^@tiptap/.*/"]
         },
@@ -275,6 +267,14 @@
             "matchDepTypes": ["peerDependencies", "optionalDependencies"],
             "additionalBranchPrefix": "renovate/peer-dependencies/",
             "branchPrefix": ""
+        },
+        {
+            "matchDepTypes": ["devDependencies", "dependencies"],
+            "rangeStrategy": "pin"
+        },
+        {
+            "matchDepTypes": ["peerDependencies", "optionalDependencies"],
+            "rangeStrategy": "replace"
         }
     ]
 }
