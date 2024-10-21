@@ -21,8 +21,8 @@ jobs:
       RENOVATE_TOKEN: ${{ secrets.TAIGA_FAMILY_BOT_PAT }}
     steps:
       - uses: actions/checkout@v4.2.1
-      - uses: taiga-family/ci/actions/setup/variables@v1.93.3
-      - uses: taiga-family/ci/actions/setup/node@v1.93.3
+      - uses: taiga-family/ci/actions/setup/variables@v1.93.4
+      - uses: taiga-family/ci/actions/setup/node@v1.93.4
       - run: |
           npx renovate \
                 --autodiscover=true \
