@@ -9,7 +9,7 @@
     "branchConcurrentLimit": 0,
     "prConcurrentLimit": 2,
     "labels": ["renovate"],
-    "rebaseWhen": "behind-base-branch",
+    "rebaseWhen": "auto",
     "automerge": false,
     "recreateWhen": "always",
     "repositoryCache": "enabled",
