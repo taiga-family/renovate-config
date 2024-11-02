@@ -134,11 +134,13 @@
             "matchPackageNames": ["/^actions/.*/"]
         },
         {
-            "groupName": "angular web APIs plugins",
+            "groupSlug": "ng-web-apis-deps",
+            "groupName": "{{packageScope}}",
             "matchPackageNames": ["/^@ng-web-apis/.*/"]
         },
         {
-            "groupName": "eslint",
+            "groupSlug": "eslint-deps",
+            "groupName": "{{depName}}",
             "matchPackageNames": [
                 "/^eslint.*/",
                 "/^@stylistic/.*/",
@@ -148,7 +150,8 @@
             ]
         },
         {
-            "groupName": "nx",
+            "groupSlug": "nx",
+            "groupName": "{{packageScope}}",
             "matchPackageNames": ["/^@nx.*/", "/^nx$/"],
             "postUpgradeTasks": {
                 "commands": [
@@ -165,7 +168,8 @@
             }
         },
         {
-            "groupName": "ng",
+            "groupSlug": "ng-deps",
+            "groupName": "{{depName}}",
             "matchPackageNames": [
                 "/^zone.js$/",
                 "/^@angular.*/",
@@ -191,7 +195,8 @@
             }
         },
         {
-            "groupName": "taiga-ui family dependencies",
+            "groupSlug": "taiga-configs",
+            "groupName": "{{packageScope}}",
             "matchPackageNames": [
                 "/^@taiga-ui/.*/",
                 "!/^@taiga-ui/.*config$/",
@@ -213,7 +218,8 @@
             }
         },
         {
-            "groupName": "taiga-ui config-tools",
+            "groupSlug": "taiga-external",
+            "groupName": "{{depName}}",
             "matchPackageNames": [
                 "/^@taiga-ui/.*config$/",
                 "@taiga-ui/syncer",
