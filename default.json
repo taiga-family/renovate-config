@@ -126,6 +126,10 @@
             "matchPackageNames": ["/^vue.*/"]
         },
         {
+            "groupName": "eslint",
+            "matchPackageNames": ["/^eslint.*/"]
+        },
+        {
             "groupName": "jasmine",
             "matchPackageNames": ["/^jasmine.*/"]
         },
@@ -134,24 +138,23 @@
             "matchPackageNames": ["/^actions/.*/"]
         },
         {
-            "groupSlug": "ng-web-apis-deps",
             "groupName": "{{packageScope}}",
             "matchPackageNames": ["/^@ng-web-apis/.*/"]
         },
         {
-            "groupSlug": "eslint-deps",
-            "groupName": "{{depName}}",
-            "matchPackageNames": [
-                "/^eslint.*/",
-                "/^@stylistic/.*/",
-                "/^@angular-eslint.*/",
-                "/^@typescript-eslint/.*/",
-                "/^@taiga-ui/eslint-plugin-experience$/"
-            ]
+            "groupName": "{{packageScope}}",
+            "matchPackageNames": ["/^@stylistic/.*/"]
         },
         {
-            "groupSlug": "nx",
             "groupName": "{{packageScope}}",
+            "matchPackageNames": ["/^@angular-eslint.*/"]
+        },
+        {
+            "groupName": "{{packageScope}}",
+            "matchPackageNames": ["/^@typescript-eslint/.*/"]
+        },
+        {
+            "groupName": "nx",
             "matchPackageNames": ["/^@nx.*/", "/^nx$/"],
             "postUpgradeTasks": {
                 "commands": [
@@ -168,10 +171,8 @@
             }
         },
         {
-            "groupSlug": "ng-deps",
-            "groupName": "{{depName}}",
+            "groupName": "{{packageScope}}",
             "matchPackageNames": [
-                "/^zone.js$/",
                 "/^@angular.*/",
                 "/^@angular-devkit.*/",
                 "/^@schematics.*/",
@@ -195,15 +196,8 @@
             }
         },
         {
-            "groupSlug": "taiga-configs",
             "groupName": "{{packageScope}}",
-            "matchPackageNames": [
-                "/^@taiga-ui/.*/",
-                "!/^@taiga-ui/.*config$/",
-                "!@taiga-ui/syncer",
-                "!@taiga-ui/design-tokens",
-                "!@taiga-ui/eslint-plugin-experience"
-            ],
+            "matchPackageNames": ["/^@taiga-ui/.*/"],
             "postUpgradeTasks": {
                 "commands": [
                     "npm install nx --force --no-save --no-audit --no-fund --ignore-scripts --loglevel silent",
@@ -216,16 +210,6 @@
                 "executionMode": "branch",
                 "fileFilters": ["**/**"]
             }
-        },
-        {
-            "groupSlug": "taiga-external",
-            "groupName": "{{depName}}",
-            "matchPackageNames": [
-                "/^@taiga-ui/.*config$/",
-                "@taiga-ui/syncer",
-                "@taiga-ui/design-tokens",
-                "@taiga-ui/eslint-plugin-experience"
-            ]
         },
         {
             "enabled": false,
