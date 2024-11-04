@@ -1,3 +1,12 @@
+### [1.90.0](https://github.com/taiga-family/renovate-config/compare/v1.89.2...v1.90.0) (2024-11-03)
+
+### 🚀 Features
+
+- allow packageScope and depName in groupName template (#1555)
+  [(44a30db)](https://github.com/taiga-family/renovate-config/commit/44a30dbe61c36d41adb7b946402167855e017cb5)
+- use `auto` option for `rebaseWhen` (#1554)
+  [(1041b27)](https://github.com/taiga-family/renovate-config/commit/1041b27e43d22cd8235739a0247249e54f6197c3)
+
 ### [1.89.2](https://github.com/taiga-family/renovate-config/compare/v1.89.1...v1.89.2) (2024-10-09)
 
 ### 🐞 Bug Fixes
