@@ -252,6 +252,10 @@
             ]
         },
         {
+            "enabled": false,
+            "matchPackageNames": ["/^renovate$/"]
+        },
+        {
             "matchDepTypes": ["devDependencies"],
             "additionalBranchPrefix": "renovate/dev-dependencies/",
             "branchPrefix": ""
