@@ -138,19 +138,19 @@
             "matchPackageNames": ["/^actions/.*/"]
         },
         {
-            "groupName": "{{packageScope}}",
+            "groupName": "@ng-web-apis/* deps",
             "matchPackageNames": ["/^@ng-web-apis/.*/"]
         },
         {
-            "groupName": "{{packageScope}}",
+            "groupName": "@stylistic/* deps",
             "matchPackageNames": ["/^@stylistic/.*/"]
         },
         {
-            "groupName": "{{packageScope}}",
+            "groupName": "@angular-eslint/* deps",
             "matchPackageNames": ["/^@angular-eslint.*/"]
         },
         {
-            "groupName": "{{packageScope}}",
+            "groupName": "@typescript-eslint/* deps",
             "matchPackageNames": ["/^@typescript-eslint/.*/"]
         },
         {
@@ -171,7 +171,7 @@
             }
         },
         {
-            "groupName": "{{packageScope}}",
+            "groupName": "@angular/* deps",
             "matchPackageNames": [
                 "/^@angular.*/",
                 "/^@angular-devkit.*/",
@@ -196,7 +196,7 @@
             }
         },
         {
-            "groupName": "{{packageScope}}",
+            "groupName": "@taiga-ui/* deps",
             "matchPackageNames": ["/^@taiga-ui/.*/"],
             "postUpgradeTasks": {
                 "commands": [
