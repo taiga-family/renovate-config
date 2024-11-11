@@ -1,3 +1,17 @@
+### [1.91.0](https://github.com/taiga-family/renovate-config/compare/v1.90.0...v1.91.0) (2024-11-06)
+
+### 🚀 Features
+
+- do not upgrade renovate automatically (#1571)
+  [(5606031)](https://github.com/taiga-family/renovate-config/commit/56060310e9821c4208713eeef880c5d31f432170)
+
+### 🐞 Bug Fixes
+
+- skip nx install and upgrade to fixed version (#1572)
+  [(2c37aa7)](https://github.com/taiga-family/renovate-config/commit/2c37aa7d3416c563472637be38c0af64038d6446)
+- try another way (#1558)
+  [(3d82807)](https://github.com/taiga-family/renovate-config/commit/3d8280744870a4d2152c40d56f4aff4b1afc0418)
+
 ### [1.90.0](https://github.com/taiga-family/renovate-config/compare/v1.89.2...v1.90.0) (2024-11-03)
 
 ### 🚀 Features
