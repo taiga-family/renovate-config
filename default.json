@@ -159,7 +159,7 @@
             "postUpgradeTasks": {
                 "commands": [
                     "npm install nx@{{{currentVersion}}} @nx/workspace@{{{currentVersion}}} --force --no-save --no-audit --no-fund --ignore-scripts --loglevel silent",
-                    "npx nx migrate nx --from={{{currentVersion}}} --to={{{newVersion}}}",
+                    "npx nx migrate nx --from=nx@{{{currentVersion}}} --to=nx@{{{newVersion}}}",
                     "NX_MIGRATE_SKIP_INSTALL=true npx nx migrate --run-migrations --ifExists && rm -f migrations.json || true",
                     "npx nx repair || true",
                     "rm -rf package-lock.json node_modules **/node_modules",
