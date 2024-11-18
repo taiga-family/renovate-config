@@ -1,3 +1,10 @@
+### [1.91.1](https://github.com/taiga-family/renovate-config/compare/v1.91.0...v1.91.1) (2024-11-11)
+
+### 🐞 Bug Fixes
+
+- skip install deps before migration (#1573)
+  [(92d079e)](https://github.com/taiga-family/renovate-config/commit/92d079e251ef969b8294aa56d61107a096a5aca0)
+
 ### [1.91.0](https://github.com/taiga-family/renovate-config/compare/v1.90.0...v1.91.0) (2024-11-06)
 
 ### 🚀 Features
