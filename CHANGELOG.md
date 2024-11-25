@@ -1,3 +1,10 @@
+### [1.91.2](https://github.com/taiga-family/renovate-config/compare/v1.91.1...v1.91.2) (2024-11-20)
+
+### 🐞 Bug Fixes
+
+- incorrect flags pattern for nx migrate (#1581)
+  [(c12099b)](https://github.com/taiga-family/renovate-config/commit/c12099be37985741f47adc7a234470ce0a68ffb5)
+
 ### [1.91.1](https://github.com/taiga-family/renovate-config/compare/v1.91.0...v1.91.1) (2024-11-11)
 
 ### 🐞 Bug Fixes
