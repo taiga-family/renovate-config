@@ -1,3 +1,10 @@
+### [1.91.3](https://github.com/taiga-family/renovate-config/compare/v1.91.2...v1.91.3) (2024-11-27)
+
+### 🐞 Bug Fixes
+
+- suppress error package doesn't exist (#1586)
+  [(ac7f4ec)](https://github.com/taiga-family/renovate-config/commit/ac7f4ec1a56c8778ffe086363767d43a2952730e)
+
 ### [1.91.2](https://github.com/taiga-family/renovate-config/compare/v1.91.1...v1.91.2) (2024-11-20)
 
 ### 🐞 Bug Fixes
