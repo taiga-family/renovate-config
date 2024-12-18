@@ -94,6 +94,10 @@
             "matchPackageNames": ["/^@commitlint/.*/"]
         },
         {
+            "groupName": "docsearch",
+            "matchPackageNames": ["/^@docsearch/.*/"]
+        },
+        {
             "groupName": "tinkoff",
             "matchPackageNames": ["/^@tinkoff/.*/"]
         },
