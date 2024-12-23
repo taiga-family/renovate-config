@@ -1,3 +1,10 @@
+### [1.92.0](https://github.com/taiga-family/renovate-config/compare/v1.91.3...v1.92.0) (2024-12-18)
+
+### 🚀 Features
+
+- add docsearch scope (#1595)
+  [(21bd6e2)](https://github.com/taiga-family/renovate-config/commit/21bd6e27a2bfa2611ddbf4edb47050bb0a0afa05)
+
 ### [1.91.3](https://github.com/taiga-family/renovate-config/compare/v1.91.2...v1.91.3) (2024-11-27)
 
 ### 🐞 Bug Fixes
