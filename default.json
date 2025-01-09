@@ -83,7 +83,7 @@
         },
         {
             "groupName": "prettier",
-            "matchPackageNames": ["/^prettier/", "/^@prettier/.*/", "/$^prettier-.*/"]
+            "matchPackageNames": ["/^prettier/", "/^@prettier/.*/", "/^prettier-.*/"]
         },
         {
             "groupName": "cypress",
@@ -92,6 +92,10 @@
         {
             "groupName": "commitlint",
             "matchPackageNames": ["/^@commitlint/.*/"]
+        },
+        {
+            "groupName": "release-it",
+            "matchPackageNames": ["/^@release-it/.*/", "/^release-it$/"]
         },
         {
             "groupName": "docsearch",
