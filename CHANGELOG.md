@@ -1,3 +1,10 @@
+### [1.93.0](https://github.com/taiga-family/renovate-config/compare/v1.92.0...v1.93.0) (2025-01-09)
+
+### 🚀 Features
+
+- add release-it group
+  [(5e9b96f)](https://github.com/taiga-family/renovate-config/commit/5e9b96fbf9889c46c0d98863f3b2a03945fe86d2)
+
 ### [1.92.0](https://github.com/taiga-family/renovate-config/compare/v1.91.3...v1.92.0) (2024-12-18)
 
 ### 🚀 Features
