@@ -1,3 +1,5 @@
+### [1.94.0](https://github.com/taiga-family/renovate-config/compare/v1.93.0...v1.94.0) (2025-01-13)
+
 ### [1.93.0](https://github.com/taiga-family/renovate-config/compare/v1.92.0...v1.93.0) (2025-01-09)
 
 ### 🚀 Features
