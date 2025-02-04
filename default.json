@@ -264,21 +264,6 @@
         {
             "enabled": false,
             "matchPackageNames": ["/^renovate$/"]
-        },
-        {
-            "matchDepTypes": ["devDependencies"],
-            "additionalBranchPrefix": "renovate/dev-dependencies/",
-            "branchPrefix": ""
-        },
-        {
-            "matchDepTypes": ["dependencies"],
-            "additionalBranchPrefix": "renovate/dependencies/",
-            "branchPrefix": ""
-        },
-        {
-            "matchDepTypes": ["peerDependencies", "optionalDependencies"],
-            "additionalBranchPrefix": "renovate/peer-dependencies/",
-            "branchPrefix": ""
         }
     ]
 }
