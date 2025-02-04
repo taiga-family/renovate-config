@@ -267,8 +267,8 @@
         },
         {
             "enabled": false,
-            "matchUpdateTypes": ["major"],
-            "matchPackageNames": ["/^react.*/", "/^@types/react$/", "/^@types/react-.*/", "/^react-.*/"]
+            "groupName": "react",
+            "matchUpdateTypes": ["major"]
         }
     ]
 }
