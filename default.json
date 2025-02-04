@@ -264,6 +264,11 @@
         {
             "enabled": false,
             "matchPackageNames": ["/^renovate$/"]
+        },
+        {
+            "enabled": false,
+            "matchUpdateTypes": ["major"],
+            "matchPackageNames": ["/^react.*/", "/^@types/react$/", "/^@types/react-.*/", "/^react-.*/"]
         }
     ]
 }
