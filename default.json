@@ -87,7 +87,7 @@
         },
         {
             "groupName": "cypress",
-            "matchPackageNames": ["/^cypress/", "/^cy2/", "/^cypress-image-snapshot/"]
+            "matchPackageNames": ["/^cypress/", "/^cy2/", "/^cypress-.*/"]
         },
         {
             "groupName": "commitlint",
@@ -127,7 +127,8 @@
         },
         {
             "groupName": "react",
-            "matchPackageNames": ["/^react.*/"]
+            "extends": ["monorepo:react"],
+            "matchPackageNames": ["/^react.*/", "/^@types/react$/", "/^@types/react-.*/", "/^react-.*/"]
         },
         {
             "groupName": "vue",
