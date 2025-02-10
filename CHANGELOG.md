@@ -1,3 +1,17 @@
+### [1.95.0](https://github.com/taiga-family/renovate-config/compare/v1.94.0...v1.95.0) (2025-02-04)
+
+### 🚀 Features
+
+- disable major react dependencies (#1614)
+  [(9e051ea)](https://github.com/taiga-family/renovate-config/commit/9e051ea5573a31720e68b3578294a45e285cfe29)
+- combine react dependencies together (#1611)
+  [(9779e06)](https://github.com/taiga-family/renovate-config/commit/9779e06b7a2c73eed7d2c54c9ad65387c7b8a8cb)
+
+### 🐞 Bug Fixes
+
+- use same branches instead separate (#1613)
+  [(cc84c82)](https://github.com/taiga-family/renovate-config/commit/cc84c82b464199f99077aa40d98a47726e9e7dbe)
+
 ### [1.94.0](https://github.com/taiga-family/renovate-config/compare/v1.93.0...v1.94.0) (2025-01-13)
 
 ### [1.93.0](https://github.com/taiga-family/renovate-config/compare/v1.92.0...v1.93.0) (2025-01-09)
