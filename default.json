@@ -184,11 +184,10 @@
             "matchPackageNames": [
                 "/^@angular.*/",
                 "/^@angular-devkit.*/",
+                "!/^@angular-eslint.*/",
                 "/^@schematics.*/",
                 "/^typescript$/",
-                "/^ng-packagr$/",
-                "/^rxjs$/",
-                "!/^@angular-eslint.*/"
+                "/^ng-packagr$/"
             ],
             "postUpgradeTasks": {
                 "commands": [
