@@ -1,7 +1,7 @@
 {
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
     "extends": [":semanticCommitScopeDisabled"],
-    "baseBranches": ["main"],
+    "baseBranchPatterns": ["main"],
     "enabledManagers": ["npm", "github-actions"],
     "fetchChangeLogs": "off",
     "internalChecksFilter": "strict",
@@ -38,7 +38,6 @@
     "suppressNotifications": ["configErrorIssue", "dependencyLookupWarnings"],
     "prBodyTemplate": "{{{table}}}{{{notes}}}{{{changelogs}}}{{{controls}}}{{{footer}}}",
     "prBodyColumns": ["Package", "Type", "Change"],
-    "allowPostUpgradeCommandTemplating": true,
     "packageRules": [
         {
             "enabledManagers": ["npm"],
@@ -259,10 +258,6 @@
                 "/^react.*/",
                 "/^vue.*/"
             ]
-        },
-        {
-            "enabled": false,
-            "matchPackageNames": ["/^renovate$/"]
         },
         {
             "enabled": false,
