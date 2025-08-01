@@ -159,7 +159,7 @@
         },
         {
             "groupName": "@typescript-eslint/* deps",
-            "matchPackageNames": ["/^@typescript-eslint/.*/"]
+            "matchPackageNames": ["/^@typescript-eslint/.*/", "typescript-eslint"]
         },
         {
             "groupName": "nx",
