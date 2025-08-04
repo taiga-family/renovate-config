@@ -1,3 +1,12 @@
+### [1.96.0](https://github.com/taiga-family/renovate-config/compare/v1.95.0...v1.96.0) (2025-08-03)
+
+### 🚀 Features
+
+- group typescript-eslint
+  [(b193e0c)](https://github.com/taiga-family/renovate-config/commit/b193e0cdb23cd5fb9468133718c49813563c42cb)
+- upgrade renovate (#1688)
+  [(9fbb294)](https://github.com/taiga-family/renovate-config/commit/9fbb29495ba3c7406838b913ed70436df21c44a2)
+
 ### [1.95.0](https://github.com/taiga-family/renovate-config/compare/v1.94.0...v1.95.0) (2025-02-04)
 
 ### 🚀 Features
