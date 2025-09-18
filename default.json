@@ -162,12 +162,29 @@
             "matchPackageNames": ["/^@typescript-eslint/.*/", "typescript-eslint"]
         },
         {
-            "groupName": "nx",
-            "matchPackageNames": ["/^@nx.*/", "/^nx$/"],
+            "groupName": "nx cloud",
+            "matchPackageNames": ["/^nx$/"],
             "postUpgradeTasks": {
                 "commands": [
-                    "npm install nx@{{{currentVersion}}} @nx/workspace@{{{currentVersion}}} --force --no-save --no-audit --no-fund --ignore-scripts --loglevel silent",
-                    "npx nx migrate nx --from=nx@{{{currentVersion}}} --to=nx@{{{newVersion}}}",
+                    "npm install nx@{{{currentVersion}}} --force --no-save --no-audit --no-fund --ignore-scripts --loglevel silent",
+                    "npx nx migrate nx@{{{newVersion}}} || true",
+                    "NX_MIGRATE_SKIP_INSTALL=true npx nx migrate --run-migrations --ifExists && rm -f migrations.json || true",
+                    "npx nx repair || true",
+                    "rm -rf package-lock.json node_modules **/node_modules",
+                    "ws=$(node -p '!!require(`./package.json`).workspaces') && npm i -ws=$ws --include-workspace-root=$ws && npm i -ws=$ws --include-workspace-root=$ws",
+                    "git add . && npx lint-staged --allow-empty || true"
+                ],
+                "executionMode": "branch",
+                "fileFilters": ["**/**"]
+            }
+        },
+        {
+            "groupName": "nx packages",
+            "matchPackageNames": ["/^@nx.*/"],
+            "postUpgradeTasks": {
+                "commands": [
+                    "npm install @nx/workspace@{{{currentVersion}}} --force --no-save --no-audit --no-fund --ignore-scripts --loglevel silent",
+                    "npm view @nx/workspace@{{{newVersion}}} version > /dev/null 2>&1 && npx nx migrate @nx/workspace@{{{newVersion}}} || true",
                     "NX_MIGRATE_SKIP_INSTALL=true npx nx migrate --run-migrations --ifExists && rm -f migrations.json || true",
                     "npx nx repair || true",
                     "rm -rf package-lock.json node_modules **/node_modules",
@@ -191,9 +208,9 @@
             "postUpgradeTasks": {
                 "commands": [
                     "npm install nx --force --no-save --no-audit --no-fund --ignore-scripts --loglevel silent",
-                    "npx nx migrate @angular/core --from=@angular/core@{{{currentVersion}}} --to=@angular/core@{{{newVersion}}} || echo ''",
-                    "npx nx migrate @angular/cli --from=@angular/cli@{{{currentVersion}}} --to=@angular/cli@{{{newVersion}}} || echo ''",
-                    "npx nx migrate @angular/cdk --from=@angular/cli@{{{currentVersion}}} --to=@angular/cli@{{{newVersion}}} || echo ''",
+                    "npm view @angular/core@{{{newVersion}}} version > /dev/null 2>&1 && npx nx migrate @angular/core@{{{newVersion}}} || true",
+                    "npm view @angular/cli@{{{newVersion}}} version > /dev/null 2>&1 && npx nx migrate @angular/cli@{{{newVersion}}} || true",
+                    "npm view @angular/cdk@{{{newVersion}}} version > /dev/null 2>&1 && npx nx migrate @angular/cdk@{{{newVersion}}} || true",
                     "NX_MIGRATE_SKIP_INSTALL=true npx nx migrate --run-migrations --ifExists && rm -f migrations.json || true",
                     "rm -rf package-lock.json node_modules **/node_modules",
                     "ws=$(node -p '!!require(`./package.json`).workspaces') && npm i -ws=$ws --include-workspace-root=$ws && npm i -ws=$ws --include-workspace-root=$ws",
@@ -209,7 +226,7 @@
             "postUpgradeTasks": {
                 "commands": [
                     "npm install nx --force --no-save --no-audit --no-fund --ignore-scripts --loglevel silent",
-                    "npx nx migrate @taiga-ui/cdk --from=@taiga-ui/cdk@{{{lookup (split currentVersion '.') 0}}} --to=@taiga-ui/cdk@{{{newVersion}}} || true",
+                    "npm view @taiga-ui/cdk@{{{newVersion}}} version > /dev/null 2>&1 && npx nx migrate @taiga-ui/cdk@{{{newVersion}}} || true",
                     "NX_MIGRATE_SKIP_INSTALL=true npx nx migrate --run-migrations --ifExists && rm -f migrations.json || true",
                     "rm -rf package-lock.json node_modules **/node_modules",
                     "ws=$(node -p '!!require(`./package.json`).workspaces') && npm i -ws=$ws --include-workspace-root=$ws && npm i -ws=$ws --include-workspace-root=$ws",
