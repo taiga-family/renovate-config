@@ -1,3 +1,10 @@
+### [1.100.0](https://github.com/taiga-family/renovate-config/compare/v1.99.0...v1.100.0) (2025-09-18)
+
+### 🐞 Bug Fixes
+
+- safety migration (#1918)
+  [(8fd888d)](https://github.com/taiga-family/renovate-config/commit/8fd888d0ef2f89dfa2ba8b31592265e5c5f2a26f)
+
 ### [1.99.0](https://github.com/taiga-family/renovate-config/compare/v1.98.0...v1.99.0) (2025-09-16)
 
 ### [1.98.0](https://github.com/taiga-family/renovate-config/compare/v1.97.0...v1.98.0) (2025-08-21)
