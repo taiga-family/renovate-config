@@ -1,3 +1,10 @@
+### [1.101.0](https://github.com/taiga-family/renovate-config/compare/v1.100.0...v1.101.0) (2025-09-19)
+
+### 🐞 Bug Fixes
+
+- update all Nx dependencies in a single branch to avoid conflicts (#1927)
+  [(ef11e6f)](https://github.com/taiga-family/renovate-config/commit/ef11e6fafcac11be9dd69d2fc29e83c39b4674c5)
+
 ### [1.100.0](https://github.com/taiga-family/renovate-config/compare/v1.99.0...v1.100.0) (2025-09-18)
 
 ### 🐞 Bug Fixes
