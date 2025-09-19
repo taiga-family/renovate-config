@@ -1,3 +1,5 @@
+### [1.102.0](https://github.com/taiga-family/renovate-config/compare/v1.101.0...v1.102.0) (2025-09-19)
+
 ### [1.101.0](https://github.com/taiga-family/renovate-config/compare/v1.100.0...v1.101.0) (2025-09-19)
 
 ### 🐞 Bug Fixes
