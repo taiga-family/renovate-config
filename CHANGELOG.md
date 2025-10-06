@@ -1,3 +1,15 @@
+### [1.103.0](https://github.com/taiga-family/renovate-config/compare/v1.102.0...v1.103.0) (2025-10-05)
+
+### 🚀 Features
+
+- reuse post commands (#1984)
+  [(f38214c)](https://github.com/taiga-family/renovate-config/commit/f38214ce67355a14f9ff3d3c856c2f72393e14d7)
+
+### 🐞 Bug Fixes
+
+- always migrate to latest minor (#1971)
+  [(6773deb)](https://github.com/taiga-family/renovate-config/commit/6773deb5fcacdf97c336030ac98534fa888668b3)
+
 ### [1.102.0](https://github.com/taiga-family/renovate-config/compare/v1.101.0...v1.102.0) (2025-09-19)
 
 ### [1.101.0](https://github.com/taiga-family/renovate-config/compare/v1.100.0...v1.101.0) (2025-09-19)
