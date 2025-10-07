@@ -61,6 +61,10 @@
             "matchPackageNames": ["/^@tiptap/.*/"]
         },
         {
+            "groupName": "playwright",
+            "matchPackageNames": ["/^@playwright/.*/", "@axe-core/playwright", "axe-playwright"]
+        },
+        {
             "groupName": "maskito",
             "matchPackageNames": ["/^@maskito/.*/"]
         },
