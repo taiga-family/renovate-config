@@ -1,3 +1,17 @@
+### [1.104.0](https://github.com/taiga-family/renovate-config/compare/v1.103.0...v1.104.0) (2025-10-11)
+
+### 🚀 Features
+
+- add playwright group (#2012)
+  [(ed9b130)](https://github.com/taiga-family/renovate-config/commit/ed9b1301fed8e204c2cb3d36384690c4774da03d)
+
+### 🐞 Bug Fixes
+
+- wrong migration version (#2015)
+  [(501329d)](https://github.com/taiga-family/renovate-config/commit/501329dd61ffc4667ed7e61b2c3af40788e8cc05)
+- don't bump dependencies inside overrides (#2013)
+  [(d224c3b)](https://github.com/taiga-family/renovate-config/commit/d224c3b100ca9b7cb1179d8b7e5f75074809d62c)
+
 ### [1.103.0](https://github.com/taiga-family/renovate-config/compare/v1.102.0...v1.103.0) (2025-10-05)
 
 ### 🚀 Features
