@@ -1,38 +1,38 @@
 {
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
     "extends": [":semanticCommitScopeDisabled"],
-    "onboarding": false,
-    "requireConfig": "optional",
     "baseBranchPatterns": ["main"],
-    "branchPrefix": "renovate/",
-    "timezone": "Europe/Moscow",
     "enabledManagers": ["npm", "github-actions"],
     "fetchChangeLogs": "off",
     "internalChecksFilter": "strict",
     "prHourlyLimit": 0,
     "branchConcurrentLimit": 0,
     "prConcurrentLimit": 2,
+    "labels": [],
     "rebaseWhen": "auto",
-    "recreateWhen": "always",
-    "semanticCommits": "enabled",
-    "commitMessageLowerCase": "auto",
-    "labels": ["dependencies"],
     "automerge": false,
+    "recreateWhen": "always",
+    "repositoryCache": "enabled",
+    "platform": "github",
     "autoApprove": true,
     "separateMajorMinor": true,
     "separateMinorPatch": false,
     "dependencyDashboard": false,
     "dependencyDashboardApproval": false,
-    "repositoryCache": "enabled",
-    "rollbackPrs": true,
-    "digest": {"enabled": false},
-    "pinDigests": false,
-    "skipInstalls": true,
-    "cloneSubmodules": false,
-    "allowScripts": true,
+    "branchPrefix": "renovate/",
+    "timezone": "Europe/Moscow",
+    "commitMessageLowerCase": "auto",
+    "semanticCommits": "enabled",
+    "onboarding": false,
     "allowCustomCrateRegistries": true,
+    "allowScripts": true,
     "exposeAllEnv": true,
-    "includePaths": ["**/package.json"],
+    "requireConfig": "optional",
+    "digest": {"enabled": false},
+    "skipInstalls": true,
+    "pinDigests": false,
+    "cloneSubmodules": true,
+    "includePaths": ["./package.json", "**/package.json", "!node_modules/**"],
     "suppressNotifications": ["configErrorIssue", "dependencyLookupWarnings"],
     "prBodyTemplate": "{{{table}}}{{{notes}}}{{{changelogs}}}{{{controls}}}{{{footer}}}",
     "prBodyColumns": ["Package", "Type", "Change"],
@@ -43,31 +43,30 @@
             "git add . && npx lint-staged --allow-empty || true"
         ],
         "executionMode": "branch",
-        "fileFilters": ["**/package.json", "package-lock.json"]
+        "fileFilters": ["**/**"]
     },
     "packageRules": [
         {"matchDepTypes": ["overrides"], "enabled": false},
-        {"matchDepTypes": ["dependencies"], "rangeStrategy": "pin"},
-        {"matchDepTypes": ["devDependencies"], "rangeStrategy": "bump"},
+        {
+            "matchDepTypes": ["devDependencies", "dependencies"],
+            "rangeStrategy": "pin"
+        },
         {
             "matchDepTypes": ["peerDependencies", "optionalDependencies"],
             "rangeStrategy": "bump"
         },
-        {
-            "groupName": "GitHub Actions",
-            "matchManagers": ["github-actions"],
-            "matchUpdateTypes": ["major", "minor", "patch"],
-            "labels": ["ci", "github-actions"],
-            "postUpgradeTasks": null
-        },
         {"groupName": "tiptap", "matchPackageNames": ["/^@tiptap/.*/"]},
+        {
+            "groupName": "playwright",
+            "matchPackageNames": ["/^@playwright/.*/", "@axe-core/playwright", "axe-playwright"]
+        },
         {"groupName": "maskito", "matchPackageNames": ["/^@maskito/.*/"]},
         {"groupName": "cspell", "matchPackageNames": ["/^@cspell/.*/"]},
         {"groupName": "prosemirror", "matchPackageNames": ["/^prosemirror.*/"]},
         {"groupName": "definitely typed", "matchPackageNames": ["/^@types/.*/"]},
         {
             "groupName": "prettier",
-            "matchPackageNames": ["/^prettier$/", "/^@prettier/.*/", "/^prettier-.*/"]
+            "matchPackageNames": ["/^prettier/", "/^@prettier/.*/", "/^prettier-.*/"]
         },
         {
             "groupName": "cypress",
@@ -76,34 +75,38 @@
         {"groupName": "commitlint", "matchPackageNames": ["/^@commitlint/.*/"]},
         {
             "groupName": "release-it",
-            "matchPackageNames": ["/^@release-it/.*/", "release-it"]
+            "matchPackageNames": ["/^@release-it/.*/", "/^release-it$/"]
         },
         {"groupName": "docsearch", "matchPackageNames": ["/^@docsearch/.*/"]},
         {"groupName": "tinkoff", "matchPackageNames": ["/^@tinkoff/.*/"]},
         {
             "groupName": "rollup",
-            "matchPackageNames": ["/^rollup.*/", "/@rollup\\/pluginutils/"]
+            "matchPackageNames": ["/^rollup.*/", "/@rollup/pluginutils/"]
         },
         {"groupName": "swc", "matchPackageNames": ["/^@swc.*/"]},
         {"groupName": "stackblitz sdk", "matchPackageNames": ["/^@stackblitz/.*/"]},
         {
             "groupName": "babel",
-            "matchPackageNames": ["/^@babel/eslint-.*/", "/^babel.*/"]
+            "matchPackageNames": ["/^@babel/eslint-.*/", "/babel.*/"]
         },
         {
             "groupName": "jest",
-            "matchPackageNames": ["/^jest.*/", "ts-jest", "jest-preset-angular"]
+            "matchPackageNames": ["/^jest.*/", "/^ts-jest$/", "/^jest-preset-angular$/"]
         },
         {
             "groupName": "react",
             "extends": ["monorepo:react"],
-            "matchPackageNames": ["/^react.*/", "@types/react", "/^@types/react-.*/", "/^react-.*/"],
-            "enabled": false,
-            "matchUpdateTypes": ["major"]
+            "matchPackageNames": ["/^react.*/", "/^@types/react$/", "/^@types/react-.*/", "/^react-.*/"]
         },
         {"groupName": "vue", "matchPackageNames": ["/^vue.*/"]},
         {"groupName": "eslint", "matchPackageNames": ["/^eslint.*/"]},
         {"groupName": "jasmine", "matchPackageNames": ["/^jasmine.*/"]},
+        {
+            "groupName": "GitHub Actions (all)",
+            "matchManagers": ["github-actions"],
+            "rangeStrategy": "replace",
+            "enabled": true
+        },
         {
             "groupName": "@ng-web-apis/* deps",
             "matchPackageNames": ["/^@ng-web-apis/.*/"]
@@ -131,7 +134,7 @@
                     "npx nx repair || true"
                 ],
                 "executionMode": "branch",
-                "fileFilters": ["**/package.json"]
+                "fileFilters": ["**/**"]
             }
         },
         {
@@ -139,12 +142,22 @@
             "matchPackageNames": [
                 "/^@angular.*/",
                 "/^@angular-devkit.*/",
-                "/^@schematics.*/",
                 "!/^@angular-eslint.*/",
+                "/^@schematics.*/",
+                "/^typescript$/",
+                "/^ng-packagr$/",
                 "!@angular/cdk"
             ],
-            "enabled": false,
-            "matchUpdateTypes": ["major"]
+            "postUpgradeTasks": {
+                "commands": [
+                    "npm install nx --force --no-save --no-audit --no-fund --ignore-scripts --loglevel silent",
+                    "npm view @angular/core@{{{newVersion}}} version > /dev/null 2>&1 && npx nx migrate @angular/core@{{{newVersion}}} || true",
+                    "npm view @angular/cli@{{{newVersion}}} version > /dev/null 2>&1 && npx nx migrate @angular/cli@{{{newVersion}}} || true",
+                    "NX_MIGRATE_SKIP_INSTALL=true npx nx migrate --run-migrations --ifExists && rm -f migrations.json || true"
+                ],
+                "executionMode": "branch",
+                "fileFilters": ["**/**"]
+            }
         },
         {
             "groupName": "@angular/cdk migrations",
@@ -155,7 +168,7 @@
                     "npx nx migrate @angular/cdk@{{{newVersion}}} || true"
                 ],
                 "executionMode": "branch",
-                "fileFilters": ["**/package.json"]
+                "fileFilters": ["**/**"]
             }
         },
         {
@@ -168,8 +181,46 @@
                     "NX_MIGRATE_SKIP_INSTALL=true npx nx migrate --run-migrations --ifExists && rm -f migrations.json || true"
                 ],
                 "executionMode": "branch",
-                "fileFilters": ["**/package.json"]
+                "fileFilters": ["**/**"]
             }
-        }
+        },
+        {"enabled": false, "matchDepTypes": ["engines"]},
+        {
+            "enabled": false,
+            "matchUpdateTypes": ["major", "minor"],
+            "matchPackageNames": ["/^typescript$/", "/^rxjs$/"]
+        },
+        {
+            "enabled": false,
+            "matchUpdateTypes": ["major"],
+            "matchPackageNames": [
+                "/^@angular.*/",
+                "/^@schematics.*/",
+                "/^@nguniversal.*/",
+                "/^ngx-highlightjs$/",
+                "/^ngx-markdown$/",
+                "/^ng-packagr/",
+                "/^eslint$/",
+                "/^glob$/"
+            ]
+        },
+        {
+            "enabled": false,
+            "matchDepTypes": ["peerDependencies", "optionalDependencies"],
+            "matchPackageNames": [
+                "/^libphonenumber-js$/",
+                "/^highlight.js$/",
+                "/^typescript$/",
+                "/^react$/",
+                "/^vue$/",
+                "/^zone.js$/",
+                "/^rxjs$/",
+                "/^@angular.*/",
+                "/^@schematics.*/",
+                "/^react.*/",
+                "/^vue.*/"
+            ]
+        },
+        {"enabled": false, "groupName": "react", "matchUpdateTypes": ["major"]}
     ]
 }
