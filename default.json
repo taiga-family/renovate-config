@@ -101,7 +101,12 @@
         {"groupName": "vue", "matchPackageNames": ["/^vue.*/"]},
         {"groupName": "eslint", "matchPackageNames": ["/^eslint.*/"]},
         {"groupName": "jasmine", "matchPackageNames": ["/^jasmine.*/"]},
-        {"groupName": "GitHub Actions", "matchPackageNames": ["/^actions/.*/"]},
+        {
+            "groupName": "GitHub Actions (all)",
+            "matchManagers": ["github-actions"],
+            "rangeStrategy": "replace",
+            "enabled": true
+        },
         {
             "groupName": "@ng-web-apis/* deps",
             "matchPackageNames": ["/^@ng-web-apis/.*/"]
