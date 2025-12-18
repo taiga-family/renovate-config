@@ -48,6 +48,10 @@
     "packageRules": [
         {"matchDepTypes": ["overrides"], "enabled": false},
         {
+            "enabled": false,
+            "matchUpdateTypes": ["major", "minor", "patch"]
+        },
+        {
             "matchDepTypes": ["devDependencies", "dependencies"],
             "rangeStrategy": "pin"
         },
@@ -102,10 +106,11 @@
         {"groupName": "eslint", "matchPackageNames": ["/^eslint.*/"]},
         {"groupName": "jasmine", "matchPackageNames": ["/^jasmine.*/"]},
         {
-            "groupName": "GitHub Actions (all)",
+            "groupName": "GitHub Actions",
             "matchManagers": ["github-actions"],
-            "rangeStrategy": "replace",
-            "enabled": true
+            "matchUpdateTypes": ["major", "minor", "patch"],
+            "labels": ["ci", "github-actions"],
+            "postUpgradeTasks": null
         },
         {
             "groupName": "@ng-web-apis/* deps",
