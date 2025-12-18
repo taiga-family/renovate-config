@@ -48,7 +48,7 @@
     "packageRules": [
         {"matchDepTypes": ["overrides"], "enabled": false},
         {
-            "enabled": false,
+            "enabled": true,
             "matchUpdateTypes": ["major", "minor", "patch"]
         },
         {
