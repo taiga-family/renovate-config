@@ -28,9 +28,7 @@
     "allowScripts": true,
     "exposeAllEnv": true,
     "requireConfig": "optional",
-    "digest": {
-        "enabled": false
-    },
+    "digest": {"enabled": false},
     "skipInstalls": true,
     "pinDigests": false,
     "cloneSubmodules": true,
@@ -48,10 +46,7 @@
         "fileFilters": ["**/**"]
     },
     "packageRules": [
-        {
-            "matchDepTypes": ["overrides"],
-            "enabled": false
-        },
+        {"matchDepTypes": ["overrides"], "enabled": false},
         {
             "matchDepTypes": ["devDependencies", "dependencies"],
             "rangeStrategy": "pin"
@@ -60,30 +55,15 @@
             "matchDepTypes": ["peerDependencies", "optionalDependencies"],
             "rangeStrategy": "bump"
         },
-        {
-            "groupName": "tiptap",
-            "matchPackageNames": ["/^@tiptap/.*/"]
-        },
+        {"groupName": "tiptap", "matchPackageNames": ["/^@tiptap/.*/"]},
         {
             "groupName": "playwright",
             "matchPackageNames": ["/^@playwright/.*/", "@axe-core/playwright", "axe-playwright"]
         },
-        {
-            "groupName": "maskito",
-            "matchPackageNames": ["/^@maskito/.*/"]
-        },
-        {
-            "groupName": "cspell",
-            "matchPackageNames": ["/^@cspell/.*/"]
-        },
-        {
-            "groupName": "prosemirror",
-            "matchPackageNames": ["/^prosemirror.*/"]
-        },
-        {
-            "groupName": "definitely typed",
-            "matchPackageNames": ["/^@types/.*/"]
-        },
+        {"groupName": "maskito", "matchPackageNames": ["/^@maskito/.*/"]},
+        {"groupName": "cspell", "matchPackageNames": ["/^@cspell/.*/"]},
+        {"groupName": "prosemirror", "matchPackageNames": ["/^prosemirror.*/"]},
+        {"groupName": "definitely typed", "matchPackageNames": ["/^@types/.*/"]},
         {
             "groupName": "prettier",
             "matchPackageNames": ["/^prettier/", "/^@prettier/.*/", "/^prettier-.*/"]
@@ -92,34 +72,19 @@
             "groupName": "cypress",
             "matchPackageNames": ["/^cypress/", "/^cy2/", "/^cypress-.*/"]
         },
-        {
-            "groupName": "commitlint",
-            "matchPackageNames": ["/^@commitlint/.*/"]
-        },
+        {"groupName": "commitlint", "matchPackageNames": ["/^@commitlint/.*/"]},
         {
             "groupName": "release-it",
             "matchPackageNames": ["/^@release-it/.*/", "/^release-it$/"]
         },
-        {
-            "groupName": "docsearch",
-            "matchPackageNames": ["/^@docsearch/.*/"]
-        },
-        {
-            "groupName": "tinkoff",
-            "matchPackageNames": ["/^@tinkoff/.*/"]
-        },
+        {"groupName": "docsearch", "matchPackageNames": ["/^@docsearch/.*/"]},
+        {"groupName": "tinkoff", "matchPackageNames": ["/^@tinkoff/.*/"]},
         {
             "groupName": "rollup",
             "matchPackageNames": ["/^rollup.*/", "/@rollup/pluginutils/"]
         },
-        {
-            "groupName": "swc",
-            "matchPackageNames": ["/^@swc.*/"]
-        },
-        {
-            "groupName": "stackblitz sdk",
-            "matchPackageNames": ["/^@stackblitz/.*/"]
-        },
+        {"groupName": "swc", "matchPackageNames": ["/^@swc.*/"]},
+        {"groupName": "stackblitz sdk", "matchPackageNames": ["/^@stackblitz/.*/"]},
         {
             "groupName": "babel",
             "matchPackageNames": ["/^@babel/eslint-.*/", "/babel.*/"]
@@ -133,22 +98,10 @@
             "extends": ["monorepo:react"],
             "matchPackageNames": ["/^react.*/", "/^@types/react$/", "/^@types/react-.*/", "/^react-.*/"]
         },
-        {
-            "groupName": "vue",
-            "matchPackageNames": ["/^vue.*/"]
-        },
-        {
-            "groupName": "eslint",
-            "matchPackageNames": ["/^eslint.*/"]
-        },
-        {
-            "groupName": "jasmine",
-            "matchPackageNames": ["/^jasmine.*/"]
-        },
-        {
-            "groupName": "GitHub Actions",
-            "matchPackageNames": ["/^actions/.*/"]
-        },
+        {"groupName": "vue", "matchPackageNames": ["/^vue.*/"]},
+        {"groupName": "eslint", "matchPackageNames": ["/^eslint.*/"]},
+        {"groupName": "jasmine", "matchPackageNames": ["/^jasmine.*/"]},
+        {"groupName": "GitHub Actions", "matchPackageNames": ["/^actions/.*/"]},
         {
             "groupName": "@ng-web-apis/* deps",
             "matchPackageNames": ["/^@ng-web-apis/.*/"]
@@ -215,7 +168,7 @@
         },
         {
             "groupName": "@taiga-ui/* deps",
-            "matchPackageNames": ["/^@taiga-ui/.*/"],
+            "matchPackageNames": ["/^@taiga-ui/.*/", "!@taiga-ui/editor"],
             "postUpgradeTasks": {
                 "commands": [
                     "npm install nx --force --no-save --no-audit --no-fund --ignore-scripts --loglevel silent",
@@ -226,10 +179,7 @@
                 "fileFilters": ["**/**"]
             }
         },
-        {
-            "enabled": false,
-            "matchDepTypes": ["engines"]
-        },
+        {"enabled": false, "matchDepTypes": ["engines"]},
         {
             "enabled": false,
             "matchUpdateTypes": ["major", "minor"],
@@ -266,10 +216,6 @@
                 "/^vue.*/"
             ]
         },
-        {
-            "enabled": false,
-            "groupName": "react",
-            "matchUpdateTypes": ["major"]
-        }
+        {"enabled": false, "groupName": "react", "matchUpdateTypes": ["major"]}
     ]
 }
