@@ -3,7 +3,7 @@
     "extends": [":semanticCommitScopeDisabled"],
     "onboarding": false,
     "requireConfig": "optional",
-    "baseBranchPatterns": ["master", "main"],
+    "baseBranchPatterns": ["main"],
     "branchPrefix": "renovate/",
     "timezone": "Europe/Moscow",
     "enabledManagers": ["npm", "gitlabci", "dockerfile", "github-actions"],
@@ -51,7 +51,7 @@
             "git add . && npx lint-staged --allow-empty || true"
         ],
         "executionMode": "branch",
-        "fileFilters": ["**/**"]
+        "fileFilters": ["**/package.json"]
     },
     "packageRules": [
         {
@@ -179,7 +179,7 @@
                     "npx nx repair || true"
                 ],
                 "executionMode": "branch",
-                "fileFilters": ["**/**"]
+                "fileFilters": ["**/package.json"]
             }
         },
         {
@@ -201,7 +201,7 @@
                     "NX_MIGRATE_SKIP_INSTALL=true npx nx migrate --run-migrations --ifExists && rm -f migrations.json || true"
                 ],
                 "executionMode": "branch",
-                "fileFilters": ["**/**"]
+                "fileFilters": ["**/package.json"]
             }
         },
         {
@@ -213,7 +213,7 @@
                     "npx nx migrate @angular/cdk@{{{newVersion}}} || true"
                 ],
                 "executionMode": "branch",
-                "fileFilters": ["**/**"]
+                "fileFilters": ["**/package.json"]
             }
         },
         {
@@ -226,7 +226,7 @@
                     "NX_MIGRATE_SKIP_INSTALL=true npx nx migrate --run-migrations --ifExists && rm -f migrations.json || true"
                 ],
                 "executionMode": "branch",
-                "fileFilters": ["**/**"]
+                "fileFilters": ["**/package.json"]
             }
         },
         {
