@@ -3,15 +3,15 @@
     "extends": [":semanticCommitScopeDisabled"],
     "onboarding": false,
     "requireConfig": "optional",
-    "baseBranchPatterns": ["main"],
+    "baseBranchPatterns": ["master", "main"],
     "branchPrefix": "renovate/",
     "timezone": "Europe/Moscow",
-    "enabledManagers": ["npm", "github-actions"],
+    "enabledManagers": ["npm", "gitlabci", "dockerfile", "github-actions"],
     "fetchChangeLogs": "off",
     "internalChecksFilter": "strict",
     "prHourlyLimit": 0,
-    "branchConcurrentLimit": 0,
-    "prConcurrentLimit": 2,
+    "branchConcurrentLimit": 2,
+    "prConcurrentLimit": 3,
     "rebaseWhen": "auto",
     "recreateWhen": "always",
     "semanticCommits": "enabled",
@@ -32,7 +32,15 @@
     "allowScripts": true,
     "allowCustomCrateRegistries": true,
     "exposeAllEnv": true,
-    "includePaths": ["**/package.json"],
+    "includePaths": [
+        "**/package.json",
+        "**/package-lock.json",
+        ".github/workflows/**",
+        "**/Dockerfile",
+        "**/dockerfile",
+        ".gitlab-ci.yml",
+        ".gitlab/**"
+    ],
     "suppressNotifications": ["configErrorIssue", "dependencyLookupWarnings"],
     "prBodyTemplate": "{{{table}}}{{{notes}}}{{{changelogs}}}{{{controls}}}{{{footer}}}",
     "prBodyColumns": ["Package", "Type", "Change"],
@@ -46,7 +54,10 @@
         "fileFilters": ["**/**"]
     },
     "packageRules": [
-        {"matchDepTypes": ["overrides"], "enabled": false},
+        {
+            "matchDepTypes": ["overrides"],
+            "enabled": false
+        },
         {
             "enabled": true,
             "matchUpdateTypes": ["major", "minor", "patch"]
@@ -59,15 +70,30 @@
             "matchDepTypes": ["peerDependencies", "optionalDependencies"],
             "rangeStrategy": "bump"
         },
-        {"groupName": "tiptap", "matchPackageNames": ["/^@tiptap/.*/"]},
+        {
+            "groupName": "tiptap",
+            "matchPackageNames": ["/^@tiptap/.*/"]
+        },
         {
             "groupName": "playwright",
             "matchPackageNames": ["/^@playwright/.*/", "@axe-core/playwright", "axe-playwright"]
         },
-        {"groupName": "maskito", "matchPackageNames": ["/^@maskito/.*/"]},
-        {"groupName": "cspell", "matchPackageNames": ["/^@cspell/.*/"]},
-        {"groupName": "prosemirror", "matchPackageNames": ["/^prosemirror.*/"]},
-        {"groupName": "definitely typed", "matchPackageNames": ["/^@types/.*/"]},
+        {
+            "groupName": "maskito",
+            "matchPackageNames": ["/^@maskito/.*/"]
+        },
+        {
+            "groupName": "cspell",
+            "matchPackageNames": ["/^@cspell/.*/"]
+        },
+        {
+            "groupName": "prosemirror",
+            "matchPackageNames": ["/^prosemirror.*/"]
+        },
+        {
+            "groupName": "definitely typed",
+            "matchPackageNames": ["/^@types/.*/"]
+        },
         {
             "groupName": "prettier",
             "matchPackageNames": ["/^prettier/", "/^@prettier/.*/", "/^prettier-.*/"]
@@ -81,14 +107,26 @@
             "groupName": "release-it",
             "matchPackageNames": ["/^@release-it/.*/", "/^release-it$/"]
         },
-        {"groupName": "docsearch", "matchPackageNames": ["/^@docsearch/.*/"]},
-        {"groupName": "tinkoff", "matchPackageNames": ["/^@tinkoff/.*/"]},
+        {
+            "groupName": "docsearch",
+            "matchPackageNames": ["/^@docsearch/.*/"]
+        },
+        {
+            "groupName": "tinkoff",
+            "matchPackageNames": ["/^@tinkoff/.*/"]
+        },
         {
             "groupName": "rollup",
             "matchPackageNames": ["/^rollup.*/", "/@rollup/pluginutils/"]
         },
-        {"groupName": "swc", "matchPackageNames": ["/^@swc.*/"]},
-        {"groupName": "stackblitz sdk", "matchPackageNames": ["/^@stackblitz/.*/"]},
+        {
+            "groupName": "swc",
+            "matchPackageNames": ["/^@swc.*/"]
+        },
+        {
+            "groupName": "stackblitz sdk",
+            "matchPackageNames": ["/^@stackblitz/.*/"]
+        },
         {
             "groupName": "babel",
             "matchPackageNames": ["/^@babel/eslint-.*/", "/babel.*/"]
@@ -102,15 +140,17 @@
             "extends": ["monorepo:react"],
             "matchPackageNames": ["/^react.*/", "/^@types/react$/", "/^@types/react-.*/", "/^react-.*/"]
         },
-        {"groupName": "vue", "matchPackageNames": ["/^vue.*/"]},
-        {"groupName": "eslint", "matchPackageNames": ["/^eslint.*/"]},
-        {"groupName": "jasmine", "matchPackageNames": ["/^jasmine.*/"]},
         {
-            "groupName": "GitHub Actions",
-            "matchManagers": ["github-actions"],
-            "matchUpdateTypes": ["major", "minor", "patch"],
-            "labels": ["ci", "github-actions"],
-            "postUpgradeTasks": null
+            "groupName": "vue",
+            "matchPackageNames": ["/^vue.*/"]
+        },
+        {
+            "groupName": "eslint",
+            "matchPackageNames": ["/^eslint.*/"]
+        },
+        {
+            "groupName": "jasmine",
+            "matchPackageNames": ["/^jasmine.*/"]
         },
         {
             "groupName": "@ng-web-apis/* deps",
@@ -189,7 +229,15 @@
                 "fileFilters": ["**/**"]
             }
         },
-        {"enabled": false, "matchDepTypes": ["engines"]},
+        {
+            "matchManagers": ["github-actions"],
+            "matchDatasources": ["github-actions"],
+            "matchUpdateTypes": ["major", "minor", "patch"]
+        },
+        {
+            "enabled": false,
+            "matchDepTypes": ["engines"]
+        },
         {
             "enabled": false,
             "matchUpdateTypes": ["major", "minor"],
