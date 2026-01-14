@@ -194,7 +194,8 @@
                 "/^@schematics.*/",
                 "/^typescript$/",
                 "/^ng-packagr$/",
-                "!@angular/cdk"
+                "!@angular/cdk",
+                "!@angular/cli"
             ],
             "postUpgradeTasks": {
                 "commands": [
@@ -217,6 +218,21 @@
                 "commands": [
                     "npm install nx --force --no-save --no-audit --no-fund --ignore-scripts --loglevel silent",
                     "npx nx migrate @angular/cdk@{{{newVersion}}} || true",
+                    "rm -rf package-lock.json node_modules **/node_modules",
+                    "ws=$(node -p '!!require(`./package.json`).workspaces') && npm i -ws=$ws --include-workspace-root=$ws && npm i -ws=$ws --include-workspace-root=$ws",
+                    "git add . && npx lint-staged --allow-empty || true"
+                ],
+                "executionMode": "branch",
+                "fileFilters": ["**/package.json"]
+            }
+        },
+        {
+            "groupName": "@angular/cli migrations",
+            "matchPackageNames": ["@angular/cli"],
+            "postUpgradeTasks": {
+                "commands": [
+                    "npm install nx --force --no-save --no-audit --no-fund --ignore-scripts --loglevel silent",
+                    "npx nx migrate @angular/cli@{{{newVersion}}} || true",
                     "rm -rf package-lock.json node_modules **/node_modules",
                     "ws=$(node -p '!!require(`./package.json`).workspaces') && npm i -ws=$ws --include-workspace-root=$ws && npm i -ws=$ws --include-workspace-root=$ws",
                     "git add . && npx lint-staged --allow-empty || true"
