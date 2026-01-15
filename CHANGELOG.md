@@ -1,3 +1,29 @@
+### [1.105.0](https://github.com/taiga-family/renovate-config/compare/v1.104.0...v1.105.0) (2026-01-15)
+
+### 🚀 Features
+
+- separate angular cli (#2223)
+  [(a0235b1)](https://github.com/taiga-family/renovate-config/commit/a0235b1d5d59b037d0b55b9b6a77413739ce9c82)
+- default.json (#2209)
+  [(8e97804)](https://github.com/taiga-family/renovate-config/commit/8e9780478fcfe41a9afeff5e231e5a159f97cbfb)
+- default.json (#2207)
+  [(ac657f5)](https://github.com/taiga-family/renovate-config/commit/ac657f591d360b38111e387a4fdb87ae895da3d7)
+- default.json (#2205)
+  [(3c018b4)](https://github.com/taiga-family/renovate-config/commit/3c018b432f704390d8a0c382ab517b73a2d94475)
+- default.json (#2204)
+  [(aed3ef2)](https://github.com/taiga-family/renovate-config/commit/aed3ef2a324eabef2442a189f4e6d5946cf99ff1)
+- default.json (#2202)
+  [(9b8960c)](https://github.com/taiga-family/renovate-config/commit/9b8960c680334b49fd6e812d63c3b9b42e3a6148)
+- enable github action majority (#2201)
+  [(62a52e2)](https://github.com/taiga-family/renovate-config/commit/62a52e27b6e3f6fb5da0bbf175a15a7921663bef)
+
+### 🐞 Bug Fixes
+
+- postUpgrade is not inherited (#2222)
+  [(45ce706)](https://github.com/taiga-family/renovate-config/commit/45ce706825858d6a9aaa847064a6a2083efe880a)
+- editor has different migration flow (#2200)
+  [(cb5980f)](https://github.com/taiga-family/renovate-config/commit/cb5980f7211fe7c49005041ecf7b30b26977d494)
+
 ### [1.104.0](https://github.com/taiga-family/renovate-config/compare/v1.103.0...v1.104.0) (2025-10-11)
 
 ### 🚀 Features
