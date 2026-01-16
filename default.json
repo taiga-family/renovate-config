@@ -258,6 +258,21 @@
             }
         },
         {
+            "groupName": "stylelint dependencies",
+            "matchPackageNames": [
+                "stylelint",
+                "@stylistic/stylelint-config",
+                "@stylistic/stylelint-plugin",
+                "postcss",
+                "postcss-less",
+                "stylelint-config-standard",
+                "stylelint-order",
+                "stylelint-plugin-logical-css",
+                "stylelint-rem-over-px",
+                "stylelint-use-logical"
+            ]
+        },
+        {
             "matchManagers": ["github-actions"],
             "matchDatasources": ["github-actions"],
             "matchUpdateTypes": ["major", "minor", "patch"]
