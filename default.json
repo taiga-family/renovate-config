@@ -302,6 +302,10 @@
                 "/^vue.*/"
             ]
         },
-        {"enabled": false, "groupName": "react", "matchUpdateTypes": ["major"]}
+        {
+            "enabled": false,
+            "groupName": "major dependencies",
+            "matchUpdateTypes": ["major"]
+        }
     ]
 }
