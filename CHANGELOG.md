@@ -1,3 +1,10 @@
+### [1.106.0](https://github.com/taiga-family/renovate-config/compare/v1.105.0...v1.106.0) (2026-01-16)
+
+### 🚀 Features
+
+- add stylelint group (#2231)
+  [(675c11f)](https://github.com/taiga-family/renovate-config/commit/675c11f7d166deaaf71556f42b6b5b1215142d5f)
+
 ### [1.105.0](https://github.com/taiga-family/renovate-config/compare/v1.104.0...v1.105.0) (2026-01-15)
 
 ### 🚀 Features
