@@ -48,7 +48,8 @@
         "commands": [
             "rm -rf package-lock.json node_modules **/node_modules",
             "ws=$(node -p '!!require(`./package.json`).workspaces') && npm i -ws=$ws --include-workspace-root=$ws && npm i -ws=$ws --include-workspace-root=$ws",
-            "git add . && npx lint-staged --allow-empty || true"
+            "git add .",
+            "npx lint-staged --allow-empty || true"
         ],
         "executionMode": "branch",
         "fileFilters": ["**/package.json"]
@@ -179,7 +180,8 @@
                     "npx nx repair || true",
                     "rm -rf package-lock.json node_modules **/node_modules",
                     "ws=$(node -p '!!require(`./package.json`).workspaces') && npm i -ws=$ws --include-workspace-root=$ws && npm i -ws=$ws --include-workspace-root=$ws",
-                    "git add . && npx lint-staged --allow-empty || true"
+                    "git add .",
+                    "npx lint-staged --allow-empty || true"
                 ],
                 "executionMode": "branch",
                 "fileFilters": ["**/package.json"]
@@ -205,7 +207,8 @@
                     "NX_MIGRATE_SKIP_INSTALL=true npx nx migrate --run-migrations --ifExists && rm -f migrations.json || true",
                     "rm -rf package-lock.json node_modules **/node_modules",
                     "ws=$(node -p '!!require(`./package.json`).workspaces') && npm i -ws=$ws --include-workspace-root=$ws && npm i -ws=$ws --include-workspace-root=$ws",
-                    "git add . && npx lint-staged --allow-empty || true"
+                    "git add .",
+                    "npx lint-staged --allow-empty || true"
                 ],
                 "executionMode": "branch",
                 "fileFilters": ["**/package.json"]
@@ -220,7 +223,8 @@
                     "npx nx migrate @angular/cdk@{{{newVersion}}} || true",
                     "rm -rf package-lock.json node_modules **/node_modules",
                     "ws=$(node -p '!!require(`./package.json`).workspaces') && npm i -ws=$ws --include-workspace-root=$ws && npm i -ws=$ws --include-workspace-root=$ws",
-                    "git add . && npx lint-staged --allow-empty || true"
+                    "git add .",
+                    "npx lint-staged --allow-empty || true"
                 ],
                 "executionMode": "branch",
                 "fileFilters": ["**/package.json"]
@@ -235,7 +239,8 @@
                     "npx nx migrate @angular/cli@{{{newVersion}}} || true",
                     "rm -rf package-lock.json node_modules **/node_modules",
                     "ws=$(node -p '!!require(`./package.json`).workspaces') && npm i -ws=$ws --include-workspace-root=$ws && npm i -ws=$ws --include-workspace-root=$ws",
-                    "git add . && npx lint-staged --allow-empty || true"
+                    "git add .",
+                    "npx lint-staged --allow-empty || true"
                 ],
                 "executionMode": "branch",
                 "fileFilters": ["**/package.json"]
@@ -251,7 +256,8 @@
                     "NX_MIGRATE_SKIP_INSTALL=true npx nx migrate --run-migrations --ifExists && rm -f migrations.json || true",
                     "rm -rf package-lock.json node_modules **/node_modules",
                     "ws=$(node -p '!!require(`./package.json`).workspaces') && npm i -ws=$ws --include-workspace-root=$ws && npm i -ws=$ws --include-workspace-root=$ws",
-                    "git add . && npx lint-staged --allow-empty || true"
+                    "git add .",
+                    "npx lint-staged --allow-empty || true"
                 ],
                 "executionMode": "branch",
                 "fileFilters": ["**/package.json"]
