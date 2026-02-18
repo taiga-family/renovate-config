@@ -166,6 +166,10 @@
             "matchPackageNames": ["/^@angular-eslint.*/"]
         },
         {
+            "groupName": "@html-eslint/* deps",
+            "matchPackageNames": ["/^@html-eslint.*/"]
+        },
+        {
             "groupName": "@typescript-eslint/* deps",
             "matchPackageNames": ["/^@typescript-eslint/.*/", "typescript-eslint"]
         },
