@@ -16,7 +16,7 @@
     "recreateWhen": "always",
     "semanticCommits": "enabled",
     "commitMessageLowerCase": "auto",
-    "labels": ["dependencies"],
+    "labels": [],
     "automerge": false,
     "autoApprove": true,
     "separateMajorMinor": false,
