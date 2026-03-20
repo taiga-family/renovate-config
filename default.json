@@ -146,8 +146,12 @@
             "matchPackageNames": ["/^vue.*/"]
         },
         {
-            "groupName": "eslint",
-            "matchPackageNames": ["/^eslint.*/"]
+            "groupName": "eslint core",
+            "matchPackageNames": ["eslint"]
+        },
+        {
+            "groupName": "eslint ecosystem",
+            "matchPackageNames": ["/^@eslint\\/.*/", "/^@eslint-community\\/.*/", "/^eslint-.*/"]
         },
         {
             "groupName": "jasmine",
