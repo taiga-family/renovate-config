@@ -1,3 +1,17 @@
+### [1.108.0](https://github.com/taiga-family/renovate-config/compare/v1.107.0...v1.108.0) (2026-03-20)
+
+### 🚀 Features
+
+- drop `dependencies` label
+  [(e1aa35b)](https://github.com/taiga-family/renovate-config/commit/e1aa35b8aed5214f52cc4e0d0908354e8670e1f2)
+- upgrade github actions always (#2284)
+  [(d5d7a7f)](https://github.com/taiga-family/renovate-config/commit/d5d7a7fe5e656a014eb65a145b0de875bba7d929)
+
+### 🐞 Bug Fixes
+
+- decompose eslint group (#2285)
+  [(4443d4f)](https://github.com/taiga-family/renovate-config/commit/4443d4fe0ab31820bf6e0327c9d7f2d69d3f189e)
+
 ### [1.107.0](https://github.com/taiga-family/renovate-config/compare/v1.106.0...v1.107.0) (2026-02-09)
 
 ### 🚀 Features
