@@ -27,7 +27,7 @@
     "rollbackPrs": true,
     "digest": {"enabled": false},
     "pinDigests": false,
-    "skipInstalls": true,
+    "skipInstalls": false,
     "cloneSubmodules": true,
     "allowScripts": true,
     "allowCustomCrateRegistries": true,
@@ -45,12 +45,7 @@
     "prBodyTemplate": "{{{table}}}{{{notes}}}{{{changelogs}}}{{{controls}}}{{{footer}}}",
     "prBodyColumns": ["Package", "Type", "Change"],
     "postUpgradeTasks": {
-        "commands": [
-            "rm -rf package-lock.json node_modules **/node_modules",
-            "ws=$(node -p '!!require(`./package.json`).workspaces') && npm i -ws=$ws --include-workspace-root=$ws && npm i -ws=$ws --include-workspace-root=$ws",
-            "git add .",
-            "npx lint-staged --allow-empty || true"
-        ],
+        "commands": ["sh -lc 'npx lint-staged --allow-empty || true'"],
         "executionMode": "branch",
         "fileFilters": ["**/package.json"]
     },
@@ -178,14 +173,9 @@
             "matchPackageNames": ["/^nx$/", "/^@nx.*/"],
             "postUpgradeTasks": {
                 "commands": [
-                    "npm install nx@{{{currentVersion}}} --force --no-save --no-audit --no-fund --ignore-scripts --loglevel silent",
-                    "npx nx migrate nx@{{{newVersion}}} || true",
-                    "NX_MIGRATE_SKIP_INSTALL=true npx nx migrate --run-migrations --ifExists && rm -f migrations.json || true",
-                    "npx nx repair || true",
-                    "rm -rf package-lock.json node_modules **/node_modules",
-                    "ws=$(node -p '!!require(`./package.json`).workspaces') && npm i -ws=$ws --include-workspace-root=$ws && npm i -ws=$ws --include-workspace-root=$ws",
-                    "git add .",
-                    "npx lint-staged --allow-empty || true"
+                    "sh -lc 'npx nx migrate nx@{{{newVersion}}} || true'",
+                    "sh -lc 'NX_MIGRATE_SKIP_INSTALL=true npx nx migrate --run-migrations --ifExists || true'",
+                    "sh -lc 'rm -f migrations.json'"
                 ],
                 "executionMode": "branch",
                 "fileFilters": ["**/package.json"]
@@ -205,14 +195,10 @@
             ],
             "postUpgradeTasks": {
                 "commands": [
-                    "npm install nx --force --no-save --no-audit --no-fund --ignore-scripts --loglevel silent",
-                    "npm view @angular/core@{{{newVersion}}} version > /dev/null 2>&1 && npx nx migrate @angular/core@{{{newVersion}}} || true",
-                    "npm view @angular/cli@{{{newVersion}}} version > /dev/null 2>&1 && npx nx migrate @angular/cli@{{{newVersion}}} || true",
-                    "NX_MIGRATE_SKIP_INSTALL=true npx nx migrate --run-migrations --ifExists && rm -f migrations.json || true",
-                    "rm -rf package-lock.json node_modules **/node_modules",
-                    "ws=$(node -p '!!require(`./package.json`).workspaces') && npm i -ws=$ws --include-workspace-root=$ws && npm i -ws=$ws --include-workspace-root=$ws",
-                    "git add .",
-                    "npx lint-staged --allow-empty || true"
+                    "sh -lc 'npx nx migrate @angular/core@{{{newVersion}}} || true'",
+                    "sh -lc 'npx nx migrate @angular/cli@{{{newVersion}}} || true'",
+                    "sh -lc 'NX_MIGRATE_SKIP_INSTALL=true npx nx migrate --run-migrations --ifExists || true'",
+                    "sh -lc 'rm -f migrations.json'"
                 ],
                 "executionMode": "branch",
                 "fileFilters": ["**/package.json"]
@@ -223,12 +209,8 @@
             "matchPackageNames": ["@angular/cdk"],
             "postUpgradeTasks": {
                 "commands": [
-                    "npm install nx --force --no-save --no-audit --no-fund --ignore-scripts --loglevel silent",
-                    "npx nx migrate @angular/cdk@{{{newVersion}}} || true",
-                    "rm -rf package-lock.json node_modules **/node_modules",
-                    "ws=$(node -p '!!require(`./package.json`).workspaces') && npm i -ws=$ws --include-workspace-root=$ws && npm i -ws=$ws --include-workspace-root=$ws",
-                    "git add .",
-                    "npx lint-staged --allow-empty || true"
+                    "sh -lc 'npx nx migrate @angular/cdk@{{{newVersion}}} --from={{{currentVersion}}} || true'",
+                    "sh -lc 'rm -f migrations.json'"
                 ],
                 "executionMode": "branch",
                 "fileFilters": ["**/package.json"]
@@ -239,12 +221,8 @@
             "matchPackageNames": ["@angular/cli"],
             "postUpgradeTasks": {
                 "commands": [
-                    "npm install nx --force --no-save --no-audit --no-fund --ignore-scripts --loglevel silent",
-                    "npx nx migrate @angular/cli@{{{newVersion}}} || true",
-                    "rm -rf package-lock.json node_modules **/node_modules",
-                    "ws=$(node -p '!!require(`./package.json`).workspaces') && npm i -ws=$ws --include-workspace-root=$ws && npm i -ws=$ws --include-workspace-root=$ws",
-                    "git add .",
-                    "npx lint-staged --allow-empty || true"
+                    "sh -lc 'npx nx migrate @angular/cli@{{{newVersion}}} --from={{{currentVersion}}} || true'",
+                    "sh -lc 'rm -f migrations.json'"
                 ],
                 "executionMode": "branch",
                 "fileFilters": ["**/package.json"]
@@ -252,19 +230,19 @@
         },
         {
             "groupName": "@taiga-ui/* deps",
-            "matchPackageNames": ["/^@taiga-ui/.*/", "!@taiga-ui/editor"],
+            "matchPackageNames": ["/^@taiga-ui/.*/", "!@taiga-ui/cdk"]
+        },
+        {
+            "groupName": "@taiga-ui/* deps",
+            "matchPackageNames": ["@taiga-ui/cdk"],
             "postUpgradeTasks": {
                 "commands": [
-                    "npm install nx --force --no-save --no-audit --no-fund --ignore-scripts --loglevel silent",
-                    "npm view @taiga-ui/cdk@{{{newVersion}}} version > /dev/null 2>&1 && npx nx migrate @taiga-ui/cdk@{{{newVersion}}} || true",
-                    "NX_MIGRATE_SKIP_INSTALL=true npx nx migrate --run-migrations --ifExists && rm -f migrations.json || true",
-                    "rm -rf package-lock.json node_modules **/node_modules",
-                    "ws=$(node -p '!!require(`./package.json`).workspaces') && npm i -ws=$ws --include-workspace-root=$ws && npm i -ws=$ws --include-workspace-root=$ws",
-                    "git add .",
-                    "npx lint-staged --allow-empty || true"
+                    "sh -lc 'npx nx migrate @taiga-ui/cdk@{{{newVersion}}} --from={{{currentVersion}}} || true'",
+                    "sh -lc 'NX_MIGRATE_SKIP_INSTALL=true npx nx migrate --run-migrations --ifExists || true'",
+                    "sh -lc 'rm -f migrations.json'"
                 ],
                 "executionMode": "branch",
-                "fileFilters": ["**/package.json"]
+                "fileFilters": ["**/*"]
             }
         },
         {
