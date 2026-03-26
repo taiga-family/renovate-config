@@ -287,19 +287,7 @@
         {
             "enabled": false,
             "matchDepTypes": ["peerDependencies", "optionalDependencies"],
-            "matchPackageNames": [
-                "/^libphonenumber-js$/",
-                "/^highlight.js$/",
-                "/^typescript$/",
-                "/^react$/",
-                "/^vue$/",
-                "/^zone.js$/",
-                "/^rxjs$/",
-                "/^@angular.*/",
-                "/^@schematics.*/",
-                "/^react.*/",
-                "/^vue.*/"
-            ]
+            "matchCurrentValue": "/^>=\\s*/"
         },
         {
             "enabled": false,
