@@ -169,6 +169,12 @@
             "matchPackageNames": ["/^@typescript-eslint/.*/", "typescript-eslint"]
         },
         {
+            "groupName": "typescript native preview",
+            "matchPackageNames": ["@typescript/native-preview"],
+            "minimumReleaseAge": "3 days",
+            "prCreation": "not-pending"
+        },
+        {
             "groupName": "nx",
             "matchPackageNames": ["/^nx$/", "/^@nx.*/"],
             "postUpgradeTasks": {
