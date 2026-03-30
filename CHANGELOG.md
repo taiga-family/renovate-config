@@ -1,3 +1,14 @@
+### [1.109.0](https://github.com/taiga-family/renovate-config/compare/v1.108.0...v1.109.0) (2026-03-30)
+
+### 🚀 Features
+
+- use matchCurrentValue
+  [(ae01b89)](https://github.com/taiga-family/renovate-config/commit/ae01b8912fc32d4e8528a0ed6c67bbc8b3b2113d)
+- add min release age (#2317)
+  [(9d41a98)](https://github.com/taiga-family/renovate-config/commit/9d41a9814626ef85ef5a5c695b1e858edb6992ed)
+- improve some rules (#2297)
+  [(a359ed8)](https://github.com/taiga-family/renovate-config/commit/a359ed8a723b6b4558cf51efbc70611dcc2da01f)
+
 ### [1.108.0](https://github.com/taiga-family/renovate-config/compare/v1.107.0...v1.108.0) (2026-03-20)
 
 ### 🚀 Features
