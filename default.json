@@ -72,7 +72,7 @@
         },
         {
             "groupName": "playwright",
-            "matchPackageNames": ["/^@playwright/.*/", "@axe-core/playwright", "axe-playwright"]
+            "matchPackageNames": ["/^@playwright\\/.*/", "@axe-core/playwright", "axe-playwright"]
         },
         {
             "groupName": "maskito",
