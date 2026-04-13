@@ -49,6 +49,7 @@
         "executionMode": "branch",
         "fileFilters": ["**/package.json"]
     },
+    "minimumReleaseAge": "14 days",
     "packageRules": [
         {
             "matchDepTypes": ["overrides"],
@@ -76,7 +77,8 @@
         },
         {
             "groupName": "maskito",
-            "matchPackageNames": ["/^@maskito/.*/"]
+            "matchPackageNames": ["/^@maskito/.*/"],
+            "minimumReleaseAge": null
         },
         {
             "groupName": "cspell",
@@ -154,7 +156,8 @@
         },
         {
             "groupName": "@ng-web-apis/* deps",
-            "matchPackageNames": ["/^@ng-web-apis/.*/"]
+            "matchPackageNames": ["/^@ng-web-apis/.*/"],
+            "minimumReleaseAge": null
         },
         {
             "groupName": "@stylistic/* deps",
@@ -171,7 +174,6 @@
         {
             "groupName": "typescript native preview",
             "matchPackageNames": ["@typescript/native-preview"],
-            "minimumReleaseAge": "3 days",
             "prCreation": "not-pending"
         },
         {
@@ -236,10 +238,12 @@
         },
         {
             "groupName": "@taiga-ui/* deps",
-            "matchPackageNames": ["/^@taiga-ui/.*/", "!@taiga-ui/cdk"]
+            "matchPackageNames": ["/^@taiga-ui/.*/", "!@taiga-ui/cdk"],
+            "minimumReleaseAge": null
         },
         {
             "groupName": "@taiga-ui/* deps",
+            "minimumReleaseAge": null,
             "matchPackageNames": ["@taiga-ui/cdk"],
             "postUpgradeTasks": {
                 "commands": [
@@ -254,6 +258,11 @@
         {
             "groupName": "stylelint dependencies",
             "matchPackageNames": ["stylelint", "/^postcss.*/", "/^@stylistic.*/", "/^stylelint.*/"]
+        },
+        {
+            "groupName": "ng-morph",
+            "matchPackageNames": ["ng-morph"],
+            "minimumReleaseAge": null
         },
         {
             "groupName": "Github Actions",
