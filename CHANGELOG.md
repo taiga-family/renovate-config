@@ -1,3 +1,10 @@
+### [1.110.0](https://github.com/taiga-family/renovate-config/compare/v1.109.0...v1.110.0) (2026-04-13)
+
+### 🚀 Features
+
+- set `"minimumReleaseAge": 14 days` (package quarantine) (#2392)
+  [(3d51fa8)](https://github.com/taiga-family/renovate-config/commit/3d51fa847fb3f4631759e5af333479d113ba65f9)
+
 ### [1.109.0](https://github.com/taiga-family/renovate-config/compare/v1.108.0...v1.109.0) (2026-03-30)
 
 ### 🚀 Features
