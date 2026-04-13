@@ -174,7 +174,6 @@
         {
             "groupName": "typescript native preview",
             "matchPackageNames": ["@typescript/native-preview"],
-            "minimumReleaseAge": "3 days",
             "prCreation": "not-pending"
         },
         {
@@ -244,6 +243,7 @@
         },
         {
             "groupName": "@taiga-ui/* deps",
+            "minimumReleaseAge": null,
             "matchPackageNames": ["@taiga-ui/cdk"],
             "postUpgradeTasks": {
                 "commands": [
@@ -258,6 +258,11 @@
         {
             "groupName": "stylelint dependencies",
             "matchPackageNames": ["stylelint", "/^postcss.*/", "/^@stylistic.*/", "/^stylelint.*/"]
+        },
+        {
+            "groupName": "ng-morph",
+            "matchPackageNames": ["ng-morph"],
+            "minimumReleaseAge": null
         },
         {
             "groupName": "Github Actions",
