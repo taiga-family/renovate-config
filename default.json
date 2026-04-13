@@ -49,6 +49,7 @@
         "executionMode": "branch",
         "fileFilters": ["**/package.json"]
     },
+    "minimumReleaseAge": "14 days",
     "packageRules": [
         {
             "matchDepTypes": ["overrides"],
@@ -76,7 +77,8 @@
         },
         {
             "groupName": "maskito",
-            "matchPackageNames": ["/^@maskito/.*/"]
+            "matchPackageNames": ["/^@maskito/.*/"],
+            "minimumReleaseAge": null
         },
         {
             "groupName": "cspell",
@@ -154,7 +156,8 @@
         },
         {
             "groupName": "@ng-web-apis/* deps",
-            "matchPackageNames": ["/^@ng-web-apis/.*/"]
+            "matchPackageNames": ["/^@ng-web-apis/.*/"],
+            "minimumReleaseAge": null
         },
         {
             "groupName": "@stylistic/* deps",
@@ -236,7 +239,8 @@
         },
         {
             "groupName": "@taiga-ui/* deps",
-            "matchPackageNames": ["/^@taiga-ui/.*/", "!@taiga-ui/cdk"]
+            "matchPackageNames": ["/^@taiga-ui/.*/", "!@taiga-ui/cdk"],
+            "minimumReleaseAge": null
         },
         {
             "groupName": "@taiga-ui/* deps",
