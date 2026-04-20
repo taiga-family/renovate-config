@@ -173,8 +173,7 @@
         },
         {
             "groupName": "typescript native preview",
-            "matchPackageNames": ["@typescript/native-preview"],
-            "prCreation": "not-pending"
+            "matchPackageNames": ["@typescript/native-preview"]
         },
         {
             "groupName": "nx",
