@@ -1,3 +1,10 @@
+### [1.112.0](https://github.com/taiga-family/renovate-config/compare/v1.111.0...v1.112.0) (2026-04-22)
+
+### 🚀 Features
+
+- ignore release min age for github actions
+  [(42cf6c4)](https://github.com/taiga-family/renovate-config/commit/42cf6c44dabca40ee5c2eda9c855b8a8fd7fde75)
+
 ### [1.111.0](https://github.com/taiga-family/renovate-config/compare/v1.110.0...v1.111.0) (2026-04-13)
 
 ### [1.110.0](https://github.com/taiga-family/renovate-config/compare/v1.109.0...v1.110.0) (2026-04-13)
