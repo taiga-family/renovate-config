@@ -267,7 +267,8 @@
             "groupName": "Github Actions",
             "matchManagers": ["github-actions"],
             "matchDatasources": ["github-actions"],
-            "matchUpdateTypes": ["major", "minor", "patch"]
+            "matchUpdateTypes": ["major", "minor", "patch"],
+            "minimumReleaseAge": null
         },
         {
             "enabled": false,
