@@ -1,37 +1,28 @@
 {
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-    "extends": [":semanticCommitScopeDisabled"],
-    "onboarding": false,
-    "requireConfig": "optional",
-    "baseBranchPatterns": ["main"],
-    "branchPrefix": "renovate/",
-    "timezone": "Europe/Moscow",
-    "enabledManagers": ["npm", "gitlabci", "dockerfile", "github-actions"],
-    "fetchChangeLogs": "off",
-    "internalChecksFilter": "strict",
-    "prHourlyLimit": 0,
-    "branchConcurrentLimit": 2,
-    "prConcurrentLimit": 3,
-    "rebaseWhen": "auto",
-    "recreateWhen": "always",
-    "semanticCommits": "enabled",
-    "commitMessageLowerCase": "auto",
-    "labels": [],
-    "automerge": false,
+    "allowCustomCrateRegistries": true,
+    "allowScripts": true,
     "autoApprove": true,
-    "separateMajorMinor": false,
-    "separateMinorPatch": false,
+    "automerge": false,
+    "baseBranchPatterns": ["main"],
+    "branchConcurrentLimit": 2,
+    "branchPrefix": "renovate/",
+    "cloneSubmodules": true,
+    "commitMessageLowerCase": "auto",
     "dependencyDashboard": false,
     "dependencyDashboardApproval": false,
-    "repositoryCache": "enabled",
-    "rollbackPrs": true,
-    "digest": {"enabled": false},
-    "pinDigests": false,
-    "skipInstalls": false,
-    "cloneSubmodules": true,
-    "allowScripts": true,
-    "allowCustomCrateRegistries": true,
+    "digest": {
+        "enabled": false
+    },
+    "enabledManagers": [
+        "npm",
+        "gitlabci",
+        "dockerfile",
+        "github-actions"
+    ],
     "exposeAllEnv": true,
+    "extends": [":semanticCommitScopeDisabled"],
+    "fetchChangeLogs": "off",
     "includePaths": [
         "**/package.json",
         "**/package-lock.json",
@@ -41,23 +32,22 @@
         ".gitlab-ci.yml",
         ".gitlab/**"
     ],
-    "suppressNotifications": ["configErrorIssue", "dependencyLookupWarnings"],
-    "prBodyTemplate": "{{{table}}}{{{notes}}}{{{changelogs}}}{{{controls}}}{{{footer}}}",
-    "prBodyColumns": ["Package", "Type", "Change"],
-    "postUpgradeTasks": {
-        "commands": ["sh -lc 'npx lint-staged --allow-empty || true'"],
-        "executionMode": "branch",
-        "fileFilters": ["**/package.json"]
-    },
+    "internalChecksFilter": "strict",
+    "labels": [],
     "minimumReleaseAge": "14 days",
+    "onboarding": false,
     "packageRules": [
         {
-            "matchDepTypes": ["overrides"],
-            "enabled": false
+            "enabled": false,
+            "matchDepTypes": ["overrides"]
         },
         {
             "enabled": true,
-            "matchUpdateTypes": ["major", "minor", "patch"]
+            "matchUpdateTypes": [
+                "major",
+                "minor",
+                "patch"
+            ]
         },
         {
             "matchDepTypes": ["devDependencies", "dependencies"],
@@ -73,7 +63,11 @@
         },
         {
             "groupName": "playwright",
-            "matchPackageNames": ["/^@playwright\\/.*/", "@axe-core/playwright", "axe-playwright"]
+            "matchPackageNames": [
+                "/^@playwright\\/.*/",
+                "@axe-core/playwright",
+                "axe-playwright"
+            ]
         },
         {
             "groupName": "maskito",
@@ -94,13 +88,24 @@
         },
         {
             "groupName": "prettier",
-            "matchPackageNames": ["/^prettier/", "/^@prettier/.*/", "/^prettier-.*/"]
+            "matchPackageNames": [
+                "/^prettier/",
+                "/^@prettier/.*/",
+                "/^prettier-.*/"
+            ]
         },
         {
             "groupName": "cypress",
-            "matchPackageNames": ["/^cypress/", "/^cy2/", "/^cypress-.*/"]
+            "matchPackageNames": [
+                "/^cypress/",
+                "/^cy2/",
+                "/^cypress-.*/"
+            ]
         },
-        {"groupName": "commitlint", "matchPackageNames": ["/^@commitlint/.*/"]},
+        {
+            "groupName": "commitlint",
+            "matchPackageNames": ["/^@commitlint/.*/"]
+        },
         {
             "groupName": "release-it",
             "matchPackageNames": ["/^@release-it/.*/", "/^release-it$/"]
@@ -131,12 +136,21 @@
         },
         {
             "groupName": "jest",
-            "matchPackageNames": ["/^jest.*/", "/^ts-jest$/", "/^jest-preset-angular$/"]
+            "matchPackageNames": [
+                "/^jest.*/",
+                "/^ts-jest$/",
+                "/^jest-preset-angular$/"
+            ]
         },
         {
-            "groupName": "react",
             "extends": ["monorepo:react"],
-            "matchPackageNames": ["/^react.*/", "/^@types/react$/", "/^@types/react-.*/", "/^react-.*/"]
+            "groupName": "react",
+            "matchPackageNames": [
+                "/^react.*/",
+                "/^@types/react$/",
+                "/^@types/react-.*/",
+                "/^react-.*/"
+            ]
         },
         {
             "groupName": "vue",
@@ -148,7 +162,11 @@
         },
         {
             "groupName": "eslint ecosystem",
-            "matchPackageNames": ["/^@eslint\\/.*/", "/^@eslint-community\\/.*/", "/^eslint-.*/"]
+            "matchPackageNames": [
+                "/^@eslint\\/.*/",
+                "/^@eslint-community\\/.*/",
+                "/^eslint-.*/"
+            ]
         },
         {
             "groupName": "jasmine",
@@ -215,10 +233,7 @@
             "groupName": "@angular/cdk migrations",
             "matchPackageNames": ["@angular/cdk"],
             "postUpgradeTasks": {
-                "commands": [
-                    "sh -lc 'npx nx migrate @angular/cdk@{{{newVersion}}} --from={{{currentVersion}}} || true'",
-                    "sh -lc 'rm -f migrations.json'"
-                ],
+                "commands": ["sh -lc 'npx nx migrate @angular/cdk@{{{newVersion}}} --from={{{currentVersion}}} || true'", "sh -lc 'rm -f migrations.json'"],
                 "executionMode": "branch",
                 "fileFilters": ["**/package.json"]
             }
@@ -227,10 +242,7 @@
             "groupName": "@angular/cli migrations",
             "matchPackageNames": ["@angular/cli"],
             "postUpgradeTasks": {
-                "commands": [
-                    "sh -lc 'npx nx migrate @angular/cli@{{{newVersion}}} --from={{{currentVersion}}} || true'",
-                    "sh -lc 'rm -f migrations.json'"
-                ],
+                "commands": ["sh -lc 'npx nx migrate @angular/cli@{{{newVersion}}} --from={{{currentVersion}}} || true'", "sh -lc 'rm -f migrations.json'"],
                 "executionMode": "branch",
                 "fileFilters": ["**/package.json"]
             }
@@ -242,8 +254,8 @@
         },
         {
             "groupName": "@taiga-ui/* deps",
-            "minimumReleaseAge": null,
             "matchPackageNames": ["@taiga-ui/cdk"],
+            "minimumReleaseAge": null,
             "postUpgradeTasks": {
                 "commands": [
                     "sh -lc 'npx nx migrate @taiga-ui/cdk@{{{newVersion}}} --from={{{currentVersion}}} || true'",
@@ -256,7 +268,12 @@
         },
         {
             "groupName": "stylelint dependencies",
-            "matchPackageNames": ["stylelint", "/^postcss.*/", "/^@stylistic.*/", "/^stylelint.*/"]
+            "matchPackageNames": [
+                "stylelint",
+                "/^postcss.*/",
+                "/^@stylistic.*/",
+                "/^stylelint.*/"
+            ]
         },
         {
             "groupName": "ng-morph",
@@ -265,9 +282,13 @@
         },
         {
             "groupName": "Github Actions",
-            "matchManagers": ["github-actions"],
             "matchDatasources": ["github-actions"],
-            "matchUpdateTypes": ["major", "minor", "patch"],
+            "matchManagers": ["github-actions"],
+            "matchUpdateTypes": [
+                "major",
+                "minor",
+                "patch"
+            ],
             "minimumReleaseAge": null
         },
         {
@@ -276,12 +297,11 @@
         },
         {
             "enabled": false,
-            "matchUpdateTypes": ["major", "minor"],
-            "matchPackageNames": ["/^typescript$/", "/^rxjs$/"]
+            "matchPackageNames": ["/^typescript$/", "/^rxjs$/"],
+            "matchUpdateTypes": ["major", "minor"]
         },
         {
             "enabled": false,
-            "matchUpdateTypes": ["major"],
             "matchPackageNames": [
                 "/^@angular.*/",
                 "/^@schematics.*/",
@@ -291,21 +311,47 @@
                 "/^ng-packagr/",
                 "/^eslint$/",
                 "/^glob$/"
-            ]
+            ],
+            "matchUpdateTypes": ["major"]
         },
         {
             "enabled": false,
-            "matchDepTypes": ["peerDependencies", "optionalDependencies"],
-            "matchCurrentValue": "/^>=\\s*/"
+            "matchCurrentValue": "/^>=\\s*/",
+            "matchDepTypes": ["peerDependencies", "optionalDependencies"]
         },
         {
             "enabled": false,
             "matchUpdateTypes": ["major"]
         },
         {
+            "enabled": true,
             "matchManagers": ["github-actions"],
-            "matchUpdateTypes": ["major"],
-            "enabled": true
+            "matchUpdateTypes": ["major"]
         }
-    ]
+    ],
+    "pinDigests": false,
+    "postUpgradeTasks": {
+        "commands": ["sh -lc 'npx lint-staged --allow-empty || true'"],
+        "executionMode": "branch",
+        "fileFilters": ["**/package.json"]
+    },
+    "prBodyColumns": [
+        "Package",
+        "Type",
+        "Change"
+    ],
+    "prBodyTemplate": "{{{table}}}{{{notes}}}{{{changelogs}}}{{{controls}}}{{{footer}}}",
+    "prConcurrentLimit": 3,
+    "prHourlyLimit": 0,
+    "rebaseWhen": "auto",
+    "recreateWhen": "always",
+    "repositoryCache": "enabled",
+    "requireConfig": "optional",
+    "rollbackPrs": true,
+    "semanticCommits": "enabled",
+    "separateMajorMinor": false,
+    "separateMinorPatch": false,
+    "skipInstalls": false,
+    "suppressNotifications": ["configErrorIssue", "dependencyLookupWarnings"],
+    "timezone": "Europe/Moscow"
 }
