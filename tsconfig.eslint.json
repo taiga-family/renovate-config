@@ -1,0 +1,4 @@
+{
+    "extends": "@taiga-ui/tsconfig",
+    "include": ["**/*.ts"]
+}

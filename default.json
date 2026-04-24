@@ -21,7 +21,7 @@
         "github-actions"
     ],
     "exposeAllEnv": true,
-    "extends": [":semanticCommitScopeDisabled"],
+    "extends": [":semanticCommitScopeDisabled", "helpers:pinGitHubActionDigests"],
     "fetchChangeLogs": "off",
     "includePaths": [
         "**/package.json",
@@ -329,7 +329,6 @@
             "matchUpdateTypes": ["major"]
         }
     ],
-    "pinDigests": false,
     "postUpgradeTasks": {
         "commands": ["sh -lc 'npx lint-staged --allow-empty || true'"],
         "executionMode": "branch",

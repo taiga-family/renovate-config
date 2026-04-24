@@ -1294,7 +1294,7 @@
 
 ### [1.1.1](https://github.com/taiga-family/renovate-config/compare/1.1.0...1.1.1) (2023-08-03)
 
-### [1.1.0]() (2023-08-03)
+### [1.1.0](https://github.com/taiga-family/renovate-config/compare/1.1.0) (2023-08-03)
 
 ### 🚀 Features
 

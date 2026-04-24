@@ -10,7 +10,7 @@
 }
 ```
 
-### Local debug your repository
+## Local debug your repository
 
 ```bash
 export LOG_LEVEL=debug
