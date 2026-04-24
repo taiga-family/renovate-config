@@ -1,3 +1,10 @@
+### [1.113.0](https://github.com/taiga-family/renovate-config/compare/v1.112.0...v1.113.0) (2026-04-24)
+
+### 🚀 Features
+
+- add `pinGitHubActionDigests`
+  [(64babd0)](https://github.com/taiga-family/renovate-config/commit/64babd02c96e185b5b6b27ed78be943baa5174d0)
+
 ### [1.112.0](https://github.com/taiga-family/renovate-config/compare/v1.111.0...v1.112.0) (2026-04-22)
 
 ### 🚀 Features
