@@ -173,20 +173,20 @@
             "matchPackageNames": ["/^jasmine.*/"]
         },
         {
-            "groupName": "@ng-web-apis/* deps",
+            "groupName": "@ng-web-apis/*",
             "matchPackageNames": ["/^@ng-web-apis/.*/"],
             "minimumReleaseAge": null
         },
         {
-            "groupName": "@stylistic/* deps",
+            "groupName": "@stylistic/*",
             "matchPackageNames": ["/^@stylistic/.*/"]
         },
         {
-            "groupName": "@angular-eslint/* deps",
+            "groupName": "@angular-eslint/*",
             "matchPackageNames": ["/^@angular-eslint.*/"]
         },
         {
-            "groupName": "@typescript-eslint/* deps",
+            "groupName": "@typescript-eslint/*",
             "matchPackageNames": ["/^@typescript-eslint/.*/", "typescript-eslint"]
         },
         {
@@ -207,7 +207,7 @@
             }
         },
         {
-            "groupName": "@angular/* deps",
+            "groupName": "@angular/*",
             "matchPackageNames": [
                 "/^@angular.*/",
                 "/^@angular-devkit.*/",
@@ -248,12 +248,21 @@
             }
         },
         {
-            "groupName": "@taiga-ui/* deps",
-            "matchPackageNames": ["/^@taiga-ui/.*/", "!@taiga-ui/cdk"],
+            "groupName": "@taiga-ui/design-tokens",
+            "matchPackageNames": ["@taiga-ui/design-tokens"],
             "minimumReleaseAge": null
         },
         {
-            "groupName": "@taiga-ui/* deps",
+            "groupName": "@taiga-ui/*",
+            "matchPackageNames": [
+                "/^@taiga-ui/.*/",
+                "!@taiga-ui/cdk",
+                "!@taiga-ui/design-tokens"
+            ],
+            "minimumReleaseAge": null
+        },
+        {
+            "groupName": "@taiga-ui/*",
             "matchPackageNames": ["@taiga-ui/cdk"],
             "minimumReleaseAge": null,
             "postUpgradeTasks": {
