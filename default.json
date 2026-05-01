@@ -2,6 +2,7 @@
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
     "allowCustomCrateRegistries": true,
     "allowScripts": true,
+    "allowedCommands": [".*"],
     "autoApprove": true,
     "automerge": false,
     "baseBranchPatterns": ["main"],
@@ -16,6 +17,7 @@
     },
     "enabledManagers": [
         "npm",
+        "bun",
         "gitlabci",
         "dockerfile",
         "github-actions"
@@ -26,10 +28,29 @@
     "includePaths": [
         "**/package.json",
         "**/package-lock.json",
+        "**/npm-shrinkwrap.json",
+        "**/yarn.lock",
+        "**/.yarnrc.yml",
+        "**/pnpm-lock.yaml",
+        "**/pnpm-workspace.yaml",
+        "**/bun.lock",
+        "**/bun.lockb",
         ".github/workflows/**",
+        ".github/actions/**",
+        ".gitea/workflows/**",
+        ".forgejo/workflows/**",
+        "**/action.yml",
+        "**/action.yaml",
         "**/Dockerfile",
         "**/dockerfile",
+        "**/Containerfile",
+        "**/containerfile",
+        "**/Dockerfile.*",
+        "**/dockerfile.*",
+        "**/Containerfile.*",
+        "**/containerfile.*",
         ".gitlab-ci.yml",
+        ".gitlab-ci.yaml",
         ".gitlab/**"
     ],
     "internalChecksFilter": "strict",
@@ -38,16 +59,18 @@
     "onboarding": false,
     "packageRules": [
         {
-            "enabled": false,
-            "matchDepTypes": ["overrides"]
+            "description": "Disable quarantine for trusted internal packages",
+            "matchPackageNames": [
+                "/^@maskito\\//",
+                "/^@ng-web-apis\\//",
+                "/^@taiga-ui\\//",
+                "ng-morph"
+            ],
+            "minimumReleaseAge": null
         },
         {
-            "enabled": true,
-            "matchUpdateTypes": [
-                "major",
-                "minor",
-                "patch"
-            ]
+            "enabled": false,
+            "matchDepTypes": ["overrides"]
         },
         {
             "matchDepTypes": ["devDependencies", "dependencies"],
@@ -59,24 +82,23 @@
         },
         {
             "groupName": "tiptap",
-            "matchPackageNames": ["/^@tiptap/.*/"]
+            "matchPackageNames": ["/^@tiptap\\//"]
         },
         {
             "groupName": "playwright",
             "matchPackageNames": [
-                "/^@playwright\\/.*/",
+                "/^@playwright\\//",
                 "@axe-core/playwright",
                 "axe-playwright"
             ]
         },
         {
             "groupName": "maskito",
-            "matchPackageNames": ["/^@maskito/.*/"],
-            "minimumReleaseAge": null
+            "matchPackageNames": ["/^@maskito\\//"]
         },
         {
             "groupName": "cspell",
-            "matchPackageNames": ["/^@cspell/.*/"]
+            "matchPackageNames": ["/^@cspell\\//"]
         },
         {
             "groupName": "prosemirror",
@@ -84,13 +106,13 @@
         },
         {
             "groupName": "definitely typed",
-            "matchPackageNames": ["/^@types/.*/"]
+            "matchPackageNames": ["/^@types\\//"]
         },
         {
             "groupName": "prettier",
             "matchPackageNames": [
                 "/^prettier/",
-                "/^@prettier/.*/",
+                "/^@prettier\\//",
                 "/^prettier-.*/"
             ]
         },
@@ -104,35 +126,35 @@
         },
         {
             "groupName": "commitlint",
-            "matchPackageNames": ["/^@commitlint/.*/"]
+            "matchPackageNames": ["/^@commitlint\\//"]
         },
         {
             "groupName": "release-it",
-            "matchPackageNames": ["/^@release-it/.*/", "/^release-it$/"]
+            "matchPackageNames": ["/^@release-it\\//", "/^release-it$/"]
         },
         {
             "groupName": "docsearch",
-            "matchPackageNames": ["/^@docsearch/.*/"]
+            "matchPackageNames": ["/^@docsearch\\//"]
         },
         {
             "groupName": "tinkoff",
-            "matchPackageNames": ["/^@tinkoff/.*/"]
+            "matchPackageNames": ["/^@tinkoff\\//"]
         },
         {
             "groupName": "rollup",
-            "matchPackageNames": ["/^rollup.*/", "/@rollup/pluginutils/"]
+            "matchPackageNames": ["/^rollup.*/", "@rollup/pluginutils"]
         },
         {
             "groupName": "swc",
-            "matchPackageNames": ["/^@swc.*/"]
+            "matchPackageNames": ["/^@swc\\//"]
         },
         {
             "groupName": "stackblitz sdk",
-            "matchPackageNames": ["/^@stackblitz/.*/"]
+            "matchPackageNames": ["/^@stackblitz\\//"]
         },
         {
             "groupName": "babel",
-            "matchPackageNames": ["/^@babel/eslint-.*/", "/babel.*/"]
+            "matchPackageNames": ["/^@babel\\/eslint-.*/", "/^babel.*/"]
         },
         {
             "groupName": "jest",
@@ -147,8 +169,8 @@
             "groupName": "react",
             "matchPackageNames": [
                 "/^react.*/",
-                "/^@types/react$/",
-                "/^@types/react-.*/",
+                "@types/react",
+                "/^@types\\/react-.*/",
                 "/^react-.*/"
             ]
         },
@@ -163,8 +185,8 @@
         {
             "groupName": "eslint ecosystem",
             "matchPackageNames": [
-                "/^@eslint\\/.*/",
-                "/^@eslint-community\\/.*/",
+                "/^@eslint\\//",
+                "/^@eslint-community\\//",
                 "/^eslint-.*/"
             ]
         },
@@ -174,20 +196,19 @@
         },
         {
             "groupName": "@ng-web-apis/*",
-            "matchPackageNames": ["/^@ng-web-apis/.*/"],
-            "minimumReleaseAge": null
+            "matchPackageNames": ["/^@ng-web-apis\\//"]
         },
         {
             "groupName": "@stylistic/*",
-            "matchPackageNames": ["/^@stylistic/.*/"]
+            "matchPackageNames": ["/^@stylistic\\//"]
         },
         {
             "groupName": "@angular-eslint/*",
-            "matchPackageNames": ["/^@angular-eslint.*/"]
+            "matchPackageNames": ["/^@angular-eslint\\//"]
         },
         {
             "groupName": "@typescript-eslint/*",
-            "matchPackageNames": ["/^@typescript-eslint/.*/", "typescript-eslint"]
+            "matchPackageNames": ["/^@typescript-eslint\\//", "typescript-eslint"]
         },
         {
             "groupName": "typescript native preview",
@@ -195,7 +216,7 @@
         },
         {
             "groupName": "nx",
-            "matchPackageNames": ["/^nx$/", "/^@nx.*/"],
+            "matchPackageNames": ["/^nx$/", "/^@nx\\//"],
             "postUpgradeTasks": {
                 "commands": [
                     "sh -lc 'npx nx migrate nx@{{{newVersion}}} || true'",
@@ -203,74 +224,35 @@
                     "sh -lc 'rm -f migrations.json'"
                 ],
                 "executionMode": "branch",
-                "fileFilters": ["**/package.json"]
+                "fileFilters": ["**/*"]
             }
         },
         {
             "groupName": "@angular/*",
             "matchPackageNames": [
-                "/^@angular.*/",
-                "/^@angular-devkit.*/",
-                "!/^@angular-eslint.*/",
-                "/^@schematics.*/",
-                "/^typescript$/",
-                "/^ng-packagr$/",
-                "!@angular/cdk",
-                "!@angular/cli"
+                "/^@angular\\//",
+                "/^@angular-devkit\\//",
+                "/^@schematics\\//",
+                "ng-packagr"
             ],
             "postUpgradeTasks": {
-                "commands": [
-                    "sh -lc 'npx nx migrate @angular/core@{{{newVersion}}} || true'",
-                    "sh -lc 'npx nx migrate @angular/cli@{{{newVersion}}} || true'",
-                    "sh -lc 'NX_MIGRATE_SKIP_INSTALL=true npx nx migrate --run-migrations --ifExists || true'",
-                    "sh -lc 'rm -f migrations.json'"
-                ],
+                "commands": ["node -e \"const {readFileSync,rmSync}=require('node:fs');const {spawnSync}=require('node:child_process');const file=process.env.RENOVATE_POST_UPGRADE_COMMAND_DATA_FILE;if(!file)process.exit(0);const upgrades=JSON.parse(readFileSync(file,'utf8'));const targets=['@angular/core','@angular/cli','@angular/cdk'];for(const depName of targets){const u=upgrades.find(x=>x.depName===depName);if(!u||!u.newVersion)continue;const args=['nx','migrate',depName+'@'+u.newVersion];if(u.currentVersion)args.push('--from='+u.currentVersion);spawnSync('npx',args,{stdio:'inherit',shell:false});spawnSync('npx',['nx','migrate','--run-migrations','--ifExists'],{stdio:'inherit',shell:false,env:{...process.env,NX_MIGRATE_SKIP_INSTALL:'true'}});rmSync('migrations.json',{force:true});}\""],
+                "dataFileTemplate": "[{{#each upgrades}}{\"depName\":\"{{{depName}}}\",\"currentVersion\":\"{{{currentVersion}}}\",\"newVersion\":\"{{{newVersion}}}\"}{{#unless @last}},{{/unless}}{{/each}}]",
                 "executionMode": "branch",
-                "fileFilters": ["**/package.json"]
-            }
-        },
-        {
-            "groupName": "@angular/cdk migrations",
-            "matchPackageNames": ["@angular/cdk"],
-            "postUpgradeTasks": {
-                "commands": ["sh -lc 'npx nx migrate @angular/cdk@{{{newVersion}}} --from={{{currentVersion}}} || true'", "sh -lc 'rm -f migrations.json'"],
-                "executionMode": "branch",
-                "fileFilters": ["**/package.json"]
-            }
-        },
-        {
-            "groupName": "@angular/cli migrations",
-            "matchPackageNames": ["@angular/cli"],
-            "postUpgradeTasks": {
-                "commands": ["sh -lc 'npx nx migrate @angular/cli@{{{newVersion}}} --from={{{currentVersion}}} || true'", "sh -lc 'rm -f migrations.json'"],
-                "executionMode": "branch",
-                "fileFilters": ["**/package.json"]
-            }
+                "fileFilters": ["**/*"]
+            },
+            "separateMinorPatch": true
         },
         {
             "groupName": "@taiga-ui/design-tokens",
-            "matchPackageNames": ["@taiga-ui/design-tokens"],
-            "minimumReleaseAge": null
+            "matchPackageNames": ["@taiga-ui/design-tokens"]
         },
         {
             "groupName": "@taiga-ui/*",
-            "matchPackageNames": [
-                "/^@taiga-ui/.*/",
-                "!@taiga-ui/cdk",
-                "!@taiga-ui/design-tokens"
-            ],
-            "minimumReleaseAge": null
-        },
-        {
-            "groupName": "@taiga-ui/*",
-            "matchPackageNames": ["@taiga-ui/cdk"],
-            "minimumReleaseAge": null,
+            "matchPackageNames": ["/^@taiga-ui\\//", "!@taiga-ui/design-tokens"],
             "postUpgradeTasks": {
-                "commands": [
-                    "sh -lc 'npx nx migrate @taiga-ui/cdk@{{{newVersion}}} --from={{{currentVersion}}} || true'",
-                    "sh -lc 'NX_MIGRATE_SKIP_INSTALL=true npx nx migrate --run-migrations --ifExists || true'",
-                    "sh -lc 'rm -f migrations.json'"
-                ],
+                "commands": ["node -e \"const {readFileSync,rmSync}=require('node:fs');const {spawnSync}=require('node:child_process');const file=process.env.RENOVATE_POST_UPGRADE_COMMAND_DATA_FILE;if(!file)process.exit(0);const upgrades=JSON.parse(readFileSync(file,'utf8'));const u=upgrades.find(x=>x.depName==='@taiga-ui/cdk');if(!u||!u.newVersion)process.exit(0);const args=['nx','migrate','@taiga-ui/cdk@'+u.newVersion];if(u.currentVersion)args.push('--from='+u.currentVersion);spawnSync('npx',args,{stdio:'inherit',shell:false});spawnSync('npx',['nx','migrate','--run-migrations','--ifExists'],{stdio:'inherit',shell:false,env:{...process.env,NX_MIGRATE_SKIP_INSTALL:'true'}});rmSync('migrations.json',{force:true});\""],
+                "dataFileTemplate": "[{{#each upgrades}}{\"depName\":\"{{{depName}}}\",\"currentVersion\":\"{{{currentVersion}}}\",\"newVersion\":\"{{{newVersion}}}\"}{{#unless @last}},{{/unless}}{{/each}}]",
                 "executionMode": "branch",
                 "fileFilters": ["**/*"]
             }
@@ -280,25 +262,13 @@
             "matchPackageNames": [
                 "stylelint",
                 "/^postcss.*/",
-                "/^@stylistic.*/",
+                "/^@stylistic\\//",
                 "/^stylelint.*/"
             ]
         },
         {
             "groupName": "ng-morph",
-            "matchPackageNames": ["ng-morph"],
-            "minimumReleaseAge": null
-        },
-        {
-            "groupName": "Github Actions",
-            "matchDatasources": ["github-actions"],
-            "matchManagers": ["github-actions"],
-            "matchUpdateTypes": [
-                "major",
-                "minor",
-                "patch"
-            ],
-            "minimumReleaseAge": null
+            "matchPackageNames": ["ng-morph"]
         },
         {
             "enabled": false,
@@ -311,20 +281,6 @@
         },
         {
             "enabled": false,
-            "matchPackageNames": [
-                "/^@angular.*/",
-                "/^@schematics.*/",
-                "/^@nguniversal.*/",
-                "/^ngx-highlightjs$/",
-                "/^ngx-markdown$/",
-                "/^ng-packagr/",
-                "/^eslint$/",
-                "/^glob$/"
-            ],
-            "matchUpdateTypes": ["major"]
-        },
-        {
-            "enabled": false,
             "matchCurrentValue": "/^>=\\s*/",
             "matchDepTypes": ["peerDependencies", "optionalDependencies"]
         },
@@ -333,15 +289,39 @@
             "matchUpdateTypes": ["major"]
         },
         {
+            "description": "Allow major updates for Taiga UI packages",
             "enabled": true,
-            "matchManagers": ["github-actions"],
+            "matchPackageNames": ["/^@taiga-ui\\//"],
             "matchUpdateTypes": ["major"]
+        },
+        {
+            "description": "Allow all updates for Renovate",
+            "enabled": true,
+            "matchPackageNames": ["renovate", "/^@renovatebot\\//"],
+            "matchUpdateTypes": [
+                "major",
+                "minor",
+                "patch"
+            ],
+            "minimumReleaseAge": null
+        },
+        {
+            "description": "Allow all GitHub Actions updates without quarantine",
+            "enabled": true,
+            "groupName": "Github Actions",
+            "matchManagers": ["github-actions"],
+            "matchUpdateTypes": [
+                "major",
+                "minor",
+                "patch"
+            ],
+            "minimumReleaseAge": null
         }
     ],
     "postUpgradeTasks": {
         "commands": ["sh -lc 'npx lint-staged --allow-empty || true'"],
         "executionMode": "branch",
-        "fileFilters": ["**/package.json"]
+        "fileFilters": ["**/*"]
     },
     "prBodyColumns": [
         "Package",
@@ -358,7 +338,7 @@
     "rollbackPrs": true,
     "semanticCommits": "enabled",
     "separateMajorMinor": true,
-    "separateMinorPatch": true,
+    "separateMinorPatch": false,
     "skipInstalls": false,
     "suppressNotifications": ["configErrorIssue", "dependencyLookupWarnings"],
     "timezone": "Europe/Moscow"
