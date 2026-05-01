@@ -357,8 +357,8 @@
     "requireConfig": "optional",
     "rollbackPrs": true,
     "semanticCommits": "enabled",
-    "separateMajorMinor": false,
-    "separateMinorPatch": false,
+    "separateMajorMinor": true,
+    "separateMinorPatch": true,
     "skipInstalls": false,
     "suppressNotifications": ["configErrorIssue", "dependencyLookupWarnings"],
     "timezone": "Europe/Moscow"
