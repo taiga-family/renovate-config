@@ -195,10 +195,6 @@
             "matchPackageNames": ["/^jasmine.*/"]
         },
         {
-            "groupName": "@ng-web-apis/*",
-            "matchPackageNames": ["/^@ng-web-apis\\//"]
-        },
-        {
             "groupName": "@stylistic/*",
             "matchPackageNames": ["/^@stylistic\\//"]
         },
@@ -249,8 +245,17 @@
             "matchPackageNames": ["@taiga-ui/design-tokens"]
         },
         {
+            "groupName": "@taiga-ui/configs",
+            "matchPackageNames": ["@taiga-ui/configs"]
+        },
+        {
             "groupName": "@taiga-ui/*",
-            "matchPackageNames": ["/^@taiga-ui\\//", "!@taiga-ui/design-tokens"],
+            "matchPackageNames": [
+                "/^@taiga-ui\\//",
+                "/^@ng-web-apis\\//",
+                "!@taiga-ui/design-tokens",
+                "!@taiga-ui/configs"
+            ],
             "postUpgradeTasks": {
                 "commands": ["node -e \"const {readFileSync,rmSync}=require('node:fs');const {spawnSync}=require('node:child_process');const file=process.env.RENOVATE_POST_UPGRADE_COMMAND_DATA_FILE;if(!file)process.exit(0);const upgrades=JSON.parse(readFileSync(file,'utf8'));const u=upgrades.find(x=>x.depName==='@taiga-ui/cdk');if(!u||!u.newVersion)process.exit(0);const args=['nx','migrate','@taiga-ui/cdk@'+u.newVersion];if(u.currentVersion)args.push('--from='+u.currentVersion);spawnSync('npx',args,{stdio:'inherit',shell:false});spawnSync('npx',['nx','migrate','--run-migrations','--ifExists'],{stdio:'inherit',shell:false,env:{...process.env,NX_MIGRATE_SKIP_INSTALL:'true'}});rmSync('migrations.json',{force:true});\"", "sh -lc 'if [ -f package-lock.json ] && [ -f package.json ]; then if node -e \"const p=require(\\\"./package.json\\\");const w=p.workspaces;process.exit(Array.isArray(w)||Array.isArray(w&&w.packages)?0:1)\"; then npm install --package-lock-only --ignore-scripts --workspaces --include-workspace-root; else npm install --package-lock-only --ignore-scripts; fi; fi'"],
                 "dataFileTemplate": "[{{#each upgrades}}{\"depName\":\"{{{depName}}}\",\"currentVersion\":\"{{{currentVersion}}}\",\"newVersion\":\"{{{newVersion}}}\"}{{#unless @last}},{{/unless}}{{/each}}]",
