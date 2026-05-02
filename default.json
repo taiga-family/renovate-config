@@ -221,7 +221,8 @@
                 "commands": [
                     "sh -lc 'npx nx migrate nx@{{{newVersion}}} || true'",
                     "sh -lc 'NX_MIGRATE_SKIP_INSTALL=true npx nx migrate --run-migrations --ifExists || true'",
-                    "sh -lc 'rm -f migrations.json'"
+                    "sh -lc 'rm -f migrations.json'",
+                    "sh -lc 'if [ -f package-lock.json ] && [ -f package.json ]; then if node -e \"const p=require(\\\"./package.json\\\");const w=p.workspaces;process.exit(Array.isArray(w)||Array.isArray(w&&w.packages)?0:1)\"; then npm install --package-lock-only --ignore-scripts --workspaces --include-workspace-root; else npm install --package-lock-only --ignore-scripts; fi; fi'"
                 ],
                 "executionMode": "branch",
                 "fileFilters": ["**/*"]
@@ -236,7 +237,7 @@
                 "ng-packagr"
             ],
             "postUpgradeTasks": {
-                "commands": ["node -e \"const {readFileSync,rmSync}=require('node:fs');const {spawnSync}=require('node:child_process');const file=process.env.RENOVATE_POST_UPGRADE_COMMAND_DATA_FILE;if(!file)process.exit(0);const upgrades=JSON.parse(readFileSync(file,'utf8'));const targets=['@angular/core','@angular/cli','@angular/cdk'];for(const depName of targets){const u=upgrades.find(x=>x.depName===depName);if(!u||!u.newVersion)continue;const args=['nx','migrate',depName+'@'+u.newVersion];if(u.currentVersion)args.push('--from='+u.currentVersion);spawnSync('npx',args,{stdio:'inherit',shell:false});spawnSync('npx',['nx','migrate','--run-migrations','--ifExists'],{stdio:'inherit',shell:false,env:{...process.env,NX_MIGRATE_SKIP_INSTALL:'true'}});rmSync('migrations.json',{force:true});}\""],
+                "commands": ["node -e \"const {readFileSync,rmSync}=require('node:fs');const {spawnSync}=require('node:child_process');const file=process.env.RENOVATE_POST_UPGRADE_COMMAND_DATA_FILE;if(!file)process.exit(0);const upgrades=JSON.parse(readFileSync(file,'utf8'));const targets=['@angular/core','@angular/cli','@angular/cdk'];for(const depName of targets){const u=upgrades.find(x=>x.depName===depName);if(!u||!u.newVersion)continue;const args=['nx','migrate',depName+'@'+u.newVersion];if(u.currentVersion)args.push('--from='+u.currentVersion);spawnSync('npx',args,{stdio:'inherit',shell:false});spawnSync('npx',['nx','migrate','--run-migrations','--ifExists'],{stdio:'inherit',shell:false,env:{...process.env,NX_MIGRATE_SKIP_INSTALL:'true'}});rmSync('migrations.json',{force:true});}\"", "sh -lc 'if [ -f package-lock.json ] && [ -f package.json ]; then if node -e \"const p=require(\\\"./package.json\\\");const w=p.workspaces;process.exit(Array.isArray(w)||Array.isArray(w&&w.packages)?0:1)\"; then npm install --package-lock-only --ignore-scripts --workspaces --include-workspace-root; else npm install --package-lock-only --ignore-scripts; fi; fi'"],
                 "dataFileTemplate": "[{{#each upgrades}}{\"depName\":\"{{{depName}}}\",\"currentVersion\":\"{{{currentVersion}}}\",\"newVersion\":\"{{{newVersion}}}\"}{{#unless @last}},{{/unless}}{{/each}}]",
                 "executionMode": "branch",
                 "fileFilters": ["**/*"]
@@ -251,7 +252,7 @@
             "groupName": "@taiga-ui/*",
             "matchPackageNames": ["/^@taiga-ui\\//", "!@taiga-ui/design-tokens"],
             "postUpgradeTasks": {
-                "commands": ["node -e \"const {readFileSync,rmSync}=require('node:fs');const {spawnSync}=require('node:child_process');const file=process.env.RENOVATE_POST_UPGRADE_COMMAND_DATA_FILE;if(!file)process.exit(0);const upgrades=JSON.parse(readFileSync(file,'utf8'));const u=upgrades.find(x=>x.depName==='@taiga-ui/cdk');if(!u||!u.newVersion)process.exit(0);const args=['nx','migrate','@taiga-ui/cdk@'+u.newVersion];if(u.currentVersion)args.push('--from='+u.currentVersion);spawnSync('npx',args,{stdio:'inherit',shell:false});spawnSync('npx',['nx','migrate','--run-migrations','--ifExists'],{stdio:'inherit',shell:false,env:{...process.env,NX_MIGRATE_SKIP_INSTALL:'true'}});rmSync('migrations.json',{force:true});\""],
+                "commands": ["node -e \"const {readFileSync,rmSync}=require('node:fs');const {spawnSync}=require('node:child_process');const file=process.env.RENOVATE_POST_UPGRADE_COMMAND_DATA_FILE;if(!file)process.exit(0);const upgrades=JSON.parse(readFileSync(file,'utf8'));const u=upgrades.find(x=>x.depName==='@taiga-ui/cdk');if(!u||!u.newVersion)process.exit(0);const args=['nx','migrate','@taiga-ui/cdk@'+u.newVersion];if(u.currentVersion)args.push('--from='+u.currentVersion);spawnSync('npx',args,{stdio:'inherit',shell:false});spawnSync('npx',['nx','migrate','--run-migrations','--ifExists'],{stdio:'inherit',shell:false,env:{...process.env,NX_MIGRATE_SKIP_INSTALL:'true'}});rmSync('migrations.json',{force:true});\"", "sh -lc 'if [ -f package-lock.json ] && [ -f package.json ]; then if node -e \"const p=require(\\\"./package.json\\\");const w=p.workspaces;process.exit(Array.isArray(w)||Array.isArray(w&&w.packages)?0:1)\"; then npm install --package-lock-only --ignore-scripts --workspaces --include-workspace-root; else npm install --package-lock-only --ignore-scripts; fi; fi'"],
                 "dataFileTemplate": "[{{#each upgrades}}{\"depName\":\"{{{depName}}}\",\"currentVersion\":\"{{{currentVersion}}}\",\"newVersion\":\"{{{newVersion}}}\"}{{#unless @last}},{{/unless}}{{/each}}]",
                 "executionMode": "branch",
                 "fileFilters": ["**/*"]
@@ -318,8 +319,9 @@
             "minimumReleaseAge": null
         }
     ],
+    "postUpdateOptions": ["npmInstallTwice", "npmDedupe"],
     "postUpgradeTasks": {
-        "commands": ["sh -lc 'npx lint-staged --allow-empty || true'"],
+        "commands": ["sh -lc 'if [ -f package-lock.json ] && [ -f package.json ]; then if node -e \"const p=require(\\\"./package.json\\\");const w=p.workspaces;process.exit(Array.isArray(w)||Array.isArray(w&&w.packages)?0:1)\"; then npm install --package-lock-only --ignore-scripts --workspaces --include-workspace-root; else npm install --package-lock-only --ignore-scripts; fi; fi'", "sh -lc 'npx lint-staged --allow-empty || true'"],
         "executionMode": "branch",
         "fileFilters": ["**/*"]
     },
