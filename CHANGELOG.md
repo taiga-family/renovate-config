@@ -1,3 +1,20 @@
+### [1.115.0](https://github.com/taiga-family/renovate-config/compare/v1.113.0...v1.115.0) (2026-05-03)
+
+### 🚀 Features
+
+- use best practice
+  [(f1f2a48)](https://github.com/taiga-family/renovate-config/commit/f1f2a489d3164c4e44d2dc68bb83033d1ef3cf49)
+- allow ng-web-apis major upgrades
+  [(f3e3de8)](https://github.com/taiga-family/renovate-config/commit/f3e3de80694d86abeb984a0c6f184804d544121a)
+- decompose packages
+  [(e0a547e)](https://github.com/taiga-family/renovate-config/commit/e0a547e870fb85e67bae2bc2f2fcb8bfb8878d9c)
+- update ng-web-apis with taiga packages
+  [(1bd4e9a)](https://github.com/taiga-family/renovate-config/commit/1bd4e9a67ed18d1b3da158147374600d58e55a81)
+- npm lockfile refresh
+  [(8c66cbc)](https://github.com/taiga-family/renovate-config/commit/8c66cbcbeea6340839265c27014313b646c76948)
+- separate major, minor, patch
+  [(4894215)](https://github.com/taiga-family/renovate-config/commit/48942157431ac1eba59ed37a5af6d82420abb8e2)
+
 ### [1.113.0](https://github.com/taiga-family/renovate-config/compare/v1.112.0...v1.113.0) (2026-04-24)
 
 ### 🚀 Features
