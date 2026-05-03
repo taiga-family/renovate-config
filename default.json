@@ -297,7 +297,11 @@
         {
             "description": "Allow major updates for Taiga UI packages",
             "enabled": true,
-            "matchPackageNames": ["/^@taiga-ui\\//"],
+            "matchPackageNames": [
+                "/^@taiga-ui\\//",
+                "/^@ng-web-apis\\//",
+                "ng-morph"
+            ],
             "matchUpdateTypes": ["major"]
         },
         {
