@@ -1,5 +1,21 @@
 This release contains internal technical improvements only. No changes to functionality, UI, or APIs.
 
+### [1.117.0](https://github.com/taiga-family/renovate-config/compare/v1.116.0...v1.117.0) (2026-05-04)
+
+### 🚀 Features
+
+- update allowed commands
+  [(78bbdf1)](https://github.com/taiga-family/renovate-config/commit/78bbdf15c8ccffd6842b0b2d0824512e9af31ba3)
+
+### 🐞 Bug Fixes
+
+- wrong migration
+  [(bf79186)](https://github.com/taiga-family/renovate-config/commit/bf791865dccf20d0dd777fa9515e8eb79d9369a4)
+- remove strict for allow shell scripts
+  [(3eb8da6)](https://github.com/taiga-family/renovate-config/commit/3eb8da6ee19cd4cb547422eac083729475b6b4cb)
+
+This release contains internal technical improvements only. No changes to functionality, UI, or APIs.
+
 ### [1.116.0](https://github.com/taiga-family/renovate-config/compare/v1.115.0...v1.116.0) (2026-05-04)
 
 ### 🚀 Features
