@@ -12,8 +12,8 @@ jobs:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
           persist-credentials: false
-      - uses: taiga-family/ci/actions/setup/variables@c5bcf64b54eb51e9274fa667e69cfd0d2f37adfd # v1.209.0
-      - uses: taiga-family/ci/actions/setup/node@c5bcf64b54eb51e9274fa667e69cfd0d2f37adfd # v1.209.0
+      - uses: taiga-family/ci/actions/setup/variables@41a6dcaf21b0a83a93310de63dde18583feb5920 # v1.210.0
+      - uses: taiga-family/ci/actions/setup/node@41a6dcaf21b0a83a93310de63dde18583feb5920 # v1.210.0
       - run: |
           if [[ "${{ env.SUPPORT_AUTO_PUSH }}" == "true" ]]; then
               npm run prettier -- --write
@@ -21,7 +21,7 @@ jobs:
               npm run prettier -- --check
           fi
       - run: npx renovate-config-validator default.json --strict
-      - uses: taiga-family/ci/actions/auto/push@c5bcf64b54eb51e9274fa667e69cfd0d2f37adfd # v1.209.0
+      - uses: taiga-family/ci/actions/auto/push@41a6dcaf21b0a83a93310de63dde18583feb5920 # v1.210.0
         with:
           token: ${{ secrets.TAIGA_FAMILY_BOT_PAT }}
 
