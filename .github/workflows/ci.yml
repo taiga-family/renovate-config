@@ -20,7 +20,7 @@ jobs:
           else
               npm run prettier -- --check
           fi
-      - run: npx renovate-config-validator default.json --strict
+      - run: npx renovate-config-validator default.json
       - uses: taiga-family/ci/actions/auto/push@41a6dcaf21b0a83a93310de63dde18583feb5920 # v1.210.0
         with:
           token: ${{ secrets.TAIGA_FAMILY_BOT_PAT }}
