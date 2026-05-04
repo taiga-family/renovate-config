@@ -1,3 +1,12 @@
+This release contains internal technical improvements only. No changes to functionality, UI, or APIs.
+
+### [1.116.0](https://github.com/taiga-family/renovate-config/compare/v1.115.0...v1.116.0) (2026-05-04)
+
+### 🚀 Features
+
+- add allowShellExecutorForPostUpgradeCommands,
+  [(5b5c9fc)](https://github.com/taiga-family/renovate-config/commit/5b5c9fc4d782560de393870815e1aaf7d122190e)
+
 ### [1.115.0](https://github.com/taiga-family/renovate-config/compare/v1.113.0...v1.115.0) (2026-05-03)
 
 ### 🚀 Features
