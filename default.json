@@ -220,7 +220,7 @@
                     "sh -lc 'if [ -f package-lock.json ] && [ -f package.json ]; then if node -e \"const p=require(\\\"./package.json\\\");const w=p.workspaces;process.exit(Array.isArray(w)||Array.isArray(w&&w.packages)?0:1)\"; then npm install --package-lock-only --ignore-scripts --workspaces --include-workspace-root; else npm install --package-lock-only --ignore-scripts; fi; fi'",
                     "sh -lc 'npx lint-staged --allow-empty || true'"
                 ],
-                "dataFileTemplate": "[{{#each upgrades}}{\"depName\":\"{{{depName}}}\",\"packageName\":\"{{{packageName}}}\",\"lookupName\":\"{{{lookupName}}}\",\"currentVersion\":\"{{{currentVersion}}}\",\"newVersion\":\"{{{newVersion}}}\"}{{#unless @last}},{{/unless}}{{/each}}]",
+                "dataFileTemplate": "[{{#each upgrades}}{\"depName\":\"{{{depName}}}\",\"packageName\":\"{{{packageName}}}\",\"lookupName\":\"{{{packageName}}}\",\"currentVersion\":\"{{{currentVersion}}}\",\"newVersion\":\"{{{newVersion}}}\"}{{#unless @last}},{{/unless}}{{/each}}]",
                 "executionMode": "branch",
                 "fileFilters": ["**/*"]
             }
@@ -239,7 +239,7 @@
                     "sh -lc 'if [ -f package-lock.json ] && [ -f package.json ]; then if node -e \"const p=require(\\\"./package.json\\\");const w=p.workspaces;process.exit(Array.isArray(w)||Array.isArray(w&&w.packages)?0:1)\"; then npm install --package-lock-only --ignore-scripts --workspaces --include-workspace-root; else npm install --package-lock-only --ignore-scripts; fi; fi'",
                     "sh -lc 'npx lint-staged --allow-empty || true'"
                 ],
-                "dataFileTemplate": "[{{#each upgrades}}{\"depName\":\"{{{depName}}}\",\"packageName\":\"{{{packageName}}}\",\"lookupName\":\"{{{lookupName}}}\",\"currentVersion\":\"{{{currentVersion}}}\",\"newVersion\":\"{{{newVersion}}}\"}{{#unless @last}},{{/unless}}{{/each}}]",
+                "dataFileTemplate": "[{{#each upgrades}}{\"depName\":\"{{{depName}}}\",\"packageName\":\"{{{packageName}}}\",\"lookupName\":\"{{{packageName}}}\",\"currentVersion\":\"{{{currentVersion}}}\",\"newVersion\":\"{{{newVersion}}}\"}{{#unless @last}},{{/unless}}{{/each}}]",
                 "executionMode": "branch",
                 "fileFilters": ["**/*"]
             },
@@ -267,7 +267,7 @@
                     "sh -lc 'if [ -f package-lock.json ] && [ -f package.json ]; then if node -e \"const p=require(\\\"./package.json\\\");const w=p.workspaces;process.exit(Array.isArray(w)||Array.isArray(w&&w.packages)?0:1)\"; then npm install --package-lock-only --ignore-scripts --workspaces --include-workspace-root; else npm install --package-lock-only --ignore-scripts; fi; fi'",
                     "sh -lc 'npx lint-staged --allow-empty || true'"
                 ],
-                "dataFileTemplate": "[{{#each upgrades}}{\"depName\":\"{{{depName}}}\",\"packageName\":\"{{{packageName}}}\",\"lookupName\":\"{{{lookupName}}}\",\"currentVersion\":\"{{{currentVersion}}}\",\"newVersion\":\"{{{newVersion}}}\"}{{#unless @last}},{{/unless}}{{/each}}]",
+                "dataFileTemplate": "[{{#each upgrades}}{\"depName\":\"{{{depName}}}\",\"packageName\":\"{{{packageName}}}\",\"lookupName\":\"{{{packageName}}}\",\"currentVersion\":\"{{{currentVersion}}}\",\"newVersion\":\"{{{newVersion}}}\"}{{#unless @last}},{{/unless}}{{/each}}]",
                 "executionMode": "branch",
                 "fileFilters": ["**/*"]
             }
