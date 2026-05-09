@@ -72,9 +72,12 @@
     ],
     "internalChecksFilter": "strict",
     "labels": [],
-    "minimumReleaseAge": "14 days",
     "onboarding": false,
     "packageRules": [
+        {
+            "matchDatasources": ["npm"],
+            "minimumReleaseAge": "14 days"
+        },
         {
             "description": "Disable quarantine for trusted internal packages",
             "matchPackageNames": [
