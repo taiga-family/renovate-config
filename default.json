@@ -363,10 +363,10 @@
         "Change"
     ],
     "prBodyTemplate": "{{{table}}}{{{notes}}}{{{changelogs}}}{{{controls}}}{{{footer}}}",
-    "prConcurrentLimit": 3,
+    "prConcurrentLimit": 2,
     "prHourlyLimit": 0,
     "rebaseWhen": "auto",
-    "recreateWhen": "always",
+    "recreateWhen": "auto",
     "repositoryCache": "enabled",
     "requireConfig": "optional",
     "rollbackPrs": true,
