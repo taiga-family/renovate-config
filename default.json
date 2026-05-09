@@ -90,11 +90,23 @@
             "matchDepTypes": ["overrides"]
         },
         {
+            "description": "Pin regular production and development dependencies",
             "matchDepTypes": ["devDependencies", "dependencies"],
+            "matchManagers": ["npm"],
             "rangeStrategy": "pin"
         },
         {
-            "matchDepTypes": ["peerDependencies", "optionalDependencies"],
+            "description": "Bump peer dependencies, including optional peer dependencies",
+            "matchCurrentValue": "!/^>=\\s*/",
+            "matchDepTypes": ["peerDependencies"],
+            "matchManagers": ["npm"],
+            "rangeStrategy": "bump"
+        },
+        {
+            "description": "Bump optional dependencies, but keep open >= ranges unchanged",
+            "matchCurrentValue": "!/^>=\\s*/",
+            "matchDepTypes": ["optionalDependencies"],
+            "matchManagers": ["npm"],
             "rangeStrategy": "bump"
         },
         {
@@ -327,11 +339,6 @@
         },
         {
             "enabled": false,
-            "matchCurrentValue": "/^>=\\s*/",
-            "matchDepTypes": ["peerDependencies", "optionalDependencies"]
-        },
-        {
-            "enabled": false,
             "matchUpdateTypes": ["major"]
         },
         {
@@ -366,6 +373,13 @@
                 "patch"
             ],
             "minimumReleaseAge": null
+        },
+        {
+            "description": "Never update open >= ranges in peer and optional dependencies",
+            "enabled": false,
+            "matchCurrentValue": "/^>=\\s*/",
+            "matchDepTypes": ["peerDependencies", "optionalDependencies"],
+            "matchManagers": ["npm"]
         }
     ],
     "postUpdateOptions": ["npmInstallTwice", "npmDedupe"],
