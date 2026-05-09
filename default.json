@@ -376,7 +376,7 @@
         "Type",
         "Change"
     ],
-    "prBodyTemplate": "{{{table}}}{{{notes}}}{{{changelogs}}}{{{controls}}}{{{footer}}}",
+    "prBodyTemplate": "{{{table}}}{{{notes}}}{{{controls}}}{{{footer}}}",
     "prConcurrentLimit": 2,
     "prHourlyLimit": 0,
     "rebaseWhen": "auto",
