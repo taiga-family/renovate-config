@@ -37,7 +37,6 @@
         "NPM_CONFIG_FETCH_TIMEOUT": "1200000",
         "NPM_CONFIG_FUND": "false"
     },
-    "exposeAllEnv": true,
     "extends": [":semanticCommitScopeDisabled", "helpers:pinGitHubActionDigests"],
     "fetchChangeLogs": "off",
     "ignoreScripts": true,
