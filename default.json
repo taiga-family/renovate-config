@@ -122,7 +122,7 @@
         },
         {
             "groupName": "prosemirror",
-            "matchPackageNames": ["/^prosemirror.*/"]
+            "matchPackageNames": ["/^prosemirror-/"]
         },
         {
             "groupName": "definitely typed",
@@ -131,17 +131,18 @@
         {
             "groupName": "prettier",
             "matchPackageNames": [
-                "/^prettier/",
+                "prettier",
                 "/^@prettier\\//",
-                "/^prettier-.*/"
+                "/^prettier-/"
             ]
         },
         {
             "groupName": "cypress",
             "matchPackageNames": [
-                "/^cypress/",
-                "/^cy2/",
-                "/^cypress-.*/"
+                "cypress",
+                "/^cypress-/",
+                "/^@cypress\\//",
+                "/^cy2/"
             ]
         },
         {
@@ -162,7 +163,11 @@
         },
         {
             "groupName": "rollup",
-            "matchPackageNames": ["/^rollup.*/", "@rollup/pluginutils"]
+            "matchPackageNames": [
+                "rollup",
+                "/^@rollup\\//",
+                "/^rollup-plugin-/"
+            ]
         },
         {
             "groupName": "swc",
@@ -174,29 +179,38 @@
         },
         {
             "groupName": "babel",
-            "matchPackageNames": ["/^@babel\\/eslint-.*/", "/^babel.*/"]
+            "matchPackageNames": [
+                "/^@babel\\//",
+                "/^babel-/",
+                "babel-jest"
+            ]
         },
         {
             "groupName": "jest",
             "matchPackageNames": [
-                "/^jest.*/",
-                "/^ts-jest$/",
-                "/^jest-preset-angular$/"
+                "jest",
+                "/^jest-/",
+                "ts-jest",
+                "jest-preset-angular"
             ]
         },
         {
             "extends": ["monorepo:react"],
             "groupName": "react",
             "matchPackageNames": [
-                "/^react.*/",
-                "@types/react",
-                "/^@types\\/react-.*/",
-                "/^react-.*/"
+                "react",
+                "react-dom",
+                "/^react-/",
+                "/^@types\\/react($|-)/"
             ]
         },
         {
             "groupName": "vue",
-            "matchPackageNames": ["/^vue.*/"]
+            "matchPackageNames": [
+                "vue",
+                "/^vue-/",
+                "/^@vue\\//"
+            ]
         },
         {
             "groupName": "eslint core",
