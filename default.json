@@ -20,7 +20,6 @@
     "cloneSubmodules": true,
     "commitMessageLowerCase": "auto",
     "dependencyDashboard": false,
-    "dependencyDashboardApproval": false,
     "digest": {
         "enabled": false
     },
@@ -42,6 +41,7 @@
     "exposeAllEnv": true,
     "extends": [":semanticCommitScopeDisabled", "helpers:pinGitHubActionDigests"],
     "fetchChangeLogs": "off",
+    "ignoreScripts": false,
     "includePaths": [
         "**/package.json",
         "**/package-lock.json",
@@ -71,7 +71,6 @@
         ".gitlab/**"
     ],
     "internalChecksFilter": "strict",
-    "labels": [],
     "onboarding": false,
     "packageRules": [
         {
@@ -221,12 +220,12 @@
             "matchPackageNames": [
                 "/^@eslint\\//",
                 "/^@eslint-community\\//",
-                "/^eslint-.*/"
+                "/^eslint-/"
             ]
         },
         {
             "groupName": "jasmine",
-            "matchPackageNames": ["/^jasmine.*/"]
+            "matchPackageNames": ["jasmine", "/^jasmine-/"]
         },
         {
             "groupName": "@stylistic/*",
@@ -309,9 +308,10 @@
             "groupName": "stylelint dependencies",
             "matchPackageNames": [
                 "stylelint",
-                "/^postcss.*/",
-                "/^@stylistic\\//",
-                "/^stylelint.*/"
+                "/^stylelint-/",
+                "postcss",
+                "/^postcss-/",
+                "/^@stylistic\\//"
             ]
         },
         {
@@ -373,7 +373,7 @@
     "postUpdateOptions": ["npmInstallTwice", "npmDedupe"],
     "prBodyColumns": [
         "Package",
-        "Type",
+        "Update",
         "Change"
     ],
     "prBodyTemplate": "{{{table}}}{{{notes}}}{{{controls}}}{{{footer}}}",
