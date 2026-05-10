@@ -96,15 +96,15 @@
             "rangeStrategy": "pin"
         },
         {
-            "description": "Bump peer dependencies, including optional peer dependencies",
-            "matchCurrentValue": "!/^>=\\s*/",
+            "description": "Bump peer dependencies, but keep open and compound ranges unchanged",
+            "matchCurrentValue": "!/^(?:\\s*>=)|\\|\\|/",
             "matchDepTypes": ["peerDependencies"],
             "matchManagers": ["npm"],
             "rangeStrategy": "bump"
         },
         {
-            "description": "Bump optional dependencies, but keep open >= ranges unchanged",
-            "matchCurrentValue": "!/^>=\\s*/",
+            "description": "Bump optional dependencies, but keep open and compound ranges unchanged",
+            "matchCurrentValue": "!/^(?:\\s*>=)|\\|\\|/",
             "matchDepTypes": ["optionalDependencies"],
             "matchManagers": ["npm"],
             "rangeStrategy": "bump"
@@ -365,7 +365,7 @@
         {
             "description": "Allow all GitHub Actions updates without quarantine",
             "enabled": true,
-            "groupName": "Github Actions",
+            "groupName": "GitHub Actions",
             "matchManagers": ["github-actions"],
             "matchUpdateTypes": [
                 "major",
@@ -375,9 +375,9 @@
             "minimumReleaseAge": null
         },
         {
-            "description": "Never update open >= ranges in peer and optional dependencies",
+            "description": "Never update open or compound ranges in peer and optional dependencies",
             "enabled": false,
-            "matchCurrentValue": "/^>=\\s*/",
+            "matchCurrentValue": "/^(?:\\s*>=)|\\|\\|/",
             "matchDepTypes": ["peerDependencies", "optionalDependencies"],
             "matchManagers": ["npm"]
         }
