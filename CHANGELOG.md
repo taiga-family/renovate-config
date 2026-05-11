@@ -1,3 +1,37 @@
+### [1.117.1](https://github.com/taiga-family/renovate-config/compare/v1.117.0...v1.117.1) (2026-05-10)
+
+### 🐞 Bug Fixes
+
+- refactor groups
+  [(370146c)](https://github.com/taiga-family/renovate-config/commit/370146cb3c6cd719d285f611806ccd49f1e1b00a)
+- support updates for optional dependencies
+  [(917a5a0)](https://github.com/taiga-family/renovate-config/commit/917a5a08f626fe114231f64955bd3cb12cc93ebb)
+- cleanup config
+  [(51afbd0)](https://github.com/taiga-family/renovate-config/commit/51afbd01c99d0dd2cf381074faae6601771c90b5)
+- add env [(1add4b8)](https://github.com/taiga-family/renovate-config/commit/1add4b8951ec849d0e9c90ab90c7d727ed8875d8)
+- ignore ranges
+  [(d91f4e8)](https://github.com/taiga-family/renovate-config/commit/d91f4e817946ea22e8bdfe854956f237e53f3933)
+- validation
+  [(9905597)](https://github.com/taiga-family/renovate-config/commit/9905597b546cc940ed6e572f5d167322777371b0)
+- revert strict
+  [(1561d25)](https://github.com/taiga-family/renovate-config/commit/1561d25da94d9743955b2195c22097fb97823e5f)
+- drop skipInstall
+  [(9e9cc96)](https://github.com/taiga-family/renovate-config/commit/9e9cc9632bfea4a20a9a5a9be9de563aaa561ace)
+- migration problem
+  [(b4e0088)](https://github.com/taiga-family/renovate-config/commit/b4e0088d931850b508da58c38da2969aad9b80e7)
+- set minimumReleaseAge only for npm
+  [(be91f9f)](https://github.com/taiga-family/renovate-config/commit/be91f9fa00c04306b802172483d91655ae0adf60)
+- ignore npm scripts
+  [(1c7e3cb)](https://github.com/taiga-family/renovate-config/commit/1c7e3cb77bb3dda7c376e29fc88e7b479d187069)
+- align concurrent branches
+  [(96f4e6b)](https://github.com/taiga-family/renovate-config/commit/96f4e6bb60ec0c19671b91c68f46caabdb4dfb18)
+- update prBodyTemplate
+  [(12c3ae7)](https://github.com/taiga-family/renovate-config/commit/12c3ae7171581198703b398dc1ae0dfa228cdd69)
+- no needed property
+  [(92828ad)](https://github.com/taiga-family/renovate-config/commit/92828ad9b588c19b33359aa87d9feab0f0fd4467)
+- security fix
+  [(f35e0e5)](https://github.com/taiga-family/renovate-config/commit/f35e0e5195a69958d6d271a298d57f0558a5490b)
+
 This release contains internal technical improvements only. No changes to functionality, UI, or APIs.
 
 ### [1.117.0](https://github.com/taiga-family/renovate-config/compare/v1.116.0...v1.117.0) (2026-05-04)
