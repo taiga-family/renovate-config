@@ -392,7 +392,7 @@
     "prConcurrentLimit": 2,
     "prHourlyLimit": 0,
     "rebaseWhen": "auto",
-    "recreateWhen": "auto",
+    "recreateWhen": "always",
     "repositoryCache": "enabled",
     "requireConfig": "optional",
     "rollbackPrs": true,
