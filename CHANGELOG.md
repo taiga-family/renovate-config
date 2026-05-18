@@ -1,3 +1,12 @@
+### [1.117.2](https://github.com/taiga-family/renovate-config/compare/v1.117.1...v1.117.2) (2026-05-18)
+
+### 🐞 Bug Fixes
+
+- change group name
+  [(535355e)](https://github.com/taiga-family/renovate-config/commit/535355ea509f90f3592c6e2ca7fbc13dcbf529a6)
+- revert recreateWhen
+  [(0910ff2)](https://github.com/taiga-family/renovate-config/commit/0910ff297d9faf8e31a38180d726316677d93508)
+
 ### [1.117.1](https://github.com/taiga-family/renovate-config/compare/v1.117.0...v1.117.1) (2026-05-10)
 
 ### 🐞 Bug Fixes
