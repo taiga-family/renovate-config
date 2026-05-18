@@ -296,7 +296,7 @@
             "matchPackageNames": ["@taiga-ui/configs"]
         },
         {
-            "groupName": "@taiga-ui/*",
+            "groupName": "taiga-family",
             "matchPackageNames": [
                 "/^@taiga-ui\\//",
                 "/^@ng-web-apis\\//",
