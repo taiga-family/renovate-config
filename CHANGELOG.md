@@ -1,3 +1,7 @@
+### [1.119.0](https://github.com/taiga-family/renovate-config/compare/v1.118.0...v1.119.0) (2026-06-10)
+
+This release contains internal technical improvements only. No changes to functionality, UI, or APIs.
+
 ### [1.118.0](https://github.com/taiga-family/renovate-config/compare/v1.117.2...v1.118.0) (2026-05-29)
 
 This release contains internal technical improvements only. No changes to functionality, UI, or APIs.
