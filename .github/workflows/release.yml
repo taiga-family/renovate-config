@@ -20,7 +20,7 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           fetch-depth: 0
-      - uses: taiga-family/actions/release-it@0940659c204565776517de7e9cafaf017f66ee81 # v2.9.0
+      - uses: taiga-family/actions/release-it@f1fac35711ea300c82e8031cec683492ffc6d942 # v2.10.0
         with:
           ref: ${{ github.ref }}
           mode: ${{ github.event.inputs.mode }}
