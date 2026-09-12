@@ -285,7 +285,7 @@
                 "executionMode": "branch",
                 "fileFilters": ["**/*"]
             },
-            "separateMinorPatch": true
+            "separateMinorPatch": false
         },
         {
             "groupName": "@taiga-ui/design-tokens",
