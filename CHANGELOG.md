@@ -1,3 +1,11 @@
+## [1.119.1](https://github.com/taiga-family/renovate-config/compare/v1.119.0...v1.119.1) (2026-09-28)
+
+### 🐞 Bug Fixes
+
+- renovate fails with `Cannot find package 'common-tags'`
+  ([#2845](https://github.com/taiga-family/renovate-config/pull/2845))
+  [(a091567)](https://github.com/taiga-family/renovate-config/commit/a09156763136f52a0634da46956cb78b6b283328)
+
 ### [1.119.0](https://github.com/taiga-family/renovate-config/compare/v1.118.0...v1.119.0) (2026-06-10)
 
 This release contains internal technical improvements only. No changes to functionality, UI, or APIs.
