@@ -10,7 +10,7 @@
     "prettier": "@taiga-ui/prettier-config",
     "devDependencies": {
         "@taiga-ui/configs": "0.570.0",
-        "renovate": "44.224.1"
+        "renovate": "44.225.1"
     },
     "release-it": {
         "extends": "@taiga-ui/release-it-config"
